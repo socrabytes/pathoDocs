@@ -376,3 +376,9 @@ Academy of Nutrition and Dietetics: http://www.eatright.org
 Drugs.com Drug Interaction Checker: http://www.drugs.com/drug_interactions.php
 Medscape Drug Interaction Checker: https://reference.medscape.com/drug-interactionchecker
 National Institutes of Health Office of Dietary Supplements: https://ods.od.nih.gov/
+
+---
+
+{{% callout title="Study Further" icon="pencil-alt" %}}
+Continue your learning with the [Study Guide for Chapter 7](study-guide.md).
+{{% /callout %}}
