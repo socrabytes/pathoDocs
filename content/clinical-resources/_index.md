@@ -6,8 +6,13 @@ cascade:
   type: "docs"
 ---
 
-# Clinical Resources
+A curated collection of clinical guides, study tools, and reference materials for advanced practice nursing.
 
+{{< cards >}}
+  {{< card link="/clinical-resources/pharmtx/" title="Pharmacotherapeutics for Advanced Practice Nurse Prescribers" icon="beaker" >}}
+{{< /cards >}}
+
+> More books coming soon! This page will serve as your clinical bookshelf.
 Welcome to your clinical resource center. Here you'll find comprehensive study materials, guides, and interactive content to support your nurse practitioner education.
 
 ## Available Resources
