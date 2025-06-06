@@ -21,8 +21,8 @@ menu:
     - name: Docs
       pageRef: /docs
       weight: 1
-    - name: Chapters
-      pageRef: /chapters
+    - name: Clinical Resources
+      pageRef: /clinical-resources
       weight: 2
     - name: About
       pageRef: /about
