@@ -30,6 +30,12 @@ Comprehensive resource for understanding pharmacotherapeutics in advanced nursin
 ### Unit II: Pharmacotherapeutics with Single Drugs
 {{< cards >}}
   {{< card link="/clinical-resources/pharmtx/ch16/" title="Chapter 16: Drugs Affecting the Immune System" icon="bookmark" >}}
+  {{< card link="/clinical-resources/pharmtx/ch25/" title="Chapter 25: Drugs Used to Treat Viral, Fungal, and Protozoal Infections" icon="bookmark" >}}
+{{< /cards >}}
+
+### Unit III: Pharmacotherapeutics with Multiple Drugs
+{{< cards >}}
+  {{< card link="/clinical-resources/pharmtx/ch39/" title="Chapter 39: Heart Failure" icon="bookmark" >}}
 {{< /cards >}}
 
 > Each chapter includes:
