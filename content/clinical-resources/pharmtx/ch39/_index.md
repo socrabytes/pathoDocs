@@ -107,9 +107,6 @@ graph TD
     R4 --> R5
 ```
 
-<figure>
-  <figcaption align="center">
-    <strong>Figure 39-1. Compensatory responses in HF.</strong><br>
-    Flowchart illustrating the physiological responses to decreased cardiac output and systemic blood pressure. The diagram details the sequence of events starting from decreased cardiac output leading to reduced systemic blood pressure. This triggers increased sympathetic discharge, which enhances heart contractility and heart rate. Simultaneously, decreased renal blood flow and oxygen supply to the kidney stimulate renin release, increasing norepinephrine and angiotensin levels. These processes collectively aim to restore cardiovascular homeostasis.
-  </figcaption>
-</figure>
+{{% details title="Figure 39-1: Compensatory Responses in HF (Details)" closed="true" %}}
+Flowchart illustrating the physiological responses to decreased cardiac output and systemic blood pressure. The diagram details the sequence of events starting from decreased cardiac output leading to reduced systemic blood pressure. This triggers increased sympathetic discharge, which enhances heart contractility and heart rate. Simultaneously, decreased renal blood flow and oxygen supply to the kidney stimulate renin release, increasing norepinephrine and angiotensin levels. These processes collectively aim to restore cardiovascular homeostasis.
+{{% /details %}}
