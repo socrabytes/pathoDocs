@@ -13,7 +13,7 @@ showReadingTime: false # Typically false for interactive pages
 This page provides an interactive learning experience for the key drug classes covered in Chapter 25.
 
 **Click the button below to launch the interactive review in a new tab for a full-screen experience:**
-<a href="/pathoDocs/pharmtx/ch25-review.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px;">Launch Fullscreen Interactive Review</a>
+<a href="/pathoDocs/pharmtx/ch25-review.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Fullscreen Interactive Review</a>
 
 Alternatively, you can engage with the interactive review directly embedded on this page:
 
@@ -22,3 +22,29 @@ Alternatively, you can engage with the interactive review directly embedded on t
 </iframe>
 
 Use this tool to test your knowledge on antiviral, antifungal, anthelmintic, and other antimicrobial agents discussed in this chapter.
+
+<style>
+.btn-primary {
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  background-color: #005f73;
+  border-color: #005f73;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none;
+  margin: 0.5rem 0;
+}
+.btn-primary:hover {
+  background-color: #0a9396;
+  border-color: #0a9396;
+  color: #fff;
+  text-decoration: none;
+}
+</style>
