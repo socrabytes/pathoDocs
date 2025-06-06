@@ -21,6 +21,15 @@ Alternatively, you can view it embedded below:
   Your browser does not support iframes. Please <a href="/pathoDocs/pharmtx/ch16-review.html" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
 </iframe>
 
+
+## Chapter Challenge
+
+Ready for a more comprehensive test of your knowledge? The Chapter Challenge includes multiple interactive activities, including a vaccine sorter, PPD interpretation scenarios, flashcard review, and a final quiz.
+
+**Click the link below to launch the Chapter 16 Challenge in a new tab:**
+
+<a href="/pathoDocs/pharmtx/ch16-challenge.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Chapter 16 Challenge</a>
+
 > [!TIP]
 > For the best experience, especially on smaller screens, use the "Launch Interactive Chapter 16 Review" button to open the content in a new, full-window tab.
 
