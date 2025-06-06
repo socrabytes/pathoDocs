@@ -19,6 +19,7 @@ Comprehensive resource for understanding pharmacotherapeutics in advanced nursin
 {{< cards >}}
   {{< card link="/clinical-resources/pharmtx/ch7/" title="Chapter 7: Nutrition & Nutraceuticals" icon="bookmark" >}}
   {{< card link="/clinical-resources/pharmtx/ch9/" title="Chapter 9: Cannabis in Clinical Practice" icon="bookmark" >}}
+  {{< card link="/clinical-resources/pharmtx/ch10/" title="Chapter 10: Pharmacoeconomics" icon="bookmark" >}}
 {{< /cards >}}
 
 > Each chapter includes:
