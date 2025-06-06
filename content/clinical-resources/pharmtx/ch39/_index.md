@@ -8,36 +8,32 @@ showBreadcrumbs: true
 showReadingTime: true
 ---
 
-# CHAPTER 39 
+Authored by *Anthony M. Angelow*.
 
-## HEART FAILURE
+## Pathophysiology
 
-## Anthony M. Angelow
+### Types of Heart Failure
+### Classifications of Heart Failure
+### Symptoms of Heart Failure
 
-## PATHOPHYSIOLOGY
+## Pharmacodynamics
 
-Types of Heart Failure
-Classifications of Heart Failure
-Symptoms of Heart Failure
+### Goals of Treatment
 
-## PHARMACODYNAMICS
+## Rational Drug Selection
 
-GOALS OF TREATMENT
+### Guidelines
+### Diagnosis of Heart Failure
+### Treatment Recommendations Based on Stage of Heart Failure
+### Pharmaceutical Therapy for Heart Failure
+### Additional Patient Variables
+### Drug Combinations
 
-## RATIONAL DRUG SELECTION
+## Monitoring
 
-Guidelines
-Diagnosis of Heart Failure
-Treatment Recommendations Based on Stage of Heart Failure
-Pharmaceutical Therapy for Heart Failure
-Additional Patient Variables
-Drug Combinations
+### Outcome Evaluation
 
-## MONITORING
-
-OUTCOME EVALUATION
-
-## PATIENT EDUCATION
+## Patient Education
 
 Heart failure (HF) is a major health problem that, according to estimates from the American Heart Association (AHA), affects more than six million Americans (Benjamin et al, 2017; Roger, 2021). The underlying HF incidence increases with age, so the prevalence has increased over the past decade as the U.S. population ages. With the growth in the aging population, incidence of HF is expected to increase significantly. Furthermore, the incidence of HF is disproportionately higher in the Black population compared with other populations. Despite aggressive investigation into treatment options, the mortality rate remains $50 \%$ within 5 years of diagnosis (Roger, 2021). Of particular importance in HF management is following Guideline-Directed Medical Therapy (GDMT), which encompasses clinical evaluation, diagnostic evaluation, pharmacological intervention, and procedural interventions to effectively manage HF. In addition, providers must address the patient's underlying pathophysiology leading to the development of HF and associated diagnoses (Benjamin et al, 2017; Heidenreich et al, 2022). This carefully designed program maximizes outcomes and prevents or delays treatment complications such as renal failure, cardiovascular complications, and death. The GDMT model focuses on multiple pharmacological regimens making patient education essential to limiting complications, hospitalizations, and hospital readmissions that result from poor adherence to the treatment regimen (Heidenreich et al, 2022).
 
