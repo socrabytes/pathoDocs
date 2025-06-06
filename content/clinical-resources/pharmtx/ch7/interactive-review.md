@@ -12,14 +12,12 @@ This visual guide provides a condensed overview of key concepts from Chapter 7, 
 
 **Click the link below to launch the interactive review in a new tab:**
 
-{{ $reviewPath := "pharmtx/ch7-review.html" | relURL }}
-
-<a href="{{ $reviewPath }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Interactive Chapter 7 Review</a>
+<a href="{{ "pharmtx/ch7-review.html" | relURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Interactive Chapter 7 Review</a>
 
 Alternatively, you can view it embedded below:
 
-<iframe src="{{ $reviewPath }}" width="100%" height="800px" style="border:1px solid #ccc; border-radius: 8px; margin-top: 20px;">
-  Your browser does not support iframes. Please <a href="{{ $reviewPath }}" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
+<iframe src="{{ "pharmtx/ch7-review.html" | relURL }}" width="100%" height="800px" style="border:1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  Your browser does not support iframes. Please <a href="{{ "pharmtx/ch7-review.html" | relURL }}" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
 </iframe>
 
 <style>
