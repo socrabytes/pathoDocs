@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 25 Interactive Review: Antimicrobials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .perspective {
+            perspective: 1000px;
+        }
+        .card {
+            width: 100%; 
+            height: 320px; /* Fixed height for cards */
+            cursor: pointer;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+        }
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem; /* 24px */
+            text-align: center;
+        }
+        .card-front {
+            background-color: #ffffff; /* White card front */
+            border: 1px solid #e5e7eb; /* Light gray border */
+        }
+        .card-back {
+            background-color: #4a5568; /* Darker gray card back */
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto; /* Scroll for overflow */
+            justify-content: flex-start; /* Align content to top for scrolling */
+            align-items: flex-start; /* Align content to left */
+            text-align: left;
+        }
+        .tab {
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem; /* 12px 24px */
+            font-size: 0.9rem; /* Slightly smaller font for tabs */
+            border-bottom-width: 3px;
+        }
+        .tab-active {
+            border-bottom-color: #2563eb; /* Blue-600 */
+            color: #1d4ed8; /* Blue-700 */
+            font-weight: 600;
+        }
+        .tab-inactive {
+            border-bottom-color: transparent;
+            color: #4b5563; /* Gray-600 */
+        }
+        .tab-inactive:hover {
+            color: #2563eb; /* Blue-600 */
+            border-bottom-color: #93c5fd; /* Blue-300 */
+        }
+        .card-back::-webkit-scrollbar {
+            width: 6px;
+        }
+        .card-back::-webkit-scrollbar-track {
+            background: #718096; /* Gray-500 */
+            border-radius: 10px;
+        }
+        .card-back::-webkit-scrollbar-thumb {
+            background: #cbd5e0; /* Gray-300 */
+            border-radius: 10px;
+        }
+        .card-back::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0; /* Gray-400 */
+        }
+        .card-back ul {
+            list-style-type: disc;
+            margin-left: 1.5rem; /* Indent list items */
+        }
+        .card-back li {
+            margin-bottom: 0.5rem; /* Space between list items */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Antimicrobial Study Guide: Chapter 25</h1>
+            <p class="text-md sm:text-lg text-gray-600 mt-2">Interactive Review: Viral, Fungal & Protozoal Infections</p>
+        </header>
+
+        <div class="border-b border-gray-300 mb-8">
+            <nav class="-mb-px flex flex-wrap justify-center space-x-2 sm:space-x-4" id="tab-nav">
+                <!-- Tabs will be dynamically inserted here -->
+            </nav>
+        </div>
+
+        <main id="tab-content" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card content for each tab will be dynamically inserted here -->
+        </main>
+    </div>
+
+    <script>
+        const studyData = {
+            "Antivirals": [
+                {
+                    title: "Nucleoside Analogues",
+                    subtitle: "Acyclovir, Valacyclovir, Famciclovir",
+                    use: "Herpes (HSV) & Varicella (VZV)",
+                    points: [
+                        "<strong>MOA:</strong> Interferes with viral DNA synthesis, inhibiting replication.",
+                        "<strong>Key Point:</strong> Valacyclovir is a prodrug of acyclovir with better bioavailability.",
+                        "<strong>Renal Alert:</strong> Requires dose adjustment for renal impairment. Crucial for older adults.",
+                        "<strong>ADRs:</strong> Headache, N/V/D are common. Risk of renal failure, especially with dehydration.",
+                        "<strong>Patient Ed:</strong> Start at the very first sign of an outbreak. Maintain good hydration. Does NOT prevent transmission."
+                    ]
+                },
+                {
+                    title: "COVID-19 Antivirals",
+                    subtitle: "Nirmatrelvir/ritonavir (Paxlovid)",
+                    use: "Mild-to-moderate COVID-19",
+                    points: [
+                        "<strong>MOA:</strong> Nirmatrelvir inhibits a viral protease; Ritonavir 'boosts' it by blocking its metabolism via CYP3A.",
+                        "<strong>CRITICAL:</strong> Strong CYP3A inhibitor with MANY significant drug interactions. Always check for interactions.",
+                        "<strong>Timing is Key:</strong> Must start within 5 days of symptom onset.",
+                        "<strong>ADRs:</strong> Dysgeusia (altered taste), diarrhea, hypertension.",
+                        "<strong>Patient Ed:</strong> Do not chew, break, or crush tablets. Complete the full 5-day course."
+                    ]
+                },
+                {
+                    title: "Influenza Antivirals",
+                    subtitle: "Oseltamivir, Zanamivir, Peramivir, Baloxavir",
+                    use: "Influenza A & B",
+                    points: [
+                        "<strong>MOA:</strong> Neuraminidase inhibitors (most) prevent viral release from cells. Baloxavir inhibits replication.",
+                        "<strong>Timing is Key:</strong> Most effective if started within 48 hours of symptoms.",
+                        "<strong>Zanamivir Alert:</strong> Inhaled; can cause bronchospasm. Avoid in patients with asthma/COPD.",
+                        "<strong>Oseltamivir (Tamiflu):</strong> Common ADRs are N/V. Requires renal dose adjustment.",
+                        "<strong>Patient Ed:</strong> These drugs do not replace the annual flu vaccine."
+                    ]
+                },
+                {
+                    title: "Hepatitis C Antivirals",
+                    subtitle: "Combination Agents (e.g., Harvoni, Mavyret)",
+                    use: "Chronic Hepatitis C (HCV)",
+                    points: [
+                        "<strong>MOA:</strong> Complex combinations that inhibit multiple viral proteins (e.g., NS5A, NS5B).",
+                        "<strong>BOXED WARNING:</strong> MUST test for Hepatitis B (HBV) before starting. Risk of fatal HBV reactivation.",
+                        "<strong>Specialist Care:</strong> Treatment is complex and should be managed by or in consultation with a specialist.",
+                        "<strong>ADRs:</strong> Headache, fatigue, and nausea are common.",
+                        "<strong>Drug Interactions:</strong> Numerous and complex. Careful review is required."
+                    ]
+                }
+            ],
+            "Antifungals": [
+                {
+                    title: "Systemic Azoles",
+                    subtitle: "Fluconazole, Itraconazole, Voriconazole",
+                    use: "Systemic & Superficial Fungal Infections",
+                    points: [
+                        "<strong>MOA:</strong> Inhibit fungal CYP450 enzymes, reducing ergosterol production and disrupting the cell membrane.",
+                        "<strong>Hepatotoxicity Risk:</strong> All azoles carry a risk of liver injury. Monitor LFTs.",
+                        "<strong>Drug Interactions:</strong> Potent inhibitors of human CYP enzymes (esp. CYP3A4), leading to many interactions.",
+                        "<strong>Fluconazole:</strong> Good bioavailability, fewer interactions than others. Drug of choice for vaginal candidiasis.",
+                        "<strong>Voriconazole:</strong> Can cause transient visual disturbances.",
+                        "<strong>Patient Ed:</strong> Report any signs of liver toxicity (jaundice, dark urine, fatigue)."
+                    ]
+                },
+                {
+                    title: "Allylamine (Oral)",
+                    subtitle: "Terbinafine (Lamisil)",
+                    use: "Onychomycosis & Tinea Infections",
+                    points: [
+                        "<strong>MOA:</strong> Interferes with ergosterol synthesis at an early step.",
+                        "<strong>Hepatotoxicity Risk:</strong> Risk of liver injury, including failure. Monitor LFTs.",
+                        "<strong>ADRs:</strong> GI upset is common. Reversible loss of taste can occur.",
+                        "<strong>Patient Ed:</strong> Report signs of liver toxicity. Concurrent use of alcohol is discouraged."
+                    ]
+                }
+            ],
+            "Anthelmintics": [
+                {
+                    title: "Benzimidazoles",
+                    subtitle: "Mebendazole, Albendazole",
+                    use: "Intestinal Worms (Pinworm, Roundworm, Hookworm)",
+                    points: [
+                        "<strong>MOA:</strong> Inhibit microtubule function in the worm, leading to its death.",
+                        "<strong>Administration:</strong> Take with a high-fat meal to increase absorption.",
+                        "<strong>Pregnancy Alert:</strong> Albendazole is teratogenic. Ensure negative pregnancy test and advise on contraception.",
+                        "<strong>ADRs:</strong> Generally well-tolerated. Rare reports of bone marrow suppression and elevated LFTs.",
+                        "<strong>Patient Ed:</strong> For pinworm, treat all household members and enforce strict hygiene."
+                    ]
+                },
+                 {
+                    title: "Other Anthelmintics",
+                    subtitle: "Pyrantel Pamoate, Ivermectin",
+                    use: "Intestinal Worms, Scabies",
+                    points: [
+                        "<strong>Pyrantel Pamoate:</strong> Causes spastic paralysis of the worm. Available OTC for pinworm.",
+                        "<strong>Ivermectin MOA:</strong> Causes paralysis of the parasite.",
+                        "<strong>Ivermectin Admin:</strong> Take on an empty stomach with a full glass of water.",
+                        "<strong>Mazzotti Reaction (Ivermectin):</strong> Inflammatory reaction to dying parasites can cause fever, rash, hypotension. May require corticosteroids."
+                    ]
+                }
+            ],
+            "Other Agents": [
+                {
+                    title: "Metronidazole & Tinidazole",
+                    subtitle: "Flagyl, Tindamax",
+                    use: "Protozoa (Trichomonas, Giardia) & Anaerobic Bacteria (Bacterial Vaginosis, C. diff)",
+                    points: [
+                        "<strong>MOA:</strong> Nitroimidazoles that disrupt DNA and protein synthesis in the organism.",
+                        "<strong>CRITICAL: DISULFIRAM-LIKE REACTION.</strong> Patient must avoid ALL alcohol during therapy and for at least 48-72 hours after.",
+                        "<strong>Drug Interaction:</strong> Potentiates warfarin. Monitor INR closely.",
+                        "<strong>ADRs:</strong> Metallic taste, nausea, headache are very common.",
+                        "<strong>Patient Ed:</strong> Take with food to reduce GI upset. Warn about harmless darkening of urine."
+                    ]
+                },
+                {
+                    title: "Nitazoxanide",
+                    subtitle: "Alinia",
+                    use: "Diarrhea (Giardia, Cryptosporidium)",
+                    points: [
+                        "<strong>MOA:</strong> Interferes with anaerobic energy metabolism in protozoa.",
+                        "<strong>Administration:</strong> Take with food to increase absorption.",
+                        "<strong>ADRs:</strong> Abdominal pain, diarrhea, headache, nausea are common.",
+                        "<strong>Patient Ed:</strong> Suspension can be mixed with food like applesauce. Tablets should be swallowed whole."
+                    ]
+                }
+            ]
+        };
+
+        const tabNav = document.getElementById('tab-nav');
+        const tabContent = document.getElementById('tab-content');
+        let activeTab = Object.keys(studyData)[0]; // Set the first tab as active by default
+
+        function createTabs() {
+            Object.keys(studyData).forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category;
+                button.className = 'tab ' + (category === activeTab ? 'tab-active' : 'tab-inactive');
+                button.onclick = () => {
+                    activeTab = category;
+                    createTabs(); // Re-render tabs to update active state
+                    displayCategoryContent(category);
+                };
+                tabNav.appendChild(button);
+            });
+        }
+
+        function displayCategoryContent(category) {
+            tabContent.innerHTML = ''; // Clear previous cards
+            const items = studyData[category];
+            items.forEach(item => {
+                const cardContainer = document.createElement('div');
+                cardContainer.className = 'perspective';
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => card.classList.toggle('flipped');
+
+                const cardInner = document.createElement('div');
+                cardInner.className = 'card-inner';
+
+                // Card Front
+                const cardFront = document.createElement('div');
+                cardFront.className = 'card-front bg-white p-6 rounded-lg shadow-lg';
+                cardFront.innerHTML = `
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">${item.title}</h3>
+                    <p class="text-sm text-gray-500 mb-1">${item.subtitle || ''}</p>
+                    <p class="text-md font-medium text-gray-700">${item.use}</p>
+                    <p class="mt-4 text-xs text-gray-400">Click to see details</p>
+                `;
+
+                // Card Back
+                const cardBack = document.createElement('div');
+                cardBack.className = 'card-back bg-gray-700 text-white p-6 rounded-lg shadow-lg overflow-y-auto';
+                let pointsHTML = '<ul class="list-disc list-inside text-sm space-y-2">';
+                item.points.forEach(point => {
+                    pointsHTML += `<li>${point}</li>`;
+                });
+                pointsHTML += '</ul>';
+                cardBack.innerHTML = `
+                    <h4 class="text-lg font-semibold mb-3">${item.title} - Details</h4>
+                    ${pointsHTML}
+                    <p class="mt-auto pt-3 text-xs text-gray-300">Click to flip back</p>
+                `;
+                
+                cardInner.appendChild(cardFront);
+                cardInner.appendChild(cardBack);
+                card.appendChild(cardInner);
+                cardContainer.appendChild(card);
+                tabContent.appendChild(cardContainer);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createTabs();
+            displayCategoryContent(activeTab);
+        });
+    </script>
+</body>
+</html>
+                    use: "Diarrhea from Giardia & Cryptosporidium",
+                    points: [
+                        "<strong>MOA:</strong> Interferes with anaerobic energy metabolism in the protozoa.",
+                        "<strong>Administration:</strong> Must be taken with food to improve bioavailability.",
+                        "<strong>Drug Interactions:</strong> Highly protein-bound; use caution with other highly protein-bound drugs like warfarin.",
+                        "<strong>ADRs:</strong> GI irritation (abdominal pain, nausea, diarrhea) is common.",
+                        "<strong>Formulation:</strong> Available as an oral suspension for pediatric use."
+                    ]
+                }
+            ]
+        };
+
+        const tabNav = document.getElementById('tab-nav');
+        const tabContent = document.getElementById('tab-content');
+
+        // Function to generate content for a tab
+        function generateTabContent(category) {
+            const cardsHtml = studyData[category].map((card, index) => `
+                <div class="perspective w-full h-80 mb-8">
+                    <div class="card relative w-full h-full" onclick="this.classList.toggle('flipped')">
+                        <div class="card-inner">
+                            <!-- Front of Card -->
+                            <div class="card-front bg-white p-6 flex flex-col justify-center items-center text-center cursor-pointer">
+                                <h3 class="text-xl font-semibold text-blue-600">${card.title}</h3>
+                                <p class="text-gray-500 mt-2">${card.subtitle}</p>
+                                <div class="mt-4 text-xs text-gray-400">Click to flip</div>
+                            </div>
+                            <!-- Back of Card -->
+                            <div class="card-back bg-blue-50 p-6 text-left">
+                                <h4 class="text-lg font-bold text-blue-800 mb-2">${card.use}</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
+                                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            return `<div id="${category.replace(/\s+/g, '-')}" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${cardsHtml}
+                    </div>`;
+        }
+
+        // Initialize tabs and content
+        function initialize() {
+            const categories = Object.keys(studyData);
+            
+            categories.forEach((category, index) => {
+                // Create Tab Button
+                const tabButton = document.createElement('button');
+                tabButton.textContent = category;
+                tabButton.className = `tab py-4 px-1 border-b-2 text-sm sm:text-base ${index === 0 ? 'tab-active' : 'tab-inactive'}`;
+                tabButton.onclick = () => switchTab(category);
+                tabNav.appendChild(tabButton);
+
+                // Create Tab Content Pane
+                const pane = document.createElement('div');
+                pane.innerHTML = generateTabContent(category);
+                if (index !== 0) {
+                    pane.style.display = 'none';
+                }
+                pane.id = `content-${category.replace(/\s+/g, '-')}`;
+                tabContent.appendChild(pane);
+            });
+        }
+        
+        // Function to switch tabs
+        function switchTab(categoryToShow) {
+            const categories = Object.keys(studyData);
+            
+            // Update tab buttons
+            const buttons = tabNav.getElementsByTagName('button');
+            for(let btn of buttons) {
+                if(btn.textContent === categoryToShow) {
+                    btn.classList.remove('tab-inactive');
+                    btn.classList.add('tab-active');
+                } else {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                }
+            }
+
+            // Update content panes
+            categories.forEach(category => {
+                const pane = document.getElementById(`content-${category.replace(/\s+/g, '-')}`);
+                if (category === categoryToShow) {
+                    pane.style.display = 'block';
+                } else {
+                    pane.style.display = 'none';
+                }
+            });
+        }
+
+
+        // Initial load
+        initialize();
+    </script>
+</body>
+</html>
