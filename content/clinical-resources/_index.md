@@ -1,8 +1,9 @@
 ---
 title: "Clinical Resources"
 description: "Comprehensive clinical resources for nurse practitioner students"
-type: "docs"
 weight: 10
+cascade:
+  type: "docs"
 ---
 
 # Clinical Resources

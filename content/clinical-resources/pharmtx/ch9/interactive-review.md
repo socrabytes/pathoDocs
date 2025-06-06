@@ -1,9 +1,11 @@
 ---
 title: "Interactive Chapter 9 Review"
 description: "An interactive infographic and clinical review for Chapter 9: Cannabis."
-type: "docs"
 weight: 92  # Appears after the study guide
-toc: false
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 ## Interactive Review: Cannabis

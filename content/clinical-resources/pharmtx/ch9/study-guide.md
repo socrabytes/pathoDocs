@@ -1,9 +1,11 @@
 ---
-title: "Study Guide: Chapter 9 - Cannabis"
+title: "Study Guide: Chapter 9 - Cannabis in Clinical Practice"
 description: "Supplemental notes, vocabulary, and highlights for Chapter 9."
-type: "docs"
-weight: 91  # Appears after the main chapter in lists
-toc: true
+weight: 91
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 # Study Guide: Chapter 9 - Cannabis for the Nurse Practitioner

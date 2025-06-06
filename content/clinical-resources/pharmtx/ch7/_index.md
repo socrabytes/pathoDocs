@@ -1,8 +1,10 @@
 ---
 title: "Chapter 7: Nutrition and Nutraceuticals"
-type: "docs"
 weight: 70
-toc: true
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 # CHAPTER 7 NUTRITION AND NUTRACEUTICALS

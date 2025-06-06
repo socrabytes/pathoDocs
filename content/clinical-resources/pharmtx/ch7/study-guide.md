@@ -1,11 +1,11 @@
 ---
 title: "Study Guide: Chapter 7 - Nutrition and Nutraceuticals"
 description: "Supplemental notes, vocabulary, and highlights for Chapter 7."
-type: "docs"
-weight: 71 # To appear after the main chapter in lists
-toc: true
-# You can link it to the main chapter like this:
-# prev: "/chapters/Ch.7-nut-nut/"
+weight: 71 
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 # NP Study Guide: Nutrition & Nutraceuticals (Chapter 7)

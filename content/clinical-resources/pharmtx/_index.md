@@ -1,8 +1,9 @@
 ---
-title: "Pharmacotherapeutics for Advanced Practice Nurse Prescribers"
+title: "Pharmacotherapeutics"
 description: "Comprehensive guide to pharmacotherapeutics for nurse practitioner students"
-type: "docs"
-weight: 10
+weight: 20
+cascade:
+  type: "docs"
 book:
   title: "Pharmacotherapeutics for Advanced Practice Nurse Prescribers"
   edition: "6th Edition"

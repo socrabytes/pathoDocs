@@ -1,8 +1,10 @@
 ---
-title: "Chapter 9: Cannabis"
-type: "docs"
+title: "Chapter 9: Cannabis in Clinical Practice"
 weight: 90
-toc: true
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 # Chapter 9: Cannabis

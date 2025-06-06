@@ -1,9 +1,11 @@
 ---
-title: "Interactive Chapter 7 Review"
+title: "Interactive Review: Chapter 7"
 description: "An interactive infographic and clinical review for Chapter 7: Nutrition and Nutraceuticals."
-type: "docs"
 weight: 72
-toc: false
+showBreadcrumbs: true
+showReadingTime: true
+toc:
+  enable: true
 ---
 
 ## Interactive Review: Nutrition & Nutraceuticals
