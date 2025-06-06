@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive Vaccine Hub for NPs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f5f7; /* A professional, neutral background */
+        }
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .page-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .clinical-pearl {
+            background-color: #eef2ff;
+            border-left: 4px solid #4f46e5;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .contraindication-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            background-color: #ffffff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: #374151;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        td {
+            color: #4b5563;
+        }
+        .quiz-option {
+            cursor: pointer;
+            border: 2px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+        .quiz-option:hover {
+            border-color: #4f46e5;
+            background-color: #eef2ff;
+        }
+        .quiz-option.selected {
+            border-color: #4f46e5;
+            background-color: #c7d2fe;
+        }
+        .quiz-option.correct {
+            border-color: #16a34a;
+            background-color: #dcfce7;
+        }
+        .quiz-option.incorrect {
+            border-color: #dc2626;
+            background-color: #fee2e2;
+        }
+        #quiz-rationale {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #f3f4f6;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Dashboard/Home Page -->
+        <div id="dashboard" class="page-section active">
+            <header class="text-center mb-12">
+                <i class="fas fa-syringe text-6xl text-indigo-600 mb-4"></i>
+                <h1 class="text-4xl sm:text-5xl font-bold">Advanced Immunization Hub</h1>
+                <p class="mt-3 text-xl text-gray-600">A high-yield clinical resource for Nurse Practitioners. Select a module to begin.</p>
+            </header>
+            <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-xl cursor-pointer" data-page="live-vaccines">
+                    <i class="fas fa-viruses text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Live Attenuated Vaccines</h3>
+                    <p class="text-gray-600">Clinical application of MMR, Varicella, and Rotavirus, focusing on immunogenicity and risk assessment.</p>
+                </div>
+                 <div class="card p-6 rounded-xl cursor-pointer" data-page="inactivated-vaccines">
+                    <i class="fas fa-ban text-4xl text-rose-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Inactivated & Recombinant</h3>
+                    <p class="text-gray-600">Complex schedules and shared decision-making for Tdap, HPV, Pneumococcal, and Shingrix.</p>
+                </div>
+                <div class="card p-6 rounded-xl cursor-pointer" data-page="passive-immunity">
+                    <i class="fas fa-shield-alt text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Passive Immunity</h3>
+                    <p class="text-gray-600">Indications and administration nuances for immunoglobulins in post-exposure prophylaxis.</p>
+                </div>
+                <div class="card p-6 rounded-xl cursor-pointer" data-page="diagnostics">
+                    <i class="fas fa-ruler-combined text-4xl text-sky-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Diagnostic Biologicals</h3>
+                    <p class="text-gray-600">Advanced interpretation of Tuberculin PPD testing and its limitations in various populations.</p>
+                </div>
+                 <div class="card p-6 rounded-xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-1" data-page="quiz">
+                    <i class="fas fa-graduation-cap text-4xl text-indigo-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Case-Based Self-Assessment</h3>
+                    <p class="text-gray-600">Apply your knowledge with an interactive quiz featuring clinical vignettes and detailed rationales.</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Reusable Header for Content Pages -->
+        <header class="hidden items-center mb-8" id="page-header">
+            <button class="back-to-dashboard bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center shadow-sm">
+                <i class="fas fa-th-large mr-2"></i> Dashboard
+            </button>
+            <h2 class="text-3xl font-bold ml-6" id="page-title"></h2>
+        </header>
+
+        <!-- Live Vaccines Page -->
+        <div id="live-vaccines" class="page-section">
+            <div class="contraindication-box">
+                <h3 class="font-bold text-red-800 text-lg mt-0">Absolute Contraindications for ALL Live Vaccines</h3>
+                <ol class="list-decimal pl-5 mt-2 text-red-700">
+                    <li><strong>Pregnancy:</strong> Risk of theoretical fetal transmission. Advise patient to avoid pregnancy for at least 1 month post-vaccination.</li>
+                    <li><strong>Severe Immunocompromise:</strong> Includes congenital immunodeficiency, leukemia/lymphoma, high-dose corticosteroid therapy (≥20mg/day or ≥2mg/kg/day of prednisone for ≥14 days), chemotherapy, and advanced HIV (CD4 count <200 cells/µL).</li>
+                </ol>
+            </div>
+            <div class="mt-8 table-responsive">
+                <table>
+                    <thead><tr><th>Vaccine</th><th>Mechanism/Prevents</th><th>Key Dosing & Population</th><th>NP Considerations & Clinical Pearls</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>MMR</strong></td><td>Live-attenuated virus; prevents Measles, Mumps, Rubella</td><td><strong>Routine:</strong> 12-15 mos, 4-6 yrs.<br><strong>Catch-up:</strong> 2 doses, ≥4 wks apart.</td><td><strong>Anaphylaxis to neomycin/gelatin is a contraindication. Egg allergy is NOT.</strong><br>A PPD test can be placed same day or must be deferred 4-6 weeks to avoid false-negative results.<br><strong>Counseling:</strong> Expect potential for fever (up to 103°F) and morbilliform rash 7-12 days post-vaccine.</td></tr>
+                        <tr><td><strong>MMRV</strong> (ProQuad)</td><td>Live-attenuated virus; prevents MMR + Varicella</td><td>Licensed for children 12 mos - 12 yrs.</td><td><strong>NP Focus:</strong> Counsel parents on the elevated risk of febrile seizures with the <strong>first dose</strong> (1 additional case per ~2,300 doses) vs. the benefit of one less injection. Risk is not increased for the second dose.</td></tr>
+                        <tr><td><strong>Varicella</strong> (Varivax)</td><td>Live-attenuated virus; prevents Chickenpox</td><td><strong>Routine:</strong> 12-15 mos, 4-6 yrs.<br><strong>Catch-up ≥13 yrs:</strong> 2 doses, 4-8 wks apart.</td><td><strong>Post-exposure prophylaxis (PEP):</strong> Highly effective (prevents/modifies disease) if given within 3-5 days of exposure.<br><strong>Counseling:</strong> A mild maculopapular or vesicular rash can occur. If a rash develops, patient should avoid contact with high-risk individuals (e.g., immunocompromised, pregnant).</td></tr>
+                        <tr><td><strong>LAIV4</strong> (FluMist)</td><td>Live-attenuated virus; prevents Influenza</td><td>Healthy, non-pregnant persons, 2-49 yrs.</td><td><strong>Multiple contraindications:</strong> Asthma/wheezing within 12 mos (for ages 2-4), pregnancy, immunosuppression, CSF leaks.<br><strong>Drug Interaction:</strong> Avoid use within 48 hours of taking influenza antiviral medications (e.g., oseltamivir).</td></tr>
+                        <tr><td><strong>Rotavirus</strong> (RotaTeq, Rotarix)</td><td>Live-attenuated virus; prevents Gastroenteritis</td><td><strong>Oral</strong> series in infancy.<br><strong>Critical cutoff:</strong> Do not initiate series if infant is ≥15 weeks, 0 days old.</td><td><strong>Contraindication:</strong> History of intussusception.<br><strong>NP Focus:</strong> Small risk of intussusception (1-1.5 cases per 100,000) exists, peaking 1-7 days post-first dose. Do not re-administer a dose that is spit out.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Inactivated Vaccines Page -->
+        <div id="inactivated-vaccines" class="page-section">
+             <div class="clinical-pearl bg-green-100 border-green-500">
+                <h3 class="font-bold text-green-800 text-lg mt-0">Principle of Inactivated Vaccines</h3>
+                <p class="text-green-700">These vaccines cannot cause disease and are generally safe for immunocompromised and pregnant patients. However, immunogenicity may be reduced in severely immunocompromised individuals, sometimes necessitating higher doses or additional serologic testing.</p>
+            </div>
+            <div class="mt-8 table-responsive">
+                <table>
+                      <thead><tr><th>Vaccine</th><th>Type/Prevents</th><th>Key Dosing & Population</th><th>NP Considerations & Clinical Pearls</th></tr></thead>
+                      <tbody>
+                          <tr><td><strong>Tdap</strong></td><td>Toxoid/Acellular Pertussis</td><td><strong>DTaP (&lt;7y):</strong> 5-dose series.<br><strong>Tdap (≥7y):</strong> Booster at 11-12y. Give <strong>one Tdap dose during EACH pregnancy</strong> (27-36w).</td><td><strong>Pregnancy Rationale:</strong> Administering Tdap in the third trimester maximizes maternal antibody transfer, providing passive pertussis protection to the newborn.<br><strong>Wound Management:</strong> For contaminated wounds, give Tdap/Td if last dose was >5 years ago.</td></tr>
+                          <tr><td><strong>HPV</strong> (Gardasil 9)</td><td>Recombinant / HPV Cancers & Warts</td><td><strong>Routine:</strong> 11-12y.<br><strong>Ages 9-14:</strong> 2 doses.<br><strong>Ages ≥15:</strong> 3 doses.<br><strong>Shared decision-making:</strong> Ages 27-45.</td><td><strong>NP Focus:</strong> High risk of <strong>vasovagal syncope</strong>. Administer vaccine while patient is seated or supine and observe for 15 minutes.<br><strong>Counseling:</strong> Emphasize this is a cancer-prevention vaccine. It is not therapeutic and does not treat existing HPV infections.</td></tr>
+                          <tr><td><strong>Pneumococcal</strong></td><td>Conjugate (PCV) & Polysaccharide (PPSV23)</td><td><strong>Kids &lt;2:</strong> PCV series.<br><strong>Adults 19-64 with risk factors:</strong> Consult ACIP.<br><strong>Adults ≥65:</strong> PCV20 alone OR PCV15 followed by PPSV23 1 yr later.</td><td><strong>Mechanism:</strong> PPSV23 elicits a T-cell-independent response, making it poorly immunogenic in children <2. PCVs are conjugated to a protein to elicit a robust T-cell dependent response.<br><strong>NP Focus:</strong> PCV20 simplifies the complex adult schedule.</td></tr>
+                          <tr><td><strong>Meningococcal</strong></td><td>Conjugate (ACWY) & Recombinant (B)</td><td><strong>MenACWY:</strong> 11-12y, booster at 16y.<br><strong>MenB:</strong> Shared clinical decision-making for 16-23y.</td><td><strong>NP Focus:</strong> MenACWY and MenB vaccines are <strong>not interchangeable</strong> and protect against different serogroups. Both are indicated for high-risk groups (asplenia, complement deficiency, microbiologists). Bexsero and Trumenba (MenB vaccines) have different schedules and are not interchangeable.</td></tr>
+                          <tr><td><strong>Zoster (RZV)</strong> (Shingrix)</td><td>Recombinant, Adjuvanted / Shingles</td><td><strong>All adults ≥50 years.</strong><br>2-dose IM series (0, 2-6 mos).<br><strong>Immunocompromised adults ≥18 years:</strong> 2-dose series (0, 1-2 mos).</td><td><strong>NP Focus:</strong> This is the <strong>preferred</strong> shingles vaccine (>90% efficacy). Vaccinate regardless of prior history of shingles or Zostavax vaccination (wait at least 8 weeks after Zostavax).<br><strong>Counseling:</strong> High reactogenicity is expected (myalgia, fatigue). This is a sign of a robust immune response.</td></tr>
+                      </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Passive Immunity Page -->
+        <div id="passive-immunity" class="page-section">
+            <div class="clinical-pearl">
+                <h3 class="font-bold text-lg mt-0">Principle of Passive Immunity</h3>
+                <p>Provides immediate but temporary protection via administration of exogenous antibodies. Crucial for post-exposure prophylaxis in high-risk scenarios. Remember, IG products can interfere with the response to <strong>LIVE</strong> vaccines; consult ACIP for specific deferral intervals.</p>
+            </div>
+            <div class="mt-8 table-responsive">
+                <table>
+                    <thead><tr><th>Immunoglobulin</th><th>Indication</th><th>NP Considerations & Clinical Pearls</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>HBIG</strong> (Hepatitis B IG)</td><td>PEP for Hepatitis B</td><td><strong>Key Scenarios:</strong> Newborn of HBsAg+ mother; unvaccinated person with percutaneous, permucosal, or sexual exposure to an HBsAg+ source. <strong>ALWAYS administer concurrently with the first dose of the HepB vaccine series at a different anatomical site.</strong></td></tr>
+                        <tr><td><strong>TIG</strong> (Tetanus IG)</td><td>PEP for Tetanus</td><td>Indicated for contaminated/"dirty" wounds in patients with an unknown or incomplete (&lt;3 doses) tetanus vaccination history. Provides immediate passive immunity while the concurrently administered Tdap/Td vaccine generates an active response.</td></tr>
+                        <tr><td><strong>RIG</strong> (Rabies IG)</td><td>PEP for Rabies</td><td>For a previously unvaccinated patient with potential rabies exposure. <strong>Technique is critical:</strong> Infiltrate as much of the dose as anatomically feasible directly into and around the wound(s). Any remaining volume is given IM at a site distant from vaccine administration. <strong>RIG is NOT given to previously vaccinated individuals.</strong></td></tr>
+                        <tr><td><strong>VZIG</strong> (Varicella-Zoster IG)</td><td>PEP for Varicella</td><td>For susceptible high-risk individuals exposed to Varicella or Zoster (e.g., immunocompromised, pregnant women, certain neonates). Most effective if given within 96 hours of exposure.</td></tr>
+                        <tr><td><strong>Rho(D) IG</strong> (RhoGAM)</td><td>Rh Isoimmunization Prevention</td><td>Prevents hemolytic disease of the fetus and newborn. Standard administration is at ~28 weeks gestation and within 72 hours postpartum for an Rh-negative mother delivering an Rh-positive infant. Also used after potential exposures like miscarriage, abortion, or trauma.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Diagnostics Page -->
+        <div id="diagnostics" class="page-section">
+             <ul class="list-disc pl-5 space-y-2 mb-8 text-lg">
+                <li><strong>Mechanism:</strong> The Mantoux test is a Type IV (delayed-type) hypersensitivity reaction. It screens for infection with *M. tuberculosis* by detecting a cell-mediated immune response to tuberculin antigens.</li>
+                <li><strong>Interpretation:</strong> Read at 48-72 hours. Measure the transverse diameter of the <strong>induration</strong> (palpable hardening), not erythema.</li>
+            </ul>
+            <div class="table-responsive">
+                <table>
+                    <thead><tr><th>Induration Size</th><th>Is Positive For...</th><th>Rationale</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>≥5 mm</strong></td><td>- HIV+ individuals<br>- Recent contacts of an infectious TB case<br>- Persons with fibrotic changes on CXR<br>- Organ transplant recipients/immunosuppressed</td><td>Highest risk of progressing from latent to active TB disease. High sensitivity is prioritized.</td></tr>
+                        <tr><td><strong>≥10 mm</strong></td><td>- Recent immigrants (&lt;5 yrs) from high-prevalence countries<br>- IV drug users<br>- Residents/employees of high-risk settings<br>- Children &lt;4 years old<br>- Persons with high-risk comorbidities (DM, ESRD)</td><td>Moderate risk of TB exposure or progression.</td></tr>
+                        <tr><td><strong>≥15 mm</strong></td><td>- Persons with no known risk factors for TB</td><td>Lowest pre-test probability of infection. High specificity is prioritized to avoid false-positives.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clinical-pearl">
+                <h3 class="font-bold text-lg mt-0">Two-Step Testing & Limitations</h3>
+                <p><strong>Two-Step Testing:</strong> Used for baseline screening in healthcare workers to prevent misinterpreting a "boosted" reaction (a recall of waned immunity) as a new conversion. A second test is placed 1-3 weeks after the first negative test.<br><strong>Limitations:</strong> Anergy (inability to react) can cause false-negatives in immunocompromised patients. Prior BCG vaccination can cause false-positives. Interferon-Gamma Release Assays (IGRAs) are preferred for BCG-vaccinated individuals.</p>
+            </div>
+        </div>
+        
+        <!-- Quiz Page -->
+        <div id="quiz" class="page-section">
+            <div id="quiz-container" class="bg-white p-6 sm:p-8 rounded-lg shadow-xl max-w-3xl mx-auto"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.page-section');
+        const dashboard = document.getElementById('dashboard');
+        const pageHeader = document.getElementById('page-header');
+        const pageTitle = document.getElementById('page-title');
+
+        function showPage(pageId) {
+            dashboard.classList.remove('active');
+            sections.forEach(sec => sec.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                if (pageId !== 'dashboard') {
+                    pageHeader.style.display = 'flex';
+                    const card = document.querySelector(`.card[data-page="${pageId}"]`);
+                    pageTitle.textContent = card ? card.querySelector('h3').textContent : 'Study Section';
+                } else {
+                    pageHeader.style.display = 'none';
+                }
+            }
+            window.scrollTo(0, 0);
+        }
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const pageId = card.dataset.page;
+                showPage(pageId);
+                if (pageId === 'quiz') buildQuiz();
+            });
+        });
+
+        document.querySelectorAll('.back-to-dashboard').forEach(button => {
+            button.addEventListener('click', () => {
+                showPage('dashboard');
+            });
+        });
+        
+        const quizContainer = document.getElementById('quiz-container');
+        const quizData = [
+            { question: "A 3-year-old child with a history of daily nebulizer use for persistent asthma requires an influenza vaccine. Which formulation is indicated?", options: ["Inactivated Influenza Vaccine (IIV)", "Live Attenuated Influenza Vaccine (LAIV)", "No influenza vaccine is safe", "Recombinant Influenza Vaccine (RIV)"], answer: "Inactivated Influenza Vaccine (IIV)", rationale: "LAIV (FluMist) is contraindicated in children aged 2-4 with a history of asthma or wheezing in the past 12 months due to an increased risk of precipitating an asthma exacerbation." },
+            { question: "A 30-year-old G2P1 patient presents at 28 weeks gestation. She received Tdap during her last pregnancy 3 years ago. What is the most appropriate recommendation today?", options: ["Administer Tdap now", "Administer Td now and Tdap postpartum", "No vaccine needed, she is up to date", "Check tetanus and pertussis titers first"], answer: "Administer Tdap now", rationale: "ACIP recommends administering Tdap during EACH pregnancy, ideally between 27-36 weeks, to maximize maternal antibody transfer and provide passive immunity to the newborn against pertussis." },
+            { question: "A 16-year-old is receiving their routine MenACWY booster. The parent asks about the 'other meningitis shot' for college. Which statement is most accurate regarding MenB vaccination?", options: ["It is not necessary if they received MenACWY", "The two MenB vaccines, Bexsero and Trumenba, are interchangeable", "It is recommended as a shared clinical decision for ages 16-23 to provide broader protection", "It is a required vaccine for all college students"], answer: "It is recommended as a shared clinical decision for ages 16-23 to provide broader protection", rationale: "MenACWY and MenB protect against different serogroups. For healthy adolescents, MenB vaccination is based on shared decision-making. The two MenB brands have different schedules and are not interchangeable." },
+            { question: "A 55-year-old patient with rheumatoid arthritis is about to start methotrexate. Which vaccine should be prioritized before initiating immunosuppressive therapy?", options: ["MMR", "Shingrix (RZV)", "Yellow Fever", "Varivax"], answer: "Shingrix (RZV)", rationale: "Herpes zoster risk is significantly increased in patients on immunosuppressants like methotrexate. Shingrix is a non-live recombinant vaccine that provides excellent protection and should be administered before immunosuppression begins for optimal immunogenicity." },
+            { question: "A healthy, unvaccinated adult sustains a deep puncture wound from a rusty nail. They last had a tetanus shot over 10 years ago. What is the appropriate post-exposure prophylaxis?", options: ["Tdap vaccine only", "Tetanus Immune Globulin (TIG) only", "Tdap vaccine and Tetanus Immune Globulin (TIG)", "Wound care only"], answer: "Tdap vaccine and Tetanus Immune Globulin (TIG)", rationale: "For a contaminated wound in a patient with fewer than 3 documented tetanus doses, both active immunization (Tdap) and passive immunity (TIG) are required to provide immediate and long-term protection against tetanus." },
+        ];
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function buildQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            if (currentQuestionIndex < quizData.length) {
+                let answered = false;
+                const currentQuestion = quizData[currentQuestionIndex];
+                const optionsHtml = currentQuestion.options.map(option => `<div class="quiz-option p-4 rounded-lg mt-4 font-medium">${option}</div>`).join('');
+                quizContainer.innerHTML = `
+                    <div class="text-lg font-semibold text-gray-800 mb-1">Question ${currentQuestionIndex + 1} of ${quizData.length}</div>
+                    <p class="text-xl text-gray-900 mb-6">${currentQuestion.question}</p>
+                    <div id="options-container">${optionsHtml}</div>
+                    <div id="quiz-rationale" class="text-gray-700"></div>
+                    <div class="text-right mt-6"><button id="next-btn" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 hidden shadow-sm">Next</button></div>
+                `;
+                const options = quizContainer.querySelectorAll('.quiz-option');
+                const rationaleEl = document.getElementById('quiz-rationale');
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        if (answered) return;
+                        answered = true;
+                        const selectedAnswer = option.textContent;
+                        const correctAnswer = currentQuestion.answer;
+                        if (selectedAnswer === correctAnswer) {
+                            option.classList.add('correct');
+                            score++;
+                        } else {
+                            option.classList.add('incorrect');
+                            options.forEach(opt => { if(opt.textContent === correctAnswer) { opt.classList.add('correct'); } });
+                        }
+                        rationaleEl.innerHTML = `<strong>Rationale:</strong> ${currentQuestion.rationale}`;
+                        rationaleEl.style.display = 'block';
+                        document.getElementById('next-btn').classList.remove('hidden');
+                    });
+                });
+                document.getElementById('next-btn').addEventListener('click', () => {
+                    currentQuestionIndex++;
+                    renderQuestion();
+                });
+            } else {
+                quizContainer.innerHTML = `
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-gray-900">Assessment Complete</h3>
+                        <p class="mt-4 text-2xl">Your Score: <span class="font-bold text-indigo-600">${score}</span> out of <span class="font-bold text-indigo-600">${quizData.length}</span></p>
+                        <button id="restart-btn" class="mt-8 bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 text-lg shadow-md">Restart Assessment</button>
+                    </div>`;
+                document.getElementById('restart-btn').addEventListener('click', buildQuiz);
+            }
+        }
+    </script>
+</body>
+</html>

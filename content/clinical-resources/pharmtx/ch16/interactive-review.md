@@ -1,31 +1,53 @@
 ---
-title: "Chapter 16: Interactive Review - Vaccines & Immunoglobulins"
-description: "Interactive review exercises for Chapter 16, focusing on vaccines, immunoglobulins, and diagnostic biologicals."
-weight: 162 # Assuming ch16/_index.md is 160 and study-guide.md is 161
+title: "Visual Summary"
+description: "A visual summary and clinical review for Chapter 16: Vaccines & Immunoglobulins."
+weight: 162
 type: "docs"
-toc: false
+toc:
+  enable: true
 showBreadcrumbs: true
-showReadingTime: false
+showReadingTime: false # Typically false for review pages
 ---
 
-This page provides an interactive review of key concepts from Chapter 16: Drugs Affecting the Immune System: Vaccines and Immunoglobulins.
+This visual guide provides a condensed overview of key concepts from Chapter 16, focusing on vaccines, immunoglobulins, and diagnostic biologicals. It's designed to complement your detailed study by offering a quick, graphical summary of essential information.
 
-Click the button below to launch the interactive review in a new tab, or use the embedded version.
+**Click the link below to launch the interactive review in a new tab:**
 
-<p style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-  <a href="/pathoDocs/pharmtx/ch16-review.html" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 25px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 1.1em; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    🚀 Launch Chapter 16 Interactive Review
-  </a>
-</p>
+<a href="/pathoDocs/pharmtx/ch16-review.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Interactive Chapter 16 Review</a>
 
-<div class="iframe-container" style="position: relative; overflow: hidden; width: 100%; padding-top: 75%;"> {/* Aspect ratio 4:3 */}
-  <iframe
-    src="/pathoDocs/pharmtx/ch16-review.html"
-    style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: 1px solid #ccc;"
-    title="Chapter 16 Interactive Review"
-    allowfullscreen
-  ></iframe>
-</div>
+Alternatively, you can view it embedded below:
+
+<iframe src="/pathoDocs/pharmtx/ch16-review.html" width="100%" height="800px" style="border:1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  Your browser does not support iframes. Please <a href="/pathoDocs/pharmtx/ch16-review.html" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
+</iframe>
 
 > [!TIP]
-> For the best experience, especially on smaller screens, use the "🚀 Launch Chapter 16 Interactive Review" button to open the content in a new, full-window tab.
+> For the best experience, especially on smaller screens, use the "Launch Interactive Chapter 16 Review" button to open the content in a new, full-window tab.
+
+[Back to Chapter 16 Overview](../)
+
+<style>
+.btn-primary {
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  background-color: #005f73; /* Using color from ch10 example */
+  border-color: #005f73;   /* Using color from ch10 example */
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none;
+  margin: 0.5rem 0;
+}
+.btn-primary:hover {
+  background-color: #0a9396; /* Using color from ch10 example */
+  border-color: #0a9396;   /* Using color from ch10 example */
+  color: #e9ecef;
+  text-decoration: none;
+}
+</style>
