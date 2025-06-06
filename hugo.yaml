@@ -1,5 +1,26 @@
 # Hugo configuration file
-title: My Site
+title: NP Clinical Knowledge Hub
+languageCode: en-us
+hasCJKLanguage: false
+defaultContentLanguage: en
+enableRobotsTXT: true
+
+relativeURLs: true
+canonifyURLs: true
+
+# Build configuration
+build:
+  useResourceCacheWhen: fallback
+  # writeStats: true # Optional: can be enabled for debugging build performance
+
+# Output configuration for production builds (hugo command)
+minify:
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+
+# For local development (hugo server), minification is usually off by default.
 
 # import hextra as module
 module:
