@@ -1301,3 +1301,1466 @@ Prevents hepatitis A, a liver infection caused by the hepatitis A virus, primari
   - Record lot number and site
   - Document in immunization registry
 
+## HEPATITIS B VIRUS (HBV) VACCINE
+
+Prevents hepatitis B infection, a potentially life-threatening liver infection caused by the hepatitis B virus, transmitted through contact with infectious body fluids.
+
+### Pharmacodynamics
+- Contains recombinant hepatitis B surface antigen (HBsAg) produced in yeast
+- Stimulates production of protective anti-HBs antibodies
+- **Available as**:
+  - Single antigen (Engerix-B®, Recombivax HB®)
+  - Combination vaccines (Pediarix®, Vaxelis®, Twinrix®)
+- **Seroprotection**: Anti-HBs ≥10 mIU/mL
+
+### Pharmacokinetics
+- **Administration**: Intramuscular (deltoid or anterolateral thigh)
+- **Seroconversion**:
+  - >95% in infants, children, and adolescents
+  - >90% in healthy adults
+- **Onset**: Detectable antibodies within 2 weeks
+- **Duration**: Long-term immunity after complete series
+
+> [!NOTE]
+> **Special Consideration**: ~30% of individuals vaccinated as infants may have anti-HBs <10 mIU/mL by early adulthood, but 94% respond to a booster dose (Sartorelli et al, 2022).
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Hypersensitivity to yeast or any vaccine component
+  - History of anaphylaxis to previous dose
+- **Precautions**:
+  - Moderate to severe acute illness (delay vaccination)
+  - Immunosuppression (may require additional doses)
+- **Special Populations**:
+  - **Pregnancy**: Not contraindicated; recommended for at-risk women
+  - **Preterm infants**: Delay first dose until 1 month or hospital discharge if <2,000g
+  - **Hemodialysis patients**: Require higher antigen doses or additional doses
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - Injection site reactions (17%)
+  - Fatigue, headache, malaise (15%)
+- **Rare**:
+  - Serum sickness-like reactions
+  - Alopecia (5 in 1 billion doses)
+
+#### Drug Interactions
+- **Immunosuppressants/chemotherapy**: May reduce immune response
+  - Consider additional doses or titer testing
+- **HBIG**: Administer at different injection sites if given concurrently
+
+#### Clinical Use and Dosing
+
+##### Standard Schedules
+- **Infants**:
+  - **Dose 1**: Birth (before discharge)
+  - **Dose 2**: 1-2 months
+  - **Dose 3**: 6-18 months
+
+- **Children/Adolescents (catch-up)**:
+  - 3-dose series at 0, 1-2, and 4-6 months
+
+- **Adults**:
+  - Standard: 0, 1, and 6 months
+  - Accelerated: 0, 1, 2, and 12 months (Engerix-B®)
+
+##### Special Populations
+- **HBsAg-positive mothers**:
+  - HBV + HBIG within 12 hours of birth
+  - Test for HBsAg and anti-HBs at 9-12 months
+- **Non-responders**:
+  - Revaccinate with 1-3 additional doses
+  - Check anti-HBs 1-2 months after each dose
+
+#### Combination Vaccines
+- **DTaP-HepB-IPV** (Pediarix®)
+- **DTaP-IPV-Hib-HepB** (Vaxelis®)
+- **HepA-HepB** (Twinrix®) - adults only
+- **Hib-HepB** (Comvax®) - children only
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Provide and review VIS
+  - Address all questions/concerns
+  - Discuss benefits and risks
+
+- **Expected Reactions**:
+  - **Common**: Pain and erythema at injection site
+  - **Systemic**: Mild fever, fatigue, headache
+  - **Management**:
+    - Acetaminophen for discomfort (first 24 hours)
+    - Apply cool compress to injection site
+
+- **When to Seek Care**:
+  - Signs of severe allergic reaction (hives, swelling, difficulty breathing)
+  - High fever (>102°F/38.9°C)
+  - Unusual behavior changes
+  - Persistent pain/swelling/redness at injection site
+
+- **Documentation**:
+  - Provide VIS (document date and edition)
+  - Record vaccine lot number and site
+  - Document in immunization registry
+  - Document maternal HBsAg status for infants
+  - Note any adverse reactions
+
+#### Monitoring
+- **Pre-vaccination Testing**:
+  - **Not routinely indicated** for children or adolescents
+  - **Consider in high-risk adults**:
+    - IV drug users
+    - Men who have sex with men
+    - Household contacts of hepatitis B carriers
+
+- **Post-vaccination Serology**:
+  - **Not routinely needed** for general population
+  - **Recommended for**:
+    1. Healthcare workers at risk of needlestick injuries
+    2. People with HIV infection
+    3. Hemodialysis patients
+    4. Immunocompromised patients at risk of hepatitis B
+    5. Regular sexual contacts of hepatitis B carriers
+    6. Infants born to HBsAg+ mothers
+  - **Timing**: 1-2 months after final dose
+  - **Target**: Anti-HBs ≥10 mIU/mL
+
+> [!TIP]
+> **Needle Anxiety Management**: For anxious patients, use slow breathing techniques during injection:
+> - Have patient take 2-3 deep breaths
+> - Administer on the third/fourth exhalation
+> - For children: "Blow up a balloon" breathing exercise
+
+## HUMAN PAPILLOMAVIRUS (HPV) VACCINE
+
+Prevents infections and cancers caused by human papillomavirus, including cervical, vulvar, vaginal, anal, and oropharyngeal cancers, as well as genital warts.
+
+### Pharmacodynamics
+- **Vaccine Types**:
+  - **Gardasil-9® (HPV9)**: Nonavalent vaccine targeting HPV types 6, 11, 16, 18, 31, 33, 45, 52, and 58
+- **Mechanism**:
+  - Contains virus-like particles (VLPs) of major capsid protein L1
+  - Induces neutralizing antibodies that prevent HPV infection
+  - Provides no therapeutic effect against existing HPV infections or disease
+- **Efficacy**: 97.9% against targeted HPV types when administered as recommended (Meites et al, 2016)
+
+### Pharmacokinetics
+- **Administration**: Intramuscular (deltoid or anterolateral thigh)
+- **Immune Response**:
+  - Strong immune response after complete series
+  - Higher antibody titers than natural infection
+- **Duration of Protection**:
+  - At least 10 years of follow-up data available
+  - No booster doses currently recommended
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction to any vaccine component
+  - Hypersensitivity to yeast (Gardasil-9)
+- **Precautions**:
+  - **Syncope risk**: Observe for 15 minutes post-vaccination
+  - Moderate or severe acute illness (delay vaccination)
+- **Pregnancy**:
+  - Not recommended during pregnancy
+  - No adverse outcomes reported in accidental exposures
+  - Pregnancy registry: 800-986-8999 (Merck & Co.)
+  - No pregnancy testing required before vaccination
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain (84%), redness (25%), swelling (25%) at injection site
+  - **Systemic**:
+    - Headache (28%)
+    - Fever (13%)
+    - Nausea (7%)
+    - Dizziness (4%)
+- **Serious (Rare)**:
+  - Syncope (1.2 cases per 100,000 doses)
+  - Anaphylaxis (<1 per million doses)
+
+#### Drug Interactions
+- **Immunosuppressants**: May reduce immune response
+- **Other Vaccines**: Can be administered simultaneously with other age-appropriate vaccines at different injection sites
+
+#### Clinical Use and Dosing
+- **Indications**:
+  - Prevention of cervical, vulvar, vaginal, anal, and oropharyngeal cancers
+  - Prevention of genital warts (condyloma acuminata)
+  - Prevention of precancerous lesions
+
+- **Target Population**:
+  - **Routine**: All children aged 11-12 years
+  - **Catch-up**: Through age 26 years
+  - **Shared Decision-Making**: Adults 27-45 years
+
+- **Dosing Schedules**:
+  - **Ages 9-14 years at series initiation**:
+    - 2-dose series: 0 and 6-12 months
+    - Minimum interval: 5 months between doses
+  - **Ages 15-45 years at series initiation**:
+    - 3-dose series: 0, 1-2, and 6 months
+    - Minimum intervals: 4 weeks between 1st/2nd, 12 weeks between 2nd/3rd, 5 months between 1st/3rd
+  - **Immunocompromised patients**:
+    - 3-dose series for all ages (including 9-14 years)
+    - Includes HIV patients, regardless of immune status
+
+> [!IMPORTANT]
+> **Syncope Prevention**:
+> - Administer vaccine while patient is seated or lying down
+> - Observe for 15 minutes after vaccination
+> - Have patient change positions slowly
+> - Be prepared to manage syncopal episodes
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review VIS
+  - Discuss benefits/risks
+  - Screen for allergies (especially yeast)
+  - Inquire about pregnancy status
+
+- **Expected Reactions**:
+  - Arm soreness common (84%)
+  - Mild systemic symptoms (headache, fever)
+  - Management:
+    - Acetaminophen for discomfort
+    - Warm compress for local reactions
+
+- **When to Seek Care**:
+  - Signs of allergic reaction
+  - High fever (>102°F/38.9°C)
+  - Persistent/severe pain at injection site
+  - Fainting or dizziness lasting >15 minutes
+
+- **Documentation**:
+  - Provide VIS
+  - Record lot number and site
+  - Document in immunization registry
+  - Report adverse events to VAERS
+
+#### Monitoring
+- **Routine Monitoring**: Not required
+- **Post-Vaccination**:
+  - Observe for 15 minutes
+  - Monitor for syncope
+  - Document any adverse reactions
+- **No serologic testing** for immunity is recommended
+
+> [!NOTE]
+> **Catch-Up Vaccination**:
+> - No need to restart series if interrupted
+> - Continue from where series was left off
+> - No maximum interval between doses
+
+## INFLUENZA VACCINE
+
+Prevents seasonal influenza, a contagious respiratory illness that can cause mild to severe illness and lead to hospitalization or death in high-risk populations.
+
+### Pharmacodynamics
+- **Vaccine Types**:
+  - **Inactivated Influenza Vaccine (IIV4)**:
+    - Standard-dose (Afluria®, Fluarix®, Flucelvax®, FluLaval®, Fluvirin®, Fluzone®)
+    - High-dose (Fluzone High-Dose®) for ≥65 years
+    - Adjuvanted (Fluad®) for ≥65 years
+  - **Recombinant (RIV4)**:
+    - Flublok® (egg-free option)
+  - **Live Attenuated (LAIV4)**:
+    - FluMist® (intranasal)
+- **Mechanism**:
+  - Contains inactivated or recombinant viral antigens
+  - Stimulates production of strain-specific antibodies
+  - Annual updates based on WHO surveillance
+- **Efficacy**:
+  - 40-60% effective in preventing influenza illness
+  - Reduces severity in vaccinated individuals who still get sick
+
+### Pharmacokinetics
+- **Administration**:
+  - IIV: Intramuscular (deltoid or anterolateral thigh)
+  - LAIV: Intranasal spray (healthy non-pregnant individuals 2-49 years)
+- **Onset**: Protective antibodies in 10-14 days
+- **Duration**: 6-12 months
+- **Annual Revaccination**: Required due to waning immunity and viral antigenic drift
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction to any vaccine component
+  - History of Guillain-Barré syndrome within 6 weeks of previous influenza vaccine
+  - Severe egg allergy (for egg-based vaccines)
+
+- **Special Populations**:
+  - **Egg Allergy**:
+    - Mild reaction (hives only): Any licensed vaccine with 30-minute observation
+    - Severe reaction: RIV4 (Flublok®) or IIV4 in medical setting
+  - **Pregnancy**: Recommended in any trimester
+  - **Immunocompromised**: IIV4 or RIV4 (not LAIV4)
+  - **Age <6 months**: Not approved
+
+> [!IMPORTANT]
+> **Egg Allergy Management**:
+> - Hives only: Any influenza vaccine with 30-minute observation
+> - Angioedema/respiratory distress: RIV4 or IIV4 in medical setting with emergency care available
+> - No egg allergy testing required before vaccination
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain (23%), redness, swelling at injection site
+  - **Systemic**:
+    - Low-grade fever (5-10%)
+    - Malaise
+    - Myalgia
+    - Headache
+- **Serious (Rare)**:
+  - Anaphylaxis (1-3 per million doses)
+  - Guillain-Barré syndrome (slightly increased risk: ~1 additional case per million doses)
+
+#### Drug Interactions
+- **Immunosuppressants**: May reduce immune response
+- **Antivirals**: Oseltamivir may reduce LAIV effectiveness if given within 48 hours
+- **Theophylline/Phenytoin/Warfarin**: Theoretical interaction; monitor levels if indicated
+
+#### Clinical Use and Dosing
+- **Annual Recommendation**: For all persons ≥6 months without contraindications
+- **Standard Dosing**:
+  - **Ages ≥9 years**: 0.5 mL single dose annually
+  - **Ages 6 months-8 years**:
+    - First season: 2 doses (4 weeks apart)
+    - Subsequent seasons: 1 dose annually
+  - **Ages ≥65 years**:
+    - High-dose (Fluzone High-Dose®) or adjuvanted (Fluad®) preferred
+
+- **Special Formulations**:
+  - **Fluzone High-Dose®**: For ≥65 years (4x antigen content)
+  - **Fluad®**: For ≥65 years (contains MF59 adjuvant)
+  - **Flublok®**: Egg-free option (≥18 years)
+  - **Flucelvax®**: Cell-based production (≥6 months)
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review VIS
+  - Screen for allergies (eggs, prior reactions)
+  - Assess for acute illness
+
+- **Expected Reactions**:
+  - Arm soreness (common)
+  - Mild systemic symptoms (1-2 days)
+  - Management:
+    - Acetaminophen/NSAIDs for discomfort
+    - Warm compress for local reactions
+
+- **When to Seek Care**:
+  - Signs of allergic reaction
+  - High fever (>102°F/38.9°C)
+  - Persistent/severe pain at injection site
+  - Symptoms of GBS (weakness, tingling)
+
+- **Documentation**:
+  - Provide VIS
+  - Record vaccine type, lot number, and site
+  - Document in immunization registry
+  - Report adverse events to VAERS
+
+#### Monitoring
+- **Routine Monitoring**: Not required
+- **Post-Vaccination**:
+  - Observe for 15 minutes (30 minutes if history of severe allergy)
+  - Monitor for syncope (especially adolescents)
+- **No serologic testing** for immunity
+
+> [!NOTE]
+> **Vaccine Timing**:
+> - Ideal: By end of October
+> - Continue vaccinating throughout flu season
+> - Protection begins ~2 weeks after vaccination
+> - Takes about 2 weeks for full immunity to develop
+
+## PNEUMOCOCCAL VACCINE
+
+Prevents invasive pneumococcal disease (IPD) caused by *Streptococcus pneumoniae*, including pneumonia, meningitis, and bacteremia.
+
+### Pharmacodynamics
+- **Vaccine Types**:
+  - **Conjugate Vaccines (PCVs)**:
+    - PCV13 (Prevnar 13®)
+    - PCV15 (Vaxneuvance®)
+    - PCV20 (Prevnar 20®)
+  - **Polysaccharide Vaccine (PPSV23)**:
+    - Pneumovax 23®
+- **Mechanism**:
+  - Conjugate vaccines link polysaccharides to carrier proteins (CRM197)
+  - Enhances immune response in children <2 years
+  - Induces T-cell dependent immunity with memory
+- **Serotype Coverage**:
+  - PCV13: 13 serotypes (1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 18C, 19A, 19F, 23F)
+  - PCV15: Adds 22F, 33F to PCV13
+  - PCV20: Adds 8, 10A, 11A, 12F, 15B, 22F, 33F to PCV13
+  - PPSV23: 23 serotypes (all above plus 2, 9N, 17F, 20, 22F, 33F)
+
+### Pharmacokinetics
+- **Administration**:
+  - PCVs: Intramuscular only
+  - PPSV23: Intramuscular or subcutaneous
+- **Onset**:
+  - Antibodies detectable within 2-3 weeks
+  - Peak response by 4-6 weeks
+- **Duration**:
+  - PCVs: Long-term protection after complete series
+  - PPSV23: Antibodies decline after 5-10 years
+  - Earlier decline in immunocompromised patients
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction to any vaccine component
+  - History of anaphylaxis to any diphtheria toxoid-containing vaccine (for PCVs)
+- **Precautions**:
+  - Moderate to severe acute illness (delay vaccination)
+  - History of Guillain-Barré syndrome
+  - Bleeding disorders (use smallest gauge needle, apply pressure)
+- **Special Populations**:
+  - **Pregnancy**: PPSV23 may be used if clearly needed
+  - **Immunocompromised**: May have reduced immune response
+  - **Asplenia/Functional Asplenia**: At high risk for IPD
+
+> [!IMPORTANT]
+> **Vaccine Interchangeability**:
+> - PCV13 and PCV15 are interchangeable in children
+> - No data on PCV20 interchangeability with other PCVs
+> - Complete series with same product when possible
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain (30-50%), redness, swelling
+  - **Systemic**:
+    - Fever (15-25% in children, <5% in adults)
+    - Irritability (up to 80% in infants)
+    - Fatigue, myalgia (30-40% in adults)
+- **Serious (Rare)**:
+  - Anaphylaxis (<1 per million doses)
+  - Febrile seizures (1-3 per 10,000 doses in children)
+
+#### Drug Interactions
+- **Immunosuppressants**: May reduce immune response
+- **Other Vaccines**: May be administered simultaneously with other vaccines at different sites
+- **Antibody-Containing Products**: No interference when given simultaneously
+
+#### Clinical Use and Dosing
+
+##### Children (Routine Schedule)
+- **PCV13 or PCV15**:
+  - Dose 1: 2 months
+  - Dose 2: 4 months
+  - Dose 3: 6 months
+  - Booster: 12-15 months
+- **Catch-Up Schedules**:
+  - 7-11 months: 2 doses + booster
+  - 12-23 months: 2 doses (8 weeks apart)
+  - 24-71 months: 1 dose if unvaccinated
+
+##### High-Risk Children (2-18 years)
+- **Primary Series**: PCV13 or PCV15 (if not previously vaccinated)
+- **Followed by**: PPSV23 ≥8 weeks later
+
+##### Adults (19-64 years)
+- **Immunocompetent with Risk Conditions**:
+  - PCV20 ×1 OR
+  - PCV15 ×1 followed by PPSV23 ×1 (≥1 year later)
+- **Immunocompromised**:
+  - PCV20 ×1 OR
+  - PCV15 ×1 followed by PPSV23 ×1 (≥8 weeks later)
+
+##### Adults (≥65 years)
+- **Routine**: PCV20 ×1 (preferred) OR
+- **Alternative**: PCV15 ×1 followed by PPSV23 ×1 (≥1 year later)
+- **Previously Vaccinated with PPSV23**:
+  - Wait ≥1 year, then give PCV20 or PCV15
+
+> [!NOTE]
+> **Special Considerations**:
+> - **Cochlear Implants/CSF Leaks**: PCV followed by PPSV23
+> - **Elective Splenectomy**: Complete series ≥2 weeks before procedure
+> - **Hematopoietic Stem Cell Transplant**: Re-vaccinate starting 3-6 months post-transplant
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review VIS
+  - Screen for allergies (especially diphtheria toxoid)
+  - Assess for acute illness
+
+- **Expected Reactions**:
+  - Arm soreness (common)
+  - Mild systemic symptoms (1-2 days)
+  - Management:
+    - Acetaminophen for discomfort
+    - Cool compress for local reactions
+
+- **When to Seek Care**:
+  - Signs of allergic reaction
+  - High fever (>102°F/38.9°C)
+  - Persistent/severe pain at injection site
+  - Unusual behavior changes
+
+- **Documentation**:
+  - Provide VIS
+  - Record vaccine type, lot number, and site
+  - Document in immunization registry
+  - Note any adverse reactions
+
+#### Monitoring
+- **Routine Monitoring**: Not required
+- **Post-Vaccination**:
+  - Observe for 15 minutes (30 minutes if history of severe allergy)
+  - Monitor for syncope
+- **No serologic testing** for immunity
+
+> [!TIP]
+> **Clinical Pearls**:
+> - Never give PPSV23 to children <2 years
+> - Minimum interval between PCV and PPSV23: 8 weeks in high-risk, 1 year in others
+> - No need to restart series if interrupted
+> - PCV20 simplifies the vaccination schedule for adults
+
+## MENINGOCOCCAL VACCINE
+
+Prevents invasive meningococcal disease (IMD) caused by *Neisseria meningitidis*, including meningitis and septicemia, with high mortality rates even with treatment.
+
+### Pharmacodynamics
+- **Vaccine Types**:
+  - **Conjugate Vaccines (MenACWY)**:
+    - MenACWY-D (Menactra®)
+    - MenACWY-CRM (Menveo®)
+    - MenACWY-TT (MenQuadfi®)
+  - **Serogroup B Vaccines (MenB)**:
+    - MenB-FHbp (Trumenba®)
+    - MenB-4C (Bexsero®)
+- **Mechanism**:
+  - Induces bactericidal antibodies against capsular polysaccharides
+  - Conjugated to carrier proteins (diphtheria toxoid, CRM197, tetanus toxoid) to enhance immunogenicity
+  - Provides protection against serogroups A, C, W, Y (MenACWY) or serogroup B (MenB)
+- **Efficacy**:
+  - 80-85% effective against targeted serogroups
+  - 62-88% efficacy against MenB strains (varies by vaccine and strain)
+
+### Pharmacokinetics
+- **Administration**:
+  - All meningococcal vaccines: Intramuscular
+  - Preferred sites: Deltoid or anterolateral thigh
+- **Onset**:
+  - Protective antibodies within 7-10 days
+  - Peak response by 2-4 weeks
+- **Duration**:
+  - Antibodies decline over 3-5 years
+  - Earlier decline in infants/young children
+  - Booster doses required for sustained protection
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction to any vaccine component
+  - History of Guillain-Barré syndrome
+  - For MenACWY-D: Severe allergy to diphtheria toxoid
+  - For MenACWY-TT: Severe allergy to tetanus toxoid
+- **Special Populations**:
+  - **Pregnancy**: No safety data; use if clearly needed
+  - **Immunocompromised**: May have reduced immune response
+  - **Asplenia/Complement Deficiencies**: At highest risk for IMD
+
+> [!IMPORTANT]
+> **Vaccine Interchangeability**:
+> - Complete series with same MenACWY product when possible
+> - MenB vaccines are not interchangeable
+> - Different MenB products have different dosing schedules
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain (50-60%), erythema, swelling
+  - **Systemic**:
+    - Fatigue (30-40%)
+    - Headache (30-35%)
+    - Myalgia (25-30%)
+    - Arthralgia (15-20%)
+- **Serious (Rare)**:
+  - Anaphylaxis (<1 per million doses)
+  - Guillain-Barré syndrome (rare association)
+
+#### Drug Interactions
+- **Immunosuppressants**: May reduce immune response
+- **Other Vaccines**: May be administered simultaneously with other vaccines at different sites
+- **Antibody-Containing Products**: No interference when given simultaneously
+
+#### Clinical Use and Dosing
+
+##### Routine Adolescent Vaccination
+- **MenACWY**:
+  - Primary: 11-12 years
+  - Booster: 16 years
+- **MenB**:
+  - 16-23 years (preferred age 16-18)
+  - Shared clinical decision-making for healthy adolescents
+
+##### High-Risk Groups (≥2 months)
+- **MenACWY Indications**:
+  - Asplenia/splenic dysfunction
+  - Complement deficiencies
+  - HIV infection
+  - Travel to/housing in endemic areas
+  - Microbiologists
+  - College students in dorms
+  - Military recruits
+  - MSM
+  - Outbreak settings
+
+##### Dosing Schedules
+- **MenACWY**:
+  - 2-23 months: 2-3 doses (varies by product)
+  - 2-55 years: 1-2 doses (depends on indication)
+  - ≥56 years: 1-2 doses (MenACWY-D not recommended)
+
+- **MenB (16-23 years)**:
+  - Bexsero: 2 doses (0, 1 month)
+  - Trumenba: 2-3 doses (0, 1-2, 6 months)
+
+> [!NOTE]
+> **Special Considerations**:
+> - **High-Risk Groups**: Additional boosters every 5 years (MenACWY)
+> - **Asplenia/Complement Deficiencies**: Both MenACWY and MenB recommended
+> - **Outbreak Settings**: Follow local public health recommendations
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review VIS
+  - Screen for allergies (especially to vaccine components)
+  - Assess for acute illness
+
+- **Expected Reactions**:
+  - Arm soreness (common)
+  - Mild systemic symptoms (1-2 days)
+  - Management:
+    - Acetaminophen for discomfort
+    - Cool compress for local reactions
+
+- **When to Seek Care**:
+  - Signs of allergic reaction
+  - High fever (>102°F/38.9°C)
+  - Persistent/severe pain at injection site
+  - Signs of GBS (weakness, tingling)
+
+- **Documentation**:
+  - Provide VIS
+  - Record vaccine type, lot number, and site
+  - Document in immunization registry
+  - Note any adverse reactions
+
+#### Monitoring
+- **Routine Monitoring**: Not required
+- **Post-Vaccination**:
+  - Observe for 15 minutes (30 minutes if history of severe allergy)
+  - Monitor for syncope (especially adolescents)
+- **No serologic testing** for immunity
+
+> [!TIP]
+> **Clinical Pearls**:
+> - Give MenACWY and MenB at same visit if both indicated (different injection sites)
+> - Don't delay MenB vaccination in high-risk individuals
+> - Document shared decision-making for MenB in healthy adolescents
+> - Check state requirements for college entry
+
+## RESPIRATORY SYNCYTIAL VIRUS (RSV) VACCINE
+
+Prevents lower respiratory tract disease caused by respiratory syncytial virus (RSV) in older adults.
+
+### Pharmacodynamics
+- **Vaccine Type**:
+  - Arexvy® (Recombinant RSV F glycoprotein)
+- **Mechanism**:
+  - Contains stabilized prefusion F glycoprotein
+  - Induces neutralizing antibodies
+- **Efficacy**:
+  - 82.6% against RSV-associated LRTD
+  - 94.1% against severe LRTD
+
+### Pharmacokinetics
+- **Administration**:
+  - 0.5 mL intramuscular
+  - Single dose
+- **Duration**:
+  - Protection through at least one RSV season
+  - Ongoing evaluation for annual revaccination
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Contraindications**:
+  - Severe allergic reaction to any component
+- **Precautions**:
+  - Moderate to severe acute illness (delay vaccination)
+  - Bleeding disorders
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - Injection site pain (60.9%)
+  - Fatigue (33.6%)
+  - Myalgia (28.9%)
+  - Headache (27.2%)
+  - Arthralgia (18.1%)
+
+#### Clinical Use and Dosing
+- **Indication**:
+  - Adults ≥60 years
+  - Shared clinical decision-making
+- **Dosing**:
+  - Single 0.5 mL IM dose
+  - No booster currently recommended
+
+#### Patient Education
+- **Expected Reactions**:
+  - Arm soreness
+  - Mild systemic symptoms
+- **When to Seek Care**:
+  - Severe allergic reaction
+  - Persistent/severe symptoms
+
+> [!NOTE]
+> **Maternal RSV Vaccine**:
+> - Under FDA review
+> - 81.8% efficacy against severe LRTD in infants (0-90 days)
+> - 60.4% efficacy through 6 months of age
+
+## TYPHOID VACCINE
+
+Prevents typhoid fever, a systemic illness caused by *Salmonella enterica* serotype Typhi, typically transmitted through contaminated food or water.
+
+### Pharmacodynamics
+- **Vaccine Type**:
+  - **Injectable Vi Polysaccharide Vaccine (Typhim Vi®)**: Contains purified Vi capsular polysaccharide from *S. typhi*.
+- **Mechanism**:
+  - Stimulates production of anti-Vi IgG antibodies.
+  - These antibodies are thought to interfere with bacterial attachment and invasion.
+- **Efficacy**:
+  - Approximately 50-80% effective in preventing clinical disease.
+  - Efficacy may be lower in areas with high disease burden or with large inoculum exposure.
+
+### Pharmacokinetics
+- **Administration**:
+  - Intramuscular (IM) injection.
+- **Onset**:
+  - Protective antibody levels generally achieved within 7-14 days.
+- **Duration**:
+  - Immunity lasts for approximately 2-3 years.
+  - Booster doses are required for ongoing protection in endemic areas or for repeated travel.
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction (e.g., anaphylaxis) to a previous dose of typhoid vaccine or to any vaccine component.
+- **Precautions**:
+  - Moderate to severe acute illness (vaccination should be deferred until recovery).
+  - Bleeding disorders (administer with caution).
+- **Special Populations**:
+  - **Pregnancy**: Inactivated vaccine (Typhim Vi) is preferred if vaccination is necessary during pregnancy. Weigh risks and benefits.
+  - **Children**: Typhim Vi is not recommended for children younger than 2 years of age due to poor immune response to polysaccharide antigens in this age group.
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain, tenderness, redness, or swelling at the injection site (up to 70%). These reactions usually begin within 24 hours and last 1-2 days.
+  - **Systemic**: Fever (5-10%), headache, malaise, myalgia.
+- **Serious (Rare)**:
+  - Anaphylaxis.
+
+#### Drug Interactions
+- **Immunosuppressants**: Patients receiving immunosuppressive therapy (e.g., corticosteroids, chemotherapy, radiation) may have a diminished immune response to the vaccine.
+- **Other Vaccines**: Typhoid vaccine can generally be administered concurrently with other vaccines, but at different injection sites. Avoid simultaneous administration with plague vaccine if possible due to potential for accentuated adverse effects.
+
+#### Clinical Use and Dosing
+- **Indications**:
+  1.  **Travelers**: To areas where there is a recognized risk of exposure to *S. typhi* (especially South Asia, parts of Southeast Asia, Africa, and Latin America).
+  2.  **Household Contacts**: Persons with intimate exposure (e.g., household contact) to a documented chronic *S. typhi* carrier.
+  3.  **Laboratory Workers**: Who work frequently with *S. typhi*.
+
+- **Dosing (Typhim Vi)**:
+  - **Adults and Children ≥2 years**: Single 0.5 mL IM dose.
+  - **Booster Dose**: Recommended every 2 years for individuals at continued or renewed risk of exposure.
+
+> [!NOTE]
+> **Oral Live Attenuated Typhoid Vaccine (Vivotif®)**:
+> - An alternative option (not detailed in the provided text but relevant for completeness).
+> - Consists of 4 capsules taken on alternate days.
+> - For individuals ≥6 years old.
+> - Booster needed every 5 years.
+> - Contraindicated in immunocompromised individuals and during pregnancy.
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review Vaccine Information Statement (VIS).
+  - Discuss travel plans and potential exposure risks.
+  - Screen for allergies and contraindications.
+  - Advise that vaccination should be completed at least 1-2 weeks before potential exposure.
+
+- **Expected Reactions**:
+  - Injection site soreness, redness, or swelling.
+  - Mild systemic symptoms like fever or headache.
+  - Management: Acetaminophen or NSAIDs for discomfort; cool compress for local reactions.
+
+- **When to Seek Care**:
+  - Signs of a severe allergic reaction (e.g., hives, difficulty breathing, swelling of the face/throat).
+  - High fever or severe, persistent symptoms.
+
+- **Prevention is Key**:
+  - Emphasize that vaccination is not 100% effective.
+  - Counsel on safe food and water precautions as the primary means of preventing typhoid fever:
+    - Eat only foods that are cooked and served hot.
+    - Avoid raw vegetables and fruits that cannot be peeled.
+    - Drink only bottled or boiled water; avoid tap water, ice cubes, and unpasteurized dairy products.
+
+- **Documentation**:
+  - Provide VIS.
+  - Record vaccine name, lot number, administration site, and date in the patient's record and immunization registry.
+
+#### Monitoring
+- **Routine Monitoring**: Not generally required.
+- **Post-Vaccination Observation**: Observe for 15 minutes for immediate allergic reactions, especially if there is a history of allergies.
+
+> [!TIP]
+> **Traveler's Health**:
+> - Advise travelers to consult a travel clinic or healthcare provider 4-6 weeks before departure for comprehensive pre-travel advice, including other recommended vaccinations and malaria prophylaxis if needed.
+
+## JAPANESE ENCEPHALITIS VIRUS (JEV) VACCINE
+
+Prevents Japanese encephalitis, a mosquito-borne viral illness prevalent in Asia and the Western Pacific, which can lead to severe neurological complications or death.
+
+### Pharmacodynamics
+- **Vaccine Type**:
+  - **IXIARO®**: Inactivated Vero cell culture-derived vaccine (JE-VC).
+- **Mechanism**:
+  - Induces neutralizing antibodies against the JE virus.
+- **Efficacy**:
+  - ≥96% seroconversion rate after a two-dose primary series.
+  - Protective efficacy is high, but the exact duration of full protection is not definitively known for all populations or exposure levels.
+
+### Pharmacokinetics
+- **Administration**:
+  - Intramuscular (IM) injection.
+- **Onset**:
+  - Protective antibody levels are generally achieved after completion of the two-dose primary series.
+- **Duration**:
+  - Immunity wanes over time; booster doses are recommended for ongoing protection in individuals at continued risk.
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction (e.g., anaphylaxis) to a previous dose of IXIARO® or any of its components (including protamine sulfate, which is used in manufacturing).
+- **Precautions**:
+  - Moderate to severe acute illness (vaccination should be deferred until recovery).
+  - Bleeding disorders (administer with caution).
+- **Special Populations**:
+  - **Pregnancy**: Contraindicated due to lack of adequate safety data. Women of childbearing potential should avoid pregnancy for 4 weeks after vaccination. If travel to a high-risk area is unavoidable, discuss risks/benefits with a healthcare provider.
+  - **Children**: Approved for use in children aged 2 months and older.
+
+#### Adverse Drug Reactions
+- **Common (≥10%)**:
+  - **Local**: Pain, tenderness, redness, or swelling at the injection site (10-40%).
+  - **Systemic**: Headache, myalgia, fatigue, low-grade fever (2-7% in children).
+- **Serious (Rare)**:
+  - Anaphylaxis, hypersensitivity reactions (including urticaria, angioedema).
+  - Neurological events (e.g., encephalitis, Guillain-Barré syndrome) have been reported rarely, but a causal link is not definitively established.
+
+> [!WARNING]
+> **Hypersensitivity Reactions**:
+> Serious allergic reactions, including anaphylaxis, have been reported. Appropriate medical treatment and supervision should be available in case of an anaphylactic event following administration of the vaccine.
+
+#### Drug Interactions
+- **Immunosuppressants**: Patients receiving immunosuppressive therapy may have a diminished immune response to the vaccine.
+- **Other Vaccines**: IXIARO® can be administered concomitantly with other vaccines, such as hepatitis A vaccine. Administer at different injection sites.
+
+#### Clinical Use and Dosing
+- **Indications**:
+  - Recommended for travelers spending 1 month or longer in JE-endemic areas during the transmission season.
+  - Short-term travelers (<1 month) if they will have extensive outdoor exposure or spend substantial time in rural areas.
+  - Individuals with planned residence in JE-endemic areas.
+  - Laboratory workers with potential exposure to JE virus.
+  - Current transmission information: CDC Yellow Book or CDC travel website.
+
+- **Primary Series Dosing (IXIARO®)**:
+  - **Adults (18-65 years)**:
+    - Two 0.5 mL IM doses, administered 28 days apart.
+    - Accelerated schedule: Two 0.5 mL IM doses, administered 7 days apart (can be used if there is insufficient time for the standard schedule).
+  - **Children and Adolescents (3 years to <18 years)**:
+    - Two 0.5 mL IM doses, administered 28 days apart.
+  - **Infants and Children (2 months to <3 years)**:
+    - Two 0.25 mL IM doses, administered 28 days apart.
+  - **Adults >65 years**:
+    - Two 0.5 mL IM doses, administered 28 days apart (accelerated schedule not approved for this age group).
+
+- **Booster Dose**:
+  - A single booster dose (0.5 mL for ≥3 years, 0.25 mL for <3 years) may be given at least 12 months after completion of the primary series if ongoing exposure or re-exposure to JE virus is expected.
+  - The need for further booster doses is not well established.
+
+> [!NOTE]
+> The primary immunization series should be completed at least 1 week before potential exposure to the JE virus.
+
+#### Patient Education
+- **Pre-Vaccination**:
+  - Review Vaccine Information Statement (VIS).
+  - Discuss travel itinerary, duration of stay, planned activities, and risk of JE exposure.
+  - Screen for allergies (especially to protamine sulfate) and contraindications.
+
+- **Expected Reactions**:
+  - Injection site soreness, redness, or swelling.
+  - Mild systemic symptoms like headache, muscle aches, or low-grade fever.
+  - Adverse reactions may occur up to 10 days after immunization.
+
+- **When to Seek Care**:
+  - Signs of a severe allergic reaction.
+  - High fever, severe or persistent symptoms, or any neurological symptoms.
+
+- **Mosquito Bite Prevention**: **CRITICAL**
+  - Emphasize that vaccination is part of a comprehensive prevention strategy.
+  - Counsel on meticulous mosquito bite avoidance measures:
+    - Use EPA-registered insect repellents containing DEET, picaridin, IR3535, oil of lemon eucalyptus (OLE), para-menthane-diol (PMD), or 2-undecanone.
+    - Wear long-sleeved shirts, long pants, and socks, especially during peak mosquito biting times (dusk to dawn).
+    - Treat clothing and gear (e.g., tents) with permethrin.
+    - Stay and sleep in screened or air-conditioned rooms.
+    - Use a bed net if sleeping area is exposed to outdoors.
+
+- **Post-Vaccination Travel Advice**:
+  - Advise patients not to travel outside the United States (or to remote areas without medical care) for at least 10 days after the last dose, in case of delayed adverse reactions.
+
+- **Documentation**:
+  - Provide VIS.
+  - Record vaccine name (IXIARO®), lot number, administration site, and date.
+
+#### Monitoring
+- **Routine Monitoring**: Not generally required.
+  - **Post-Vaccination Observation**: Observe for 15-30 minutes for immediate allergic reactions.
+
+> [!TIP]
+> **Traveler's Health Consultation**:
+> - Strongly recommend a pre-travel consultation with a healthcare provider specializing in travel medicine, ideally 4-6 weeks before departure, for a comprehensive risk assessment and advice on all relevant health precautions, including other vaccinations and malaria prophylaxis if applicable.
+
+## PLAGUE VACCINE
+
+> [!IMPORTANT]
+> The plague vaccine (a whole-cell vaccine with inactivated *Yersinia pestis*) is **no longer available in the United States**.
+
+Vaccination against plague is not required by any country as a condition for entry. Travelers at risk of exposure to plague (e.g., those working with potentially infected animals or in areas with active outbreaks) should:
+- Be educated on plague transmission and symptoms.
+- Practice strict flea avoidance measures.
+- Carry prophylactic antibiotics (e.g., doxycycline, or trimethoprim-sulfamethoxazole for children <8 years) and understand when and how to use them according to CDC guidelines.
+- Seek immediate medical attention if plague is suspected.
+
+For current CDC guidelines on plague, refer to the CDC Traveler's Health website (www.cdc.gov/travel).
+
+## RABIES VACCINE
+
+Prevents rabies, a fatal viral disease transmitted through the saliva of infected animals, typically via bites or scratches.
+
+### Pharmacodynamics
+- **Vaccine Types**:
+  - **Imovax®**: Inactivated rabies virus grown in human diploid cell (HDC) culture.
+  - **RabAvert®**: Inactivated rabies virus grown in purified chick embryo cell (PCEC) culture.
+- **Mechanism**:
+  - Induces an active immune response, stimulating the production of neutralizing antibodies against the rabies virus.
+- **Efficacy**:
+  - Highly effective when administered appropriately, both for pre-exposure prophylaxis (PrEP) and post-exposure prophylaxis (PEP).
+
+### Pharmacokinetics
+- **Administration**:
+  - Intramuscular (IM) injection, typically in the deltoid area (or anterolateral thigh in infants/young children).
+- **Onset of Immunity**:
+  - Protective antibody levels (≥0.5 IU/mL) are generally achieved within 7 to 14 days after initiating a primary series.
+- **Duration of Immunity**:
+  - After a complete primary series, immunity can persist for at least 2 years. Booster doses are recommended based on risk of exposure and antibody titers.
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- **Absolute Contraindications**:
+  - Severe allergic reaction (e.g., anaphylaxis) to a previous dose of rabies vaccine or any of its components (e.g., neomycin, which is present in trace amounts in some formulations).
+- **Precautions**:
+  - Moderate to severe acute illness (vaccination should generally be deferred until recovery for PrEP; for PEP, the benefits usually outweigh risks, but consult with public health officials).
+  - Immunocompromised individuals may have a suboptimal immune response.
+- **Special Populations**:
+  - **Pregnancy**: **Not a contraindication** for PEP. For PrEP, vaccination should be considered if the risk of exposure is substantial. Discuss risks/benefits.
+  - **Children**: Safe and effective. Dosing is the same as for adults.
+
+#### Adverse Drug Reactions
+- **Local Reactions (Common, 30-74%)**:
+  - Pain, redness, swelling, itching, or induration at the injection site.
+- **Systemic Reactions (Common, 5-40%)**:
+  - Headache, nausea, abdominal pain, muscle aches, dizziness, low-grade fever.
+- **Immune Complex-like Reactions (Uncommon, ~6% with boosters of HDCV - Imovax®)**:
+  - Generalized urticaria, arthralgia, arthritis, angioedema, nausea, vomiting, fever, malaise. Typically occur 2-21 days after a booster dose.
+- **Serious (Rare)**:
+  - Anaphylaxis.
+  - Neurological events (e.g., Guillain-Barré syndrome, encephalitis, transverse myelitis) have been reported very rarely; a causal link is not always clear.
+
+> [!WARNING]
+> **Post-Exposure Prophylaxis (PEP) is a Medical Urgency**
+> For individuals potentially exposed to rabies, PEP should be initiated as soon as possible. Delays can be fatal. Pregnancy is NOT a contraindication to PEP.
+
+#### Drug Interactions
+- **Chloroquine and related antimalarials**: May interfere with the antibody response to intradermal (ID) rabies vaccine (not a recommended route in the US for PrEP). If possible, complete PrEP before starting chloroquine. IM route is preferred.
+- **Immunosuppressants**: Corticosteroids, other immunosuppressive drugs, or radiation therapy may reduce the immune response to rabies vaccine. If possible, PrEP should be administered before or after such treatments. For PEP in immunosuppressed individuals, serological testing post-vaccination is crucial.
+- **Rabies Immunoglobulin (RIG)**:
+  - HRIG (Human Rabies Immunoglobulin) provides passive immunity and can partially suppress the active immune response to the vaccine. **Do NOT exceed the recommended dose of RIG.** Administer RIG at a different anatomical site from the vaccine.
+
+#### Clinical Use and Dosing
+
+**1. Pre-Exposure Prophylaxis (PrEP)**
+- **Indications**: Individuals at high risk of rabies exposure:
+  - Veterinarians, veterinary staff, animal control officers, wildlife handlers.
+  - Rabies laboratory workers.
+  - Travelers spending extended time in areas with enzootic rabies and limited access to PEP.
+- **Schedule (Imovax® or RabAvert®)**:
+  - **Primary Series**: Two 1.0 mL IM doses, administered on Day 0 and Day 7.
+  - **Booster Recommendations (based on risk category and antibody titers)**:
+    - **Sustained Risk (e.g., rabies researchers, vaccine production workers)**: Rabies antibody titer check every 6 months. Booster if titer <0.5 IU/mL.
+    - **Frequent Risk (e.g., veterinarians, animal control in enzootic areas, bat handlers)**: Rabies antibody titer check every 2 years. Booster if titer <0.5 IU/mL. OR a one-time booster dose 3 weeks to 3 years after the primary 2-dose series, then no further routine testing or boosters.
+    - **Infrequent Risk (e.g., travelers to high-risk areas)**: No routine titer checks or booster doses after the primary 2-dose series.
+
+> [!NOTE]
+> The Advisory Committee on Immunization Practices (ACIP) updated PrEP recommendations in 2022 to a 2-dose series (Day 0, Day 7). Previous 3-dose PrEP schedules are still considered valid.
+
+**2. Post-Exposure Prophylaxis (PEP)**
+- **Indications**: Any individual bitten, scratched, or exposed via mucous membranes to saliva or neural tissue of a confirmed or suspected rabid animal.
+- **Management**: **ALWAYS** includes:
+  1.  **Wound Care**: Immediate and thorough washing of the wound with soap and water for at least 15 minutes. A virucidal agent (e.g., povidone-iodine) should be applied.
+  2.  **Rabies Immunoglobulin (RIG)**: Administer on Day 0.
+      - **HRIG (HyperRAB® S/D, Kedrab®)**: Dose is 20 IU/kg body weight.
+      - Infiltrate as much of the dose as anatomically feasible into and around the wound(s). Administer any remaining volume IM at a site distant from vaccine administration.
+      - If RIG was not given with the first vaccine dose, it can be given up to 7 days after the first vaccine dose.
+  3.  **Rabies Vaccine Series**:
+      - **Previously Unvaccinated Individuals**: Four 1.0 mL IM doses of rabies vaccine. One dose on Day 0, and one dose on Days 3, 7, and 14.
+      - **Previously Vaccinated Individuals** (documented complete PrEP or PEP with cell-culture vaccine, or previous documented rabies antibody titer ≥0.5 IU/mL): Two 1.0 mL IM doses of rabies vaccine. One dose on Day 0 and one dose on Day 3. **RIG should NOT be given.**
+
+> [!IMPORTANT]
+> For PEP in immunocompromised individuals, a 5-dose vaccine schedule (Days 0, 3, 7, 14, and 28) plus RIG is recommended, regardless of prior vaccination status. Serologic testing post-vaccination is also advised.
+
+#### Patient Education
+- **Pre-Vaccination (PrEP or PEP)**:
+  - Provide Vaccine Information Statement (VIS).
+  - Explain the reason for vaccination (PrEP risk or PEP exposure).
+  - Discuss the dosing schedule and importance of completing the series.
+  - Inform about common adverse reactions (local site reactions, mild systemic symptoms).
+  - Advise acetaminophen or NSAIDs for discomfort.
+
+- **Post-Exposure Specifics**:
+  - Emphasize the critical importance of wound care.
+  - Explain the roles of both RIG (immediate passive protection) and vaccine (long-term active protection).
+  - Stress adherence to the complete PEP schedule.
+
+- **When to Seek Care**:
+  - Signs of a severe allergic reaction (hives, difficulty breathing, swelling of face/throat).
+  - High fever, severe or persistent symptoms, or any neurological symptoms.
+
+- **Animal Contact Avoidance (for PrEP recipients in high-risk professions)**:
+  - Reinforce safe animal handling practices.
+
+- **Documentation**:
+  - Record vaccine name, lot number, administration site(s), and date(s) for all doses of vaccine and RIG.
+
+#### Monitoring
+- **PrEP**: Serologic testing for rabies antibody titers as per risk category (see PrEP Booster Recommendations).
+- **PEP**: Post-vaccination serologic testing is **not** routinely recommended for immunocompetent individuals who receive PEP according to ACIP guidelines.
+  - Testing may be considered for immunocompromised individuals or those whose PEP regimen deviated from recommendations.
+
+## ISSUES IN IMMUNIZATION
+
+This section addresses key considerations and standards related to immunization practices for various populations, adapted from common clinical guidelines and recommendations.
+
+### Childhood Immunization
+
+Ideally, immunizations should be given as a part of comprehensive child health care. Childhood immunizations are widely recognized as a highly cost-effective method of preventing infectious diseases. Identified barriers to childhood immunization include:
+
+1.  **Financial**: Low socioeconomic status can place a child at risk of underimmunization.
+2.  **Family Structure**: Issues such as disrupted family structure can impact immunization uptake.
+3.  **Perceived Attitudes**: Beliefs regarding the benefits (or risks) of immunization.
+4.  **Provider Policies and Practices**: Missed opportunities for vaccination during clinic visits.
+5.  **Social Determinants of Health**: Factors including rural populations, education levels, and access to healthcare services.
+
+### Standards for Child and Adolescent Immunization Practices
+*(Adapted from National Vaccine Advisory Committee, 2013)*
+
+#### Availability of Vaccines
+1.  Vaccination services are readily available.
+2.  Vaccinations are coordinated with other health-care services and provided in a medical home when possible.
+3.  Barriers to vaccination are identified and minimized.
+4.  Patient costs are minimized.
+
+#### Assessment of Vaccination Status
+1.  Health-care professionals review the vaccination and health status of patients at every encounter to determine which vaccines are indicated.
+2.  Health-care professionals assess for and follow only medically indicated contraindications.
+3.  Providers conduct semiannual audits to assess immunization coverage levels and to review immunization records in the patient populations they serve.
+
+#### Effective Communication About Vaccine Benefits and Risks
+1.  Parents/guardians and patients are educated about the benefits and risks of vaccination in a culturally appropriate manner and in easy-to-understand language.
+
+#### Proper Storage and Administration of Vaccines and Documentation of Vaccinations
+1.  Health-care professionals follow appropriate procedures for vaccine storage and handling.
+2.  Up-to-date, written vaccination protocols are accessible at all locations where vaccines are administered.
+3.  Persons who administer vaccines and staff who manage or support vaccine administration are knowledgeable and receive ongoing education.
+4.  Health-care professionals simultaneously administer as many indicated vaccine doses as possible.
+5.  Vaccination records for patients are accurate, complete, and easily accessible.
+6.  Health-care professionals report adverse events following vaccination promptly and accurately to the Vaccine Adverse Events Reporting System (VAERS) and are aware of a separate program, the National Vaccine Injury Compensation Program (NVICP).
+7.  All personnel who have contact with patients are appropriately vaccinated.
+
+#### Implementation of Strategies to Improve Vaccination Coverage
+1.  Systems are used to remind parents/guardians, patients, and health-care professionals when vaccinations are due and to recall those who are overdue.
+2.  Office- or clinic-based patient record reviews and vaccination coverage assessments are performed annually.
+3.  Health-care professionals practice community-based approaches.
+
+### Standards for Adult Immunization Practices
+*(Adapted from National Vaccine Advisory Committee, 2014)*
+
+#### Make Vaccinations Available
+1.  Adult vaccination services are readily available.
+2.  Barriers to receiving vaccines are identified and minimized.
+3.  Patient "out-of-pocket" vaccination costs are minimized.
+
+#### Assess Patients' Vaccination Standards
+1.  Health-care professionals routinely review the vaccination status of patients.
+2.  Health-care professionals assess for valid contraindications.
+
+#### Communicate Effectively with Patients
+1.  Patients are educated about risks and benefits of vaccination in easy-to-understand language.
+
+#### Administer and Document Vaccinations Properly
+1.  Written vaccination protocols are available at all locations where vaccines are administered.
+2.  Persons who administer vaccines are properly trained.
+3.  Health-care professionals recommend simultaneous administration of indicated vaccine doses.
+4.  Vaccination records for patients are accurate and easily accessible.
+5.  All personnel who have contact with patients are appropriately vaccinated.
+
+#### Implement Strategies to Improve Vaccination Rates
+1.  Systems are developed and used to remind patients and health-care professionals when vaccinations are due and to recall patients who are overdue.
+2.  Standing orders for vaccinations are employed.
+3.  Regular assessments of vaccination coverage levels are conducted in a provider's practice.
+
+#### Partner with the Community
+1.  Patient-oriented and community-based approaches are used to reach the target.
+
+### Immunization in Special Populations
+
+#### Pregnant Patients
+The Advisory Committee on Immunization Practices (ACIP) has published guidelines for vaccinating pregnant women (see [CDC Guidelines for Vaccinating Pregnant Women](https://www.cdc.gov/vaccines/pregnancy/hcp-toolkit/guidelines.html)). Key considerations include:
+
+- The risk from vaccination during pregnancy is largely theoretical.
+- The benefit of vaccination among pregnant women usually outweighs the potential risk when:
+  - (a) The risk for disease exposure is high.
+  - (b) Infections would pose a special risk for the mother or fetus.
+  - (c) The vaccine is unlikely to cause harm.
+
+Generally, live virus vaccines are contraindicated in pregnant women because of the possible risk of transmission to the fetus. If a woman is inadvertently given a live virus vaccine while pregnant, she should be counseled about the potential effects on the fetus. It is not normally an indication to terminate the pregnancy.
+
+**Recommendations for Vaccination During Pregnancy Include the Following:**
+
+| Vaccine                     | May Be Given if Indicated | Contraindicated During Pregnancy | Comments                                                                                                                               |
+| :-------------------------- | :------------------------: | :------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **Routine Vaccines**        |                            |                                  |                                                                                                                                        |
+| COVID-19                    |             X              |                                  | Recommended for all pregnant individuals.                                                                                              |
+| Hepatitis A                 |             X              |                                  | If at risk for infection or severe outcome from infection during pregnancy.                                                            |
+| Hepatitis B                 |             X              |                                  | The theoretical risk to the fetus is low from the inactivated vaccine. Recommended for those at risk.                                |
+| Human papillomavirus (HPV)  |                            |                                  | Not recommended during pregnancy; vaccination series should be deferred until after pregnancy.                                       |
+| Influenza (inactivated)     |             X              |                                  | Recommended for all women who are or will be pregnant during flu season.                                                               |
+| Influenza (LAIV)            |                            |                X                 | Live attenuated vaccine.                                                                                                               |
+| MMR (Measles, Mumps, Rubella) |                            |                X                 | Live attenuated vaccine.                                                                                                               |
+| Meningococcal (MenACWY)     |             X              |                                  | Administer if indicated (e.g., during an outbreak, travel to endemic area, or other risk factors). Safety data are limited.        |
+| Meningococcal B (MenB)      |                            |            Precaution            | Delay until after pregnancy unless at increased risk and benefits of vaccination outweigh potential risks.                             |
+| PCV (conjugate: 13/15/20)   |                            |                                  | No routine recommendation; consider for those with specific medical conditions.                                                        |
+| PPSV23 (polysaccharide)     |                            |                                  | Inadequate data for specific recommendation; consider for those with specific medical conditions.                                    |
+| Polio (IPV - inactivated)   |             X              |                                  | If at increased risk of exposure.                                                                                                      |
+| Td (Tetanus, diphtheria)    |             X              |                                  | Tdap preferred.                                                                                                                        |
+| Tdap (Tetanus, diphtheria, acellular pertussis) |             X              |                                  | Recommended for **every** pregnancy, ideally between 27 and 36 weeks gestation, to protect the newborn from pertussis.               |
+| Varicella (Chickenpox)      |                            |                X                 | Live attenuated vaccine.                                                                                                               |
+| Zoster (Shingles)           |                            |                X                 | Live attenuated (ZVL - no longer preferred) and recombinant (RZV) vaccines. RZV not studied in pregnancy. Defer until postpartum. |
+| **Travel and Other Vaccines** |                            |                                  |                                                                                                                                        |
+| Anthrax                     |                            |         X (generally)          | Vaccinate only if benefits clearly outweigh risks to fetus (e.g., high-risk exposure).                                               |
+| BCG (Tuberculosis)          |                            |                X                 | Contraindicated.                                                                                                                       |
+| Japanese Encephalitis (JE)  |                            |                                  | The vaccine should not be routinely administered during pregnancy. Consider if high risk of JE exposure is unavoidable.              |
+| Rabies                      |             X              |                                  | Post-exposure prophylaxis is critical and should not be withheld due to pregnancy.                                                     |
+| Typhoid (injectable ViPS)   |      X (if indicated)      |                                  | If necessary to vaccinate a pregnant patient, the inactivated Vi polysaccharide vaccine is recommended over the oral live vaccine. |
+| Typhoid (oral Ty21a)        |                            |                X                 | Live attenuated vaccine.                                                                                                               |
+| Vaccinia (Smallpox/Mpox)    |                            |         X (JYNNEOS/ACAM2000)     | JYNNEOS is generally contraindicated. ACAM2000 (live) is contraindicated. For definite high-risk smallpox exposure, consult CDC. |
+| Yellow Fever                |                            |         X (generally)          | Live attenuated. Only vaccinate if travel to high-risk area is unavoidable and risk of infection is high. Weigh risks/benefits.    |
+
+#### Immunocompromised Patients
+For practical considerations, persons with immunocompromising conditions may be divided into three groups:
+
+1.  **Persons who are severely immunocompromised not as a result of HIV infection** (e.g., due to congenital immunodeficiencies, high-dose corticosteroids, chemotherapy, or other immunosuppressive drugs).
+    -   In general, these patients should **not** be administered live vaccines (both viral and bacterial).
+    -   Measles, mumps, and rubella (MMR) vaccine is **not** contraindicated for their close contacts.
+    -   Passive immunization with immunoglobulin should be considered for immunocompromised persons instead of or in addition to vaccination for certain exposures (e.g., varicella, measles).
+
+2.  **Persons with HIV infection**.
+    -   Vaccination recommendations depend on the level of immunosuppression (CD4+ T-lymphocyte count).
+    -   In general, persons known to be HIV-infected should **not** receive live virus or live bacteria vaccines if severely immunocompromised (e.g., CD4 count <200 cells/µL).
+    -   MMR vaccination is recommended for all children and for adults when otherwise indicated, if not severely immunocompromised.
+    -   Varicella vaccine may be considered for HIV-infected individuals who are not severely immunocompromised and lack evidence of immunity.
+    -   Enhanced inactivated polio vaccine (eIPV) is the preferred polio vaccine.
+    -   Pneumococcal vaccines (conjugate and polysaccharide) are indicated for all HIV-infected persons ≥2 years of age.
+    -   Annual influenza vaccination (inactivated) is recommended.
+
+3.  **Persons with conditions that cause limited immune deficits** (e.g., asplenia, chronic renal failure, chronic liver disease, diabetes mellitus) that may require use of special vaccines or higher doses of vaccines but that do not contraindicate use of any particular vaccine.
+    -   Persons with these conditions are generally not considered severely immunosuppressed for the purposes of vaccination and should receive routine vaccinations with both live and inactivated vaccines according to the usual schedules, with specific considerations for their condition (e.g., enhanced pneumococcal, meningococcal, and *Haemophilus influenzae* type b vaccination for asplenia).
+
+> [!IMPORTANT]
+> Specific ACIP recommendations for each group should always be consulted, as guidelines can be complex and nuanced.
+
+#### Travel Immunization
+International travel is becoming more common, with jets allowing people to travel great distances in a few hours. With international travel comes exposure to infectious diseases not common in the United States. Patients should be advised to begin to prepare for their trip at least 4-8 weeks before departure.
+
+To determine what vaccines the traveling patient will need, the provider can consult with a local travel clinic or the CDC. The CDC website has a comprehensive travel information section, maintained by the National Center for Emerging and Zoonotic Infectious Diseases (NCEZID) (see [CDC Travelers' Health](http://www.cdc.gov/travel/)). The website allows the provider or patient to inquire into recommendations based on the region the patient will be traveling to. Information on traveling with children, outbreaks, and special needs travelers is also located at this site.
+
+The CDC also publishes an annual guide, *CDC Yellow Book: Health Information for International Travel*, which is an essential resource.
+
+In addition to special immunizations required by travel, patients should also have all of the recommended routine immunizations for their age, including influenza vaccine. Patients should have a copy of their current immunizations included with their travel documents.
+
+## Zoster Vaccine
+
+Herpes zoster is a painful skin eruption that is a reactivation of latent varicella zoster virus, with approximately 1 million cases a year in the United States (Dooling et al., 2018). Postherpetic neuralgia can occur in 10% to 13% of herpes zoster cases in persons aged 50 years or older.
+
+In 2017, a recombinant zoster vaccine (RZV, Shingrix) was approved, in addition to zoster vaccine live (ZVL, Zostavax), which is approved for immunocompetent adults. The Advisory Committee on Immunization Practices (ACIP) recommends the use of RZV over ZVL due to better efficacy against herpes zoster and postherpetic neuralgia (Dooling et al., 2018).
+
+### Pharmacodynamics
+
+Recombinant zoster vaccine boosts varicella zoster virus-specific immune response, which protects against zoster disease. The efficacy of RZV vaccine in prevention of herpes zoster is 96.6% in persons 50 to 59 years, 97.4% in persons age 60 to 69 years, and 91.3% in persons age 70 or older (Dooling et al., 2018).
+
+### Pharmacokinetics
+
+Exact pharmacokinetics for recombinant zoster vaccine is unknown.
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+Recombinant zoster vaccine is contraindicated in persons with a severe allergic reaction (e.g., anaphylaxis) to any component of the vaccine or after a previous dose of Shingrix.
+
+Recombinant zoster vaccine should not be administered to a person with an acute episode of herpes zoster. Vaccination should be delayed until the acute illness has resolved.
+
+There are no data indicating whether RZV is safe in pregnant or lactating women. Pregnancy testing is not needed before administering RZV. Women known to be pregnant should delay RZV vaccination until after pregnancy. If RZV is inadvertently administered to a pregnant woman, no intervention is needed, but she should be informed about the lack of safety data.
+
+Safety and effectiveness in children younger than age 18 years have not been determined. RZV is not indicated for primary prevention of varicella (chickenpox) infection.
+
+### Adverse Drug Reactions
+
+Adverse reactions to RZV include local injection site reactions such as pain, redness, and swelling. Systemic adverse effects are common and include myalgia, fatigue, headache, shivering, fever, and gastrointestinal symptoms. These reactions are generally mild to moderate and resolve within 2-3 days.
+
+There is an increased risk (approximately 3 per 1 million doses administered) of Guillain-Barré syndrome (GBS) in the 42 days after receiving the RZV vaccine, although a causal relationship has not been established.
+
+### Drug Interactions
+
+There are no known clinically significant drug interactions with RZV. It can be coadministered with other adult vaccines, such as influenza and pneumococcal vaccines, at different anatomical sites.
+
+### Clinical Use and Dosing
+
+Recombinant zoster vaccine is recommended as part of the routine adult schedule for all immunocompetent adults aged 50 years or older, including those who have previously received ZVL.
+
+RZV (Shingrix) 0.5 mL is administered intramuscularly (IM) in two doses:
+- First dose at elected date.
+- Second dose 2 to 6 months after the first dose.
+
+For immunodeficient or immunosuppressed persons aged 18 years or older, RZV is also recommended. The schedule is two doses of RZV:
+- First dose at elected date.
+- Second dose 1 to 2 months after the first dose.
+
+Ideally, a patient is vaccinated with RZV before starting immunosuppression therapy, when their immune response is likely to be strongest (Anderson et al., 2022).
+
+> [!NOTE]
+> If more than 6 months have passed since the first dose for immunocompetent individuals (or more than 2 months for immunosuppressed individuals), the second dose should be administered as soon as possible. The series does not need to be restarted.
+
+### Monitoring
+
+There is no ongoing laboratory monitoring required after RZV vaccine administration. Patients should be observed for immediate allergic reactions per standard vaccination practice.
+
+### Patient Education
+
+Patients should be informed of:
+- The benefits of RZV vaccination in preventing herpes zoster and postherpetic neuralgia.
+- The recommended two-dose schedule and the importance of completing the series.
+- Expected adverse effects of the vaccine, including common local injection site reactions (pain, redness, swelling) and systemic reactions (myalgia, fatigue, headache, fever).
+- That these reactions are usually temporary and self-limiting.
+- The rare risk of GBS.
+- When to contact a healthcare provider for severe or persistent adverse reactions.
+
+## Immunoglobulin Serums
+
+Immunoglobulin (IG) serums provide passive immunity to infectious diseases. The choice of IG is determined by the types of products available, the type of antibody desired, route of administration, timing, and other considerations. IG products that may be used in primary care include:
+
+-   Immunoglobulin Intramuscular (IGIM): e.g., GamaSTAN S/D
+-   Hepatitis B Immunoglobulin (HBIG): e.g., HepaGam B, Nabi-HB
+-   Tetanus Immunoglobulin (TIG): e.g., HyperTET S/D
+-   Varicella Zoster Immunoglobulin (VZIG): e.g., VARIZIG
+-   Rabies Immunoglobulin (RIG): e.g., HyperRAB S/D, Imogam Rabies HT
+-   Rho(D) Immunoglobulin: e.g., RhoGAM, HyperRHO S/D Full Dose, WinRho SDF
+-   Botulism Immunoglobulin Intravenous (BIG-IV, BabyBIG)
+-   Vaccinia Immunoglobulin Intravenous (VIGIV)
+
+> [!NOTE]
+> Respiratory Syncytial Virus Immunoglobulin (RSV-IGIV) is no longer available in the U.S.
+
+### Pharmacodynamics
+
+IGs are derived from the pooled plasma of adult human donors, processed by methods such as cold ethanol fractionation. They consist primarily of the immunoglobulin G (IgG) fraction (≥95% IgG) and are not known to transmit hepatitis viruses, HIV, or other common infectious diseases due to viral inactivation and removal steps during manufacturing. The concentrated protein solution contains specific antibodies in proportion to the infectious and immunization experience of the donor population from which the plasma was derived.
+
+Specific IGs (e.g., HBIG, TIG) differ from standard IGIM (sometimes referred to as gamma globulin) in that they are prepared from plasma pools selected for high titers of specific antibodies against a particular antigen.
+
+-   **IGIM (e.g., GamaSTAN S/D)** is a sterile preparation of concentrated antibodies. IGIM provides protection against hepatitis A and measles through passive transfer of antibody. It may be used for pre-exposure prophylaxis or postexposure prevention in the treatment of hepatitis A; it is used postexposure for measles.
+
+-   **Hepatitis B Immunoglobulin (HBIG, e.g., HepaGam B)** is a sterile solution of IGs (typically 10% to 18% protein) containing high titers of antibodies against Hepatitis B surface antigen (anti-HBs). HBIG is used to provide passive immunity to patients after exposure to HBsAg-positive blood or body fluids (e.g., needlestick injury, sexual exposure) and for infants born to HBsAg-positive mothers.
+
+-   **Tetanus Immunoglobulin (TIG, e.g., HyperTET S/D)** is prepared from the plasma of adults who are hyperimmunized with tetanus toxoid. TIG contains antibodies that neutralize the exotoxin (tetanospasmin) produced by *Clostridium tetani*. The passive immunity bestowed by TIG is capable of attenuating or preventing tetanus infection by binding free exotoxin before it can bind to nerve tissue.
+
+-   **Varicella-Zoster Immunoglobulin (VZIG, VARIZIG)** is derived from human plasma and consists of IgG that contains high titers of antibodies to varicella zoster virus. VZIG is used primarily for passive immunization of high-risk susceptible patients after exposure to chickenpox or herpes zoster to prevent or attenuate disease. High-risk groups include immunocompromised children and adults, pregnant women without evidence of immunity, newborns of women with varicella shortly before or after delivery, premature infants, and neonates and infants younger than 12 months without evidence of immunity.
+
+-   **Rabies Immunoglobulin (RIG, e.g., HyperRAB S/D, Imogam Rabies HT)** is primarily gamma globulin containing high titers of rabies antibodies. RIG is used to provide passive immunity to rabies in patients exposed to the virus. Rabies antibodies neutralize the rabies virus, retarding its spread and inhibiting its effectiveness, providing immediate protection until the patient's immune system responds to rabies vaccine.
+
+-   **Rho(D) Immunoglobulin (e.g., RhoGAM)** is used to prevent isoimmunization in Rho(D)-negative women exposed or potentially exposed to Rho(D)-positive red blood cells (e.g., during delivery of an Rho(D)-positive infant, miscarriage, abortion, or transfusion of Rho(D)-positive blood). Rho(D) immunoglobulin is a solution containing IgG antibodies against the erythrocyte antigen Rho(D), collected from the plasma of human donors. It is believed that the anti-Rho(D) antibodies in Rho(D) immunoglobulin interact directly with the Rho(D) antigens on fetal red blood cells in the maternal circulation, preventing the mother's immune system from recognizing and becoming sensitized to the Rho(D) antigen. This prevents the development of erythroblastosis fetalis (hemolytic disease of the fetus and newborn) in current or subsequent pregnancies.
+
+-   **Botulism Immunoglobulin Intravenous (BIG-IV, BabyBIG)** provides immunoglobulin derived from adults immunized with botulinum toxoid types A and B, and provides antibodies against circulating botulism toxins A and B. It is used for the treatment of infant botulism.
+
+-   **Vaccinia Immunoglobulin Intravenous (VIGIV)** provides passive immunity for certain complications of vaccinia (smallpox) vaccination, such as eczema vaccinatum, severe or progressive vaccinia, and certain other vaccinia infections in patients with underlying skin conditions.
+
+### Pharmacokinetics
+
+-   **IGIM**: When used for pre-exposure prophylaxis for hepatitis A, a standard dose confers protection for approximately 3 months; larger doses can extend protection up to 5 months. It is greater than 85% effective in preventing hepatitis A if given within 2 weeks after exposure. IGIM can be given to prevent or modify measles in susceptible persons if used within 6 days of exposure.
+
+-   **HBIG**: Slowly absorbed after IM administration, with antibodies typically appearing in 1 to 6 days and peak levels reached in 3 to 9 days. The antibodies remain in the serum for up to 2 months. HBIG likely crosses the placenta and may be distributed in breast milk.
+
+-   **TIG**: Given IM, with peak levels of IgG noted approximately 2 days after administration. The half-life of IgG in circulation is approximately 3.5 to 4.5 weeks (23-28 days).
+
+-   **VZIG**: Administered IM, with peak IgG levels obtained approximately 2-5 days after administration. It is most effective if administered as soon as possible after exposure to VZV, ideally within 96 hours but may be effective up to 10 days post-exposure. Antibody protection lasts for at least 3 weeks.
+
+-   **RIG**: Administered by infiltrating as much of the dose as feasible into and around the wound(s), with any remaining volume given IM at a site distant from vaccine administration. Provides immediate passive antibodies.
+
+-   **Rho(D) Immunoglobulin**: Pharmacokinetics is not well described. Peak antibody levels are reached in approximately 5 to 10 days after IM administration. Anti-Rho(D) antibodies are generally not detectable 6 months after administration of a standard 300 mcg dose.
+
+-   **BIG-IV (BabyBIG)**: Has a reported half-life of approximately 28 days in infants.
+
+-   **VIGIV**: After IV infusion, peaks rapidly (e.g., within 2 hours) and has a reported half-life of approximately 22-30 days.
+
+### Pharmacotherapeutics
+
+#### Precautions and Contraindications
+- An allergic response to IG serums or their components (e.g., thimerosal, if present in a specific formulation) is a contraindication to IG serum use.
+- Patients with selective IgA deficiency who have developed antibodies against IgA are more likely to have anaphylactic or severe systemic reactions to pooled IG products containing IgA. If IG administration is necessary, products with very low IgA content should be considered, and administration should occur in a setting equipped to manage anaphylaxis.
+- Live-virus vaccines (e.g., MMR, varicella) should not be administered within 3 months of an IG serum. (Note: This interval can be longer, up to 11 months, depending on the IG product and dose; consult specific ACIP recommendations or product labeling).
+- Pregnancy is not a contraindication to most IG serums when clearly indicated.
+- BIG-IV (BabyBIG) is not indicated for adults or children older than 12 months. Safety and efficacy are not established for children age 1 year or older.
+- VIGIV is contraindicated in patients with isolated vaccinia keratitis due to the risk of increased corneal scarring.
+> [!WARNING]
+> VIGIV may cause falsely high blood glucose readings on some test systems due to the maltose in the preparation. Blood glucose testing should be done with a glucose-specific method (e.g., glucose oxidase, glucose hexokinase, or glucose dehydrogenase nicotine adenine dinucleotide–based tests).
+
+### Adverse Drug Reactions
+- **Local Reactions:** Tenderness, pain, erythema, and induration at the injection site are common and may last for several hours.
+- **Systemic Reactions:**
+    - Mild: Urticaria, angioedema, flushing, headache, myalgia, chills, fever, nausea, vomiting, lethargy.
+    - Rare but Serious: Anaphylactic reactions (particularly in IgA-deficient individuals with anti-IgA antibodies).
+
+### Drug Interactions
+IG serums interfere with the immune response to live virus vaccines. Live virus vaccines should generally not be administered within 3 months (and up to 11 months, depending on the specific IG product, dose, and vaccine) of an IG serum. Consult current ACIP guidelines for specific interval recommendations.
+
+### Clinical Use and Dosing
+IG serums are used to prevent disease by either pre-exposure or postexposure administration. The clinical use and dosing of the IG serums are detailed in Table 16-4.
+
+**Table 16-4: Clinical Use and Dosing of Selected Immunoglobulin Serums**
+
+| Drug                                      | Indication                                                                    | Dose                                                                                                                                                                                                                                                           | Comments                                                                                                                                                                                                                                                              |
+| :---------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **IGIM (Gamma Globulin)**                 | Hepatitis A prophylaxis (pre-exposure)                                     | Length of stay: <3 mo, give 0.02 mL/kg IM.<br>Prolonged (>3 mo), give 0.06 mL/kg IM and repeat every 4-6 mo.                                                                                                                                                | Effective if given before exposure or within 2 weeks of exposure. Hepatitis A vaccine is preferred for pre-exposure prophylaxis in most cases.                                                                                                                      |
+|                                           | Measles postexposure prophylaxis                                           | Give 0.25 mL/kg IM (max 15 mL).<br>If child is also immunocompromised, give 0.5 mL/kg IM (max 15 mL).                                                                                                                                                           | Must be given within 6 days of exposure to measles for susceptible individuals.                                                                                                                                                                                       |
+|                                           | Immunoglobulin Deficiency (replacement therapy)                             | 0.66 mL/kg (minimum 100 mg/kg) every 3-4 weeks. (IVIG is more commonly used for replacement).                                                                                                                                                                | Dose and frequency adjusted based on clinical response and serum IgG levels.                                                                                                                                                                                          |
+| **Hepatitis B Immunoglobulin (HBIG)**     | Postexposure prophylaxis (PEP) for Hepatitis B (HBV)                       | **Percutaneous/Permucosal Exposure:** Children >12 mo and adults: Administer 0.06 mL/kg IM within 24h (ideally), repeat in 28-30 days if ongoing exposure or source remains HBsAg positive and vaccine series incomplete.<br>Children <12 mo: 0.5 mL × 1. | Give hepatitis B vaccine series concurrently (first dose within 7 days of exposure) at a separate anatomical site.                                                                                                                                             |
+|                                           | Sexual contacts of HBV-infected people                                     | Administer 0.06 mL/kg IM within 14 days of sexual contact.                                                                                                                                                                                                   | Give hepatitis B vaccine series concurrently (first dose within 7 days of exposure) at a separate anatomical site.                                                                                                                                             |
+|                                           | Infants born to HBsAg-positive mothers                                     | Administer 0.5 mL IM within 12 hours of birth.                                                                                                                                                                                                             | Give hepatitis B vaccine series concurrently (first dose within 12 hours of birth) at a separate anatomical site.                                                                                                                                            |
+| **Tetanus Immunoglobulin (TIG)**          | Passive immunization against tetanus (postexposure)                        | **Clean minor wounds:** No TIG necessary. Give Tdap/Td if indicated based on vaccination history.<br>**All other wounds (contaminated, puncture, etc.):**<br>- Unknown or <3 doses of tetanus toxoid-containing vaccine: Adults 250 Units TIG IM; Children 4 Units/kg TIG IM. Give Tdap/Td concurrently.<br>- History of ≥3 doses of tetanus toxoid: No TIG necessary. Give Tdap/Td if indicated. | TIG provides immediate passive immunity. Tetanus toxoid-containing vaccine (Tdap/Td) provides active immunity. Always assess wound type and vaccination history.                                                                                              |
+| **Varicella-Zoster Immunoglobulin (VZIG)** | Passive immunization for high-risk patients exposed to varicella or zoster | Administer VZIG within 96 hours of exposure (up to 10 days if necessary).<br>**Dose:** Adolescents and adults: 125 U/10 kg, up to 625 U maximum.<br>Children and infants: 125 U/10 kg, rounded to nearest 125 U.<br>  - >40 kg: 625 U IM<br>  - 30.1-40 kg: 500 U<br>  - 20.1-30 kg: 375 U<br>  - 10.1-20 kg: 250 U<br>  - ≤10 kg: 125 U | **High-risk groups include:** Immunocompromised patients, neonates of mothers with varicella around delivery, premature infants exposed postnatally, pregnant women without immunity.<br>**Requirements:** 1. Not immune to varicella. 2. Significant exposure (<96 hr before VZIG ideally); significant exposure defined as household contact, playmate contact (>1 hr), hospital contact (same room). | 
+| **Rabies Immunoglobulin (RIG)**           | Provides passive immunity to rabies (postexposure)                         | **Previously unvaccinated against rabies:** Administer 20 IU/kg body weight. Infiltrate as much of the dose as feasible into and around the wound(s), with any remaining volume given IM at a site distant from vaccine administration. Give up to 7 days after the first dose of rabies vaccine if not given concurrently. | Postexposure prophylaxis **always** includes administration of both passive antibody (RIG) and rabies vaccine series for previously unvaccinated individuals. RIG is not recommended for persons who have previously received a complete vaccination series. The ACIP recommends 4 doses of rabies vaccine with RIG for PEP. |
+| **Rho(D) Immunoglobulin (RhoGAM)**        | Rh isoimmunization prophylaxis                                             | Administer 300 mcg IM at 28 wk gestation AND/OR within 72 hr of an Rh-incompatible delivery, miscarriage, abortion (after 12 wks), or transfusion accident.<br>Administer 50 mcg IM if pregnancy terminated before 13 wk gestation. | Each vial or syringe (~300 mcg) prevents sensitization to a volume of up to 15 mL of Rh-positive red blood cells (or 30 mL Rh-positive whole blood).                                                                                                          |
+| **Botulism Immunoglobulin (BIG-IV, BabyBIG)** | Treatment of infant botulism (types A or B) in patients <1 year of age   | 1.0 mL/kg (50 mg/kg) given as a single IV infusion.                                                                                                                                                                                                          | Begin infusion slowly (0.5 mL/kg/hr for 15 min); if no reaction, increase rate to 1.0 mL/kg/hr.                                                                                                                                                           | 
+
+*IM, intramuscular; IV, intravenous. Dosing and indications should always be confirmed with current package inserts and ACIP recommendations.*
+
+### Monitoring
+- Laboratory monitoring is generally not necessary for most IG serum administrations.
+- The patient's Rh status and antibody screen should be determined before administering Rho(D) immunoglobulin.
+- Patients who receive BIG-IV for infant botulism should be monitored for clinical response and relapse of botulism, as relapse may occur up to 1 month after administration.
+- Monitor for acute adverse reactions during and after IV administration of IG products.
+
+### Patient Education
+Patients (or parents/guardians) should receive information regarding the benefits and risks of the specific IG serum before administration. Any questions or concerns regarding the vaccine should be addressed.
+Key points for patient education include:
+- The reason for administration.
+- The source of IG products (human plasma) and safety measures.
+- Expected benefits and temporary nature of passive immunity.
+- Common adverse reactions (e.g., pain/erythema at injection site).
+- Signs of severe reactions and when to seek medical attention.
+- Potential interference with live virus vaccines.
+
+## Diagnostic Biologicals
+
+### Tuberculin Purified Protein Derivative
+
+The diagnostic biological agent that is commonly used in primary care is tuberculin PPD. PPD is used to screen asymptomatic individuals for infection with M. tuberculosis.
+
+#### Pharmacodynamics
+
+PPD is administered intradermally to asymptomatic individuals. Once a person has become sensitized to mycobacterial antigens, a hypersensitivity reaction occurs to the administration of the intradermal PPD. In sensitive people, the reaction includes induration and erythema at the site of administration. A positive reaction to PPD indicates that the person at some time has had a TB infection. A positive test does not indicate an active infection but rather that further testing is indicated. See Chapter 50 for more information regarding TB evaluation.
+
+#### Pharmacotherapeutics
+
+##### Precautions and Contraindications
+Do not administer PPD to known tuberculin-positive reactors because they may have a severe reaction, including ulceration and necrosis at the site of administration. SC administration should be avoided, as a general febrile reaction or acute inflammation may occur.
+
+Skin testing of immunodeficient people may not be accurate because skin-test responsiveness may be suppressed. Skin test responsiveness may be delayed in the older adult patient.
+
+PPD testing is safe in pregnancy, during lactation, and in children of all ages, including infants.
+
+#### Adverse Drug Reactions
+
+In highly sensitive people, vesiculation, ulceration, and necrosis can occur at the administration site. A normal adverse reaction is a minimal amount of bleeding at the administration site.
+
+#### Drug Interactions
+
+Live-virus vaccines (MMR, varicella) can suppress the reaction to PPD if given 4 to 6 weeks before the PPD. PPD can be administered at the time that MMR and varicella vaccines are administered. Patients who have been vaccinated with BCG generally are sensitive to PPD. Immunosuppressant medications can suppress the reaction to PPD testing.
+
+#### Clinical Use and Dosing
+
+The Mantoux PPD test containing 5 tuberculin units (TU) is the preferred test because the interpretation of the reaction has been standardized. Previously, multiple puncture tests were used, and there were many problems with interpretation. The test consists of injecting 5 TU of PPD intradermally. A small white bleb should appear at the injection site if it is done correctly. Reactions are read in 48 to 72 hours after administration. For patients who may be highly sensitized, a test dose of 1 TU is used.
+
+The CDC recommends two-step testing of all health care personnel upon hire, because some people with latent TB have a negative reaction when tested years after initial infection. The first test may boost a reaction to the second test (CDC, 2019). The steps for the two-step testing are as follows:
+
+Step 1
+
+1.  Administer the first PPT skin test.
+2.  If positive, the person is considered infected and needs to be evaluated for TB disease.
+3.  If negative, the person needs a second TB skin test 1 to 3 weeks after the first skin test.
+
+Step 2
+
+1.  Administer the second PPD skin test.
+2.  If positive, the person is considered infected and needs to be evaluated for TB disease.
+3.  If negative, the person is not infected.
+
+Determining the results of the skin test is based on the likelihood of infection and the risk of active TB if infection has occurred. If the patient is HIV-positive or has fibrotic lesions on chest x-ray, a reaction of 5 mm or more induration is considered positive. A reaction of 10 mm or more induration is considered positive in other at-risk patients, including infants and children. In patients who are not in any highrisk category or high-risk environment, a result of 15 mm or more induration is considered positive.
+
+Patients are considered high risk if they have any of the following: (1) diabetes mellitus; (2) prolonged therapy with adrenocorticosteroids; (3) immunosuppressive therapy; (4) hematological and/or reticuloendothelial diseases, such as leukemia or Hodgkin's disease; (5) injection drug users known to be HIV-seronegative; (6) end-stage renal disease; or (6) any clinical presentation that includes substantial rapid weight loss or chronic malnutrition.
+
+People who are in a high-incidence group with a skin test reaction of 10 mm or more induration are candidates for preventive therapy, even if they do not have any of the risk factors. High-incidence groups include the following: (1) foreign-born persons from high-prevalence countries, (2) medically underserved low-income populations, and (3) residents of facilities for long-term care.
+
+#### Monitoring
+
+The PPD should be read by an experienced health-care professional who has been trained in the proper method of interpreting the results.
+
+#### Patient Education
+
+Patients must have an understanding of the reason for PPD testing and why the test must be read in 48 to 72 hours. Adverse reactions are rare in patients who are not already sensitized to TB.
+
+
+
