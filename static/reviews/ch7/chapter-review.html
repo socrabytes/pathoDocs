@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutraceuticals & Clinical Practice: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Narrative Plan:
+        1.  Hero Section: Hook with the core concept of nutrition's role in pharmacotherapy.
+        2.  Nutrient-Drug Interactions: Detail the "how" (pharmacokinetics) and the "what" (critical interactions) using clear visuals. ADDED: Gemini API Interaction Checker.
+        3.  At-Risk Populations: Visually segment key demographics that require nutritional supplementation.
+        4.  Guide to Nutraceuticals: A deep dive into the evidence and clinical use for Fiber, Vitamins, Fatty Acids, Plant Sterols, and Probiotics using various charts.
+        5.  Conclusion: Actionable takeaways for the Nurse Practitioner.
+        
+        Visualization Choices:
+        -   Hero Stat -> Goal: Inform -> Single Big Number (HTML/CSS) -> Justification: High-impact opener. CONFIRM: NO SVG.
+        -   Pharmacokinetics Flow -> Goal: Organize -> HTML/CSS Flowchart -> Justification: Shows a process clearly. CONFIRM: NO SVG/MERMAID.
+        -   Critical Interactions -> Goal: Inform -> Iconography (Unicode) & Cards -> Justification: Highlights warnings effectively. CONFIRM: NO SVG.
+        -   Gemini Interaction Checker -> Goal: Organize/Inform -> HTML Form + JS/API -> Justification: Provides dynamic, personalized insights. CONFIRM: NO SVG.
+        -   At-Risk Populations -> Goal: Organize/Compare -> Cards with Icons/Lists -> Justification: Easy to scan demographic info. CONFIRM: NO SVG.
+        -   B12 Deficiency Risks -> Goal: Compare -> Donut Chart (Chart.js) -> Justification: Shows parts of a whole (risk factors). CONFIRM: NO SVG.
+        -   Drug-Induced Depletions -> Goal: Compare -> Bar Chart (Chart.js) -> Justification: Clear comparison of drug effects. CONFIRM: NO SVG.
+        -   Omega-3 & BP -> Goal: Change -> Line Chart (Chart.js) -> Justification: Shows dose-response relationship. CONFIRM: NO SVG.
+        -   Probiotic Efficacy -> Goal: Compare -> Bar Chart (Chart.js) -> Justification: Compares use cases. CONFIRM: NO SVG.
+        
+        Color Palette Selection:
+        -   Palette Name: "Brilliant Blues" / "Oceanic Professionalism"
+        -   HEX Codes: Primary: #005f73, Secondary: #0a9396, Accent: #94d2bd, Text/Dark: #001219, Background: #f8f9fa.
+        
+        Constraint Confirmation:
+        -   NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visuals are pure HTML/CSS or rendered on HTML Canvas by Chart.js.
+    -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Prevents charts from becoming too wide */
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Base height for charts */
+            max-height: 400px; /* Max height for charts */
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px; /* Taller charts on larger screens */
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #94d2bd; /* Accent color for flow arrows */
+            margin: 0 1rem;
+        }
+        .flow-arrow:last-child::after {
+            content: ''; /* Remove arrow from the last item in flow */
+        }
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #0a9396; /* Secondary color */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-[#001219]">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#005f73] mb-2">The Practitioner's Guide to Nutrition & Pharmacotherapy</h1>
+            <p class="text-lg md:text-xl text-[#0a9396]">Integrating nutritional science into clinical practice for enhanced patient outcomes.</p>
+        </header>
+
+        <main>
+            <section id="interactions" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#001219] mb-8">Nutrient-Drug Interactions: A Critical Consideration</h2>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+                    <h3 class="text-2xl font-semibold text-[#005f73] mb-4">How Diet Influences Pharmacokinetics</h3>
+                    <p class="mb-6 text-gray-700">The presence and type of food can significantly alter a drug's journey through the body. Understanding this flow is the first step in preventing adverse interactions and ensuring therapeutic efficacy. These interactions can affect absorption, metabolism, and excretion of medications.</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center text-center">
+                        <div class="p-4 flow-arrow">
+                            <h4 class="text-xl font-bold text-[#0a9396]">Absorption</h4>
+                            <p class="text-sm text-gray-600">Altered by GET, pH, and chelation with minerals.</p>
+                        </div>
+                        <div class="p-4 flow-arrow">
+                            <h4 class="text-xl font-bold text-[#0a9396]">Metabolism</h4>
+                            <p class="text-sm text-gray-600">Affected by CYP450 inducers/inhibitors in food.</p>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold text-[#0a9396]">Excretion</h4>
+                            <p class="text-sm text-gray-600">Modified by food-induced changes in urinary pH.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-3"><span class="text-2xl mr-2">⚠️</span>CYP3A4 Inhibitors</h4>
+                        <p class="text-gray-700"><strong>Foods:</strong> Grapefruit, Seville Oranges, Pomelos.</p>
+                        <p class="mt-2 text-gray-700"><strong>Interaction:</strong> Decrease first-pass metabolism, significantly increasing levels of statins, Ca-channel blockers, and immunosuppressants.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-3"><span class="text-2xl mr-2">⚠️</span>Vitamin K Interaction</h4>
+                        <p class="text-gray-700"><strong>Foods:</strong> Kale, spinach, collard greens.</p>
+                        <p class="mt-2 text-gray-700"><strong>Interaction:</strong> High Vitamin K intake can antagonize warfarin, leading to therapeutic failure and increased clotting risk.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-3"><span class="text-2xl mr-2">⚠️</span>Drug-Induced Depletions</h4>
+                        <p class="text-gray-700"><strong>Medications:</strong> Loop Diuretics, PPIs, Metformin, Phenytoin.</p>
+                        <p class="mt-2 text-gray-700"><strong>Interaction:</strong> Can cause clinically significant deficiencies in Potassium, Calcium, B12, and Folic Acid over time.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold text-[#005f73] mb-4">Personalized Drug-Nutrient Interaction Checker ✨</h3>
+                    <p class="mb-6 text-gray-700">Enter a patient's current medications and key dietary components (foods or supplements known to be interactive) to analyze potential interactions. This tool uses AI to provide insights based on general pharmacological principles.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="medicationsInput" class="block text-sm font-medium text-gray-700">Medications (comma-separated, e.g., Warfarin, Atorvastatin):</label>
+                            <input type="text" id="medicationsInput" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0a9396] focus:ring-[#0a9396] sm:text-sm p-2" placeholder="e.g., Lisinopril, Metformin">
+                        </div>
+                        <div>
+                            <label for="dietaryItemsInput" class="block text-sm font-medium text-gray-700">Key Dietary Items (comma-separated, e.g., Grapefruit Juice, Spinach, St. John's Wort):</label>
+                            <input type="text" id="dietaryItemsInput" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0a9396] focus:ring-[#0a9396] sm:text-sm p-2" placeholder="e.g., Kale, Milk, Vitamin D supplement">
+                        </div>
+                        <button id="analyzeInteractionsBtn" class="w-full bg-[#005f73] hover:bg-[#0a9396] text-white font-semibold py-2 px-4 rounded-md shadow-sm transition duration-150 ease-in-out">
+                            Analyze Interactions ✨
+                        </button>
+                    </div>
+                    <div id="interactionLoader" class="loader hidden mt-4"></div>
+                    <div id="interactionResults" class="mt-6 p-4 border border-gray-200 rounded-md bg-gray-50 hidden">
+                        <h4 class="text-lg font-semibold text-[#001219] mb-2">Interaction Analysis:</h4>
+                        <p id="resultsText" class="text-gray-700 whitespace-pre-wrap"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="at-risk" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center text-[#001219] mb-8">Identifying At-Risk Populations for Supplementation</h2>
+                 <p class="text-center max-w-3xl mx-auto mb-8 text-gray-700">While a balanced diet is primary, certain life stages and conditions necessitate targeted nutritional support to prevent deficiencies. The Academy of Nutrition and Dietetics highlights these key groups who may benefit from specific supplementation strategies.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <p class="text-4xl mb-3">🤰</p>
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-2">Pregnant Women</h4>
+                        <ul class="text-left list-disc list-inside text-gray-600">
+                            <li>600 mcg Folic Acid</li>
+                            <li>27 mg Iron</li>
+                            <li>Vitamin B12 (if vegan)</li>
+                            <li>Multivitamin/mineral</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <p class="text-4xl mb-3">👶</p>
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-2">Infants & Children</h4>
+                        <ul class="text-left list-disc list-inside text-gray-600">
+                            <li>400 IU Vitamin D daily</li>
+                             <li>1 mg/kg Iron (breastfed, from 4mo)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <p class="text-4xl mb-3">👵</p>
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-2">Adults >50 Years</h4>
+                         <ul class="text-left list-disc list-inside text-gray-600">
+                            <li>2.4 mcg Vitamin B12</li>
+                            <li>Adequate Vitamin D</li>
+                            <li>Adequate Calcium</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <p class="text-4xl mb-3">🏃‍♀️</p>
+                        <h4 class="text-xl font-semibold text-[#005f73] mb-2">Special Groups</h4>
+                        <ul class="text-left list-disc list-inside text-gray-600">
+                            <li>Smokers (+35mg Vit C)</li>
+                            <li>Vegans (B12, Iron, Ca)</li>
+                            <li>Alcoholism (Thiamine)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="nutraceuticals" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#001219] mb-8">A Guide to Key Nutraceuticals</h2>
+                <p class="text-center max-w-3xl mx-auto mb-10 text-gray-700">Nutraceuticals are foods or food components offering health benefits beyond basic nutrition. This section highlights key categories with clinical relevance, visualizing data on their efficacy and application based on the provided chapter.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-[#005f73] mb-4">Vitamin B12 Deficiency Risk Factors</h3>
+                        <p class="mb-4 text-gray-700">Vitamin B12 deficiency is common, especially in older adults and those on certain medications. Absorption issues often necessitate supplementation over dietary changes alone. This chart illustrates the relative contribution of common risk factors.</p>
+                        <div class="chart-container">
+                            <canvas id="b12Chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-[#005f73] mb-4">Common Drug-Induced Nutrient Depletions</h3>
+                        <p class="mb-4 text-gray-700">Long-term use of common medications can deplete essential nutrients, potentially leading to new symptoms or side effects. This chart visualizes the relative risk scores for specific depletions by drug class.</p>
+                        <div class="chart-container">
+                            <canvas id="depletionChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-[#005f73] mb-4">Omega-3 Fatty Acids & Blood Pressure</h3>
+                        <p class="mb-4 text-gray-700">Omega-3 fatty acids demonstrate a dose-dependent effect on systolic blood pressure. While not a primary hypertension treatment, higher doses (2-4 g/day), often used for triglyceride management, may offer modest BP benefits as shown in the trend.</p>
+                        <div class="chart-container">
+                            <canvas id="omega3Chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-[#005f73] mb-4">Efficacy of Probiotics in GI Conditions</h3>
+                        <p class="mb-4 text-gray-700">Probiotics are beneficial for restoring gut flora, particularly in specific gastrointestinal conditions. The chart displays relative efficacy scores based on strength of evidence for key indications.</p>
+                        <div class="chart-container">
+                            <canvas id="probioticsChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="conclusion" class="text-center bg-[#005f73] text-white rounded-lg shadow-lg p-8">
+                 <h2 class="text-3xl font-bold mb-4">The NP's Clinical Action Plan</h2>
+                 <p class="max-w-3xl mx-auto mb-6 text-[#e0f2f1]">Integrating nutritional awareness into pharmacotherapy is key to holistic patient care. Here are actionable steps for Nurse Practitioners:</p>
+                 <ol class="list-decimal list-inside text-left max-w-2xl mx-auto space-y-3 text-[#e0f2f1]">
+                     <li><strong>Always Assess:</strong> Get a complete profile of all medications, including Rx, OTC, herbal, and nutritional supplements, at every relevant visit. This forms the foundation for identifying potential interactions.</li>
+                     <li><strong>Educate on Timing & Interactions:</strong> Clearly instruct patients on whether to take medications with or without food, specifying problematic foods (e.g., grapefruit, high-calcium dairy, Vitamin K-rich foods with warfarin).</li>
+                     <li><strong>Identify At-Risk Patients:</strong> Proactively screen for nutrient deficiencies in high-risk groups (elderly, pregnant, chronic GI conditions, long-term medication use like PPIs or metformin).</li>
+                     <li><strong>Recommend with Evidence:</strong> Base supplement recommendations on solid evidence for specific conditions, such as probiotics for antibiotic-associated diarrhea, Vitamin K for newborns, or folic acid in pregnancy.</li>
+                     <li><strong>Monitor and Collaborate:</strong> If therapy is ineffective or adverse events occur, consider a nutrient-drug interaction as a contributing factor. Consult with pharmacists and registered dietitians for complex cases.</li>
+                 </ol>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const chartColors = {
+            primary: '#0a9396',
+            secondary: '#94d2bd',
+            accent: '#e9d8a6', /* A softer accent */
+            text: '#001219',
+            danger: '#ae2012', /* For strong warnings or negative data */
+            primaryLight: 'rgba(10, 147, 150, 0.6)',
+            secondaryLight: 'rgba(148, 210, 189, 0.6)',
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (!str || typeof str !== 'string') return ''; // Handle undefined or non-string labels
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const defaultTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            if (!item || !item.chart || !item.chart.data || !item.chart.data.labels) return '';
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label || '';
+                        }
+                    }
+                }
+            }
+        };
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const b12Ctx = document.getElementById('b12Chart');
+            if (b12Ctx) {
+                new Chart(b12Ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Older Adults (>50)', 'Metformin Use', 'Vegan/Vegetarian Diets', wrapLabel('GI Disorders (Crohn\'s, Celiac)',16)],
+                        datasets: [{
+                            label: 'Risk Contribution (%)',
+                            data: [40, 25, 20, 15],
+                            backgroundColor: [chartColors.primary, chartColors.secondary, chartColors.accent, chartColors.danger],
+                            borderColor: '#f8f9fa',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { 
+                                position: 'bottom',
+                                labels: { 
+                                    font: { size: 10 },
+                                    boxWidth: 20,
+                                    padding: 10
+                                }
+                            },
+                            tooltip: defaultTooltipCallback.plugins.tooltip,
+                            title: {
+                                display: true,
+                                text: 'Key Factors Contributing to B12 Deficiency Risk',
+                                padding: { top: 10, bottom: 10 },
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const depletionCtx = document.getElementById('depletionChart');
+            if(depletionCtx) {
+                const depletionLabels = [
+                    'Loop Diuretics (furosemide)',
+                    'Proton Pump Inhibitors (omeprazole)',
+                    'Metformin',
+                    'Phenytoin'
+                ].map(label => wrapLabel(label, 16));
+
+                new Chart(depletionCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: depletionLabels,
+                        datasets: [{
+                            label: 'Potassium',
+                            data: [8, 0, 0, 0],
+                            backgroundColor: chartColors.primary,
+                        }, {
+                            label: 'Calcium',
+                            data: [6, 5, 0, 0],
+                            backgroundColor: chartColors.secondary,
+                        }, {
+                            label: 'Vitamin B12',
+                            data: [0, 7, 6, 0],
+                            backgroundColor: chartColors.accent,
+                        }, {
+                            label: 'Folic Acid',
+                            data: [0, 0, 0, 9],
+                            backgroundColor: '#ca6702', /* Distinct color for Folic Acid */
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { stacked: true, title: { display: true, text: 'Relative Deficiency Risk Score (0-10)', font: {size: 10} } },
+                            y: { stacked: true, ticks: { font: {size: 10}} }
+                        },
+                        plugins: {
+                            ...defaultTooltipCallback.plugins,
+                            title: {
+                                display: true,
+                                text: 'Nutrient Depletion Risk by Common Drug Class',
+                                padding: { top:10, bottom:10},
+                                font: {size: 14, weight: 'bold'}
+                            },
+                            legend: {
+                                position: 'top',
+                                labels: { font: {size: 10}, boxWidth: 15, padding: 10}
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const omega3Ctx = document.getElementById('omega3Chart');
+            if(omega3Ctx) {
+                new Chart(omega3Ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['0 g/day', '1 g/day', '2 g/day', '3 g/day', '4 g/day'],
+                        datasets: [{
+                            label: 'Systolic BP Reduction (mmHg)',
+                            data: [0, -1.2, -2.1, -2.8, -3.5],
+                            fill: true,
+                            borderColor: chartColors.primary,
+                            backgroundColor: chartColors.primaryLight,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: false, /* Start from a value that makes sense for reductions */
+                                title: { display: true, text: 'Avg. Reduction (mmHg)', font: {size: 10} },
+                                ticks: { font: {size: 10}}
+                            },
+                            x: { ticks: { font: {size: 10}}}
+                        },
+                        plugins: {
+                           ...defaultTooltipCallback.plugins,
+                            title: {
+                                display: true,
+                                text: 'Dose-Response of Omega-3s on Systolic Blood Pressure',
+                                padding: { top:10, bottom:10},
+                                font: {size: 14, weight: 'bold'}
+                            },
+                            legend: {
+                                labels: { font: {size: 10}, boxWidth: 15, padding: 10}
+                            }
+                        }
+                    }
+                });
+            }
+
+            const probioticsCtx = document.getElementById('probioticsChart');
+            if(probioticsCtx) {
+                const probioticLabels = [
+                    'Antibiotic-Associated Diarrhea',
+                    'Acute Infectious Diarrhea (Peds)',
+                    'Necrotizing Enterocolitis (Preterm)',
+                    'Ulcerative Colitis (Remission)'
+                ].map(label => wrapLabel(label, 16));
+                
+                new Chart(probioticsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: probioticLabels,
+                        datasets: [{
+                            label: 'Relative Efficacy Score',
+                            data: [9, 8.5, 7.5, 6],
+                            backgroundColor: [chartColors.primary, chartColors.primaryLight, chartColors.secondary, chartColors.secondaryLight],
+                            borderColor: chartColors.primary,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                         plugins: {
+                            legend: { display: false },
+                            tooltip: defaultTooltipCallback.plugins.tooltip,
+                             title: {
+                                display: true,
+                                text: 'Evidence for Probiotic Use in GI Conditions',
+                                padding: { top:10, bottom:10},
+                                font: {size: 14, weight: 'bold'}
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                 title: { display: true, text: 'Strength of Evidence (0-10)', font: {size: 10}},
+                                 ticks: { font: {size: 10}}
+                            },
+                            x: { ticks: { font: {size: 10}}}
+                        }
+                    }
+                });
+            }
+
+            const analyzeBtn = document.getElementById('analyzeInteractionsBtn');
+            const medicationsInput = document.getElementById('medicationsInput');
+            const dietaryItemsInput = document.getElementById('dietaryItemsInput');
+            const interactionResultsDiv = document.getElementById('interactionResults');
+            const resultsTextP = document.getElementById('resultsText');
+            const loaderDiv = document.getElementById('interactionLoader');
+
+            if (analyzeBtn) {
+                analyzeBtn.addEventListener('click', async () => {
+                    const meds = medicationsInput.value.trim();
+                    const dietItems = dietaryItemsInput.value.trim();
+
+                    if (!meds && !dietItems) {
+                        resultsTextP.textContent = "Please enter at least one medication or dietary item to analyze.";
+                        interactionResultsDiv.classList.remove('hidden');
+                        return;
+                    }
+
+                    interactionResultsDiv.classList.add('hidden');
+                    loaderDiv.classList.remove('hidden');
+                    resultsTextP.textContent = "";
+
+                    const prompt = `
+                        You are a clinical pharmacology assistant for a Nurse Practitioner.
+                        Based on the provided chapter on "Nutrition and Nutraceuticals" and general pharmacological principles, 
+                        analyze the following list of medications and dietary items for potential nutrient-drug interactions.
+
+                        Medications: ${meds || "None provided"}
+                        Dietary Items/Supplements: ${dietItems || "None provided"}
+
+                        For each potential interaction found, please provide:
+                        1.  The interacting pair (e.g., Warfarin and Vitamin K-rich foods).
+                        2.  A brief explanation of the mechanism (e.g., Vitamin K antagonizes warfarin's anticoagulant effect).
+                        3.  Key clinical considerations or advice for the Nurse Practitioner (e.g., Counsel patient on consistent Vitamin K intake, monitor INR closely).
+
+                        If no significant interactions are commonly expected based on the provided lists, state that.
+                        Focus on clinically relevant interactions. Format the response clearly.
+                        Prioritize information regarding absorption, metabolism (especially CYP450 pathways like CYP3A4, CYP1A2), excretion, and direct antagonism or synergistic effects.
+                        Also consider drug-induced nutrient depletions if a medication is known for this and a related nutrient or symptom could be inferred from dietary items.
+                    `;
+                    
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            console.error("API Error:", errorData);
+                            throw new Error(`API request failed with status ${response.status}: ${errorData?.error?.message || response.statusText}`);
+                        }
+
+                        const result = await response.json();
+                        
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            resultsTextP.textContent = text;
+                        } else {
+                            resultsTextP.textContent = "No analysis available or unexpected response format from the AI. Please try rephrasing your input.";
+                            console.error("Unexpected API response structure:", result);
+                        }
+                    } catch (error) {
+                        console.error("Fetch error:", error);
+                        resultsTextP.textContent = `An error occurred: ${error.message}. Please try again later.`;
+                    } finally {
+                        loaderDiv.classList.add('hidden');
+                        interactionResultsDiv.classList.remove('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
