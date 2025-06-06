@@ -1,5 +1,5 @@
 ---
-title: "Chapter 16 Study Guide: Drugs Affecting the Immune System"
+title: "Study Guide"
 description: "Key concepts and learning objectives for Chapter 16, covering vaccines, immunoglobulins, and diagnostic biologicals."
 type: "docs"
 weight: 161

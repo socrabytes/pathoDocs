@@ -1,5 +1,5 @@
 ---
-title: "Interactive Chapter 25 Review"
+title: "Visual Summary"
 description: "An interactive review for Chapter 25: Drugs Used to Treat Viral, Fungal, and Protozoal Infections."
 weight: 252 # Chapter 25, interactive review
 type: "docs"

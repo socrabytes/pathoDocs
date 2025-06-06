@@ -1,5 +1,5 @@
 ---
-title: "Study Guide: Chapter 39 - Heart Failure"
+title: "Study Guide"
 description: "Key concepts, learning objectives, and clinical pearls for Chapter 39: Heart Failure."
 weight: 391
 type: "docs"

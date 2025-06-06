@@ -1,5 +1,5 @@
 ---
-title: "Chapter 16: Drugs Affecting the Immune System: Vaccines and Immunoglobulins"
+title: "Chapter 16: Vaccines & Immunoglobulins"
 description: "Comprehensive guide to vaccines, immunoglobulins, and their clinical applications in immunization and immune system modulation."
 type: "docs"
 weight: 160

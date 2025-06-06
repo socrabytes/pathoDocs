@@ -1,5 +1,5 @@
 ---
-title: "Study Guide: Chapter 25 - Drugs Used to Treat Viral, Fungal, and Protozoal Infections"
+title: "Study Guide"
 description: "Key learning objectives, concepts, and review material for Chapter 25, focusing on antiviral, antifungal, and antiprotozoal medications."
 weight: 251
 type: "docs"

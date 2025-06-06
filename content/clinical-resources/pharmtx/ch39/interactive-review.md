@@ -1,5 +1,5 @@
 ---
-title: "Interactive Chapter 39 Review"
+title: "Visual Summary"
 description: "An interactive review for Chapter 39: Heart Failure."
 weight: 392
 type: "docs"

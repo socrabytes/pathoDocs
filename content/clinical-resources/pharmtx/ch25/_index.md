@@ -1,5 +1,5 @@
 ---
-title: "Chapter 25: Drugs Used to Treat Viral, Fungal, and Protozoal Infections"
+title: "Chapter 25: Antivirals, Antifungals, & Antiprotozoals"
 description: "An overview of antiviral, antifungal, and antiprotozoal medications commonly encountered in primary care, authored by Teri Moser Woo."
 weight: 250
 type: "docs"
