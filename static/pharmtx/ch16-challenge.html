@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immunology Learning Module</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .main-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .activity-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .modal {
+            display: none; /* Hidden by default */
+        }
+        .modal.active {
+            display: flex;
+        }
+        /* Drag and Drop Styles */
+        .draggable {
+            cursor: move;
+            transition: background-color 0.2s;
+        }
+        .drop-zone {
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .drop-zone.drag-over {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        /* PPD Ruler Styles */
+        #ruler-handle {
+            cursor: ew-resize;
+        }
+        #ppd-induration-visual {
+            transition: width 0.1s ease-out, height 0.1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="main-hub" class="main-container p-4 md:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-600">Immunology Challenge</h1>
+            <p class="text-lg text-gray-600 mt-2">Select an activity to begin your training.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Activity Card 1: Vaccine Sorter -->
+            <div id="activity-sorter" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="text-3xl mb-4">🗂️</div>
+                <h3 class="text-xl font-bold text-gray-900">Vaccine Sorter</h3>
+                <p class="text-gray-600 mt-2">Drag and drop vaccines into the correct categories: Live vs. Inactivated.</p>
+            </div>
+
+            <!-- Activity Card 2: Case Studies -->
+            <div id="activity-cases" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="text-3xl mb-4">🩺</div>
+                <h3 class="text-xl font-bold text-gray-900">Clinical Cases</h3>
+                <p class="text-gray-600 mt-2">Apply your knowledge to real-world patient scenarios.</p>
+            </div>
+
+            <!-- Activity Card 3: PPD Interpreter -->
+            <div id="activity-ppd" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="text-3xl mb-4">📏</div>
+                <h3 class="text-xl font-bold text-gray-900">PPD Interpreter</h3>
+                <p class="text-gray-600 mt-2">Measure the induration and make the right call based on patient risk factors.</p>
+            </div>
+            
+             <!-- Activity Card 4: Immunoglobulin Match -->
+            <div id="activity-ig" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="text-3xl mb-4">💉</div>
+                <h3 class="text-xl font-bold text-gray-900">Immunoglobulin Match</h3>
+                <p class="text-gray-600 mt-2">Match the immunoglobulin product to its critical use case.</p>
+            </div>
+
+            <!-- Activity Card 5: Flashcard Review -->
+            <div id="activity-flashcards" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                 <div class="text-3xl mb-4">📚</div>
+                <h3 class="text-xl font-bold text-gray-900">Flashcard Review</h3>
+                <p class="text-gray-600 mt-2">Quick-fire review of all vaccines and their key details.</p>
+            </div>
+
+            <!-- Activity Card 6: Final Quiz -->
+            <div id="activity-quiz" class="activity-card bg-white p-6 rounded-xl shadow-md cursor-pointer">
+                 <div class="text-3xl mb-4">🏆</div>
+                <h3 class="text-xl font-bold text-gray-900">Final Challenge</h3>
+                <p class="text-gray-600 mt-2">Test your overall knowledge with a comprehensive quiz.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for Activities -->
+    <div id="modal-container"></div>
+    
+    <script>
+        // --- DATA ---
+        const liveVaccines = ["MMR", "Varicella", "Rotavirus", "LAIV (FluMist)", "Zoster (Zostavax - old)", "Yellow Fever", "Oral Typhoid"];
+        const inactivatedVaccines = ["DTaP/Tdap", "IPV", "Hepatitis A", "Hepatitis B", "Hib", "HPV", "IIV (Flu Shot)", "Pneumococcal", "Meningococcal", "Zoster (Shingrix)", "Injectable Typhoid", "Rabies"];
+        const caseStudies = [
+            {
+                scenario: "A 30-year-old pregnant woman, at 28 weeks gestation, is in your clinic for a routine visit. She has no record of a Tdap vaccine during adulthood. What is the appropriate action?",
+                options: ["Administer Tdap today.", "Tell her to wait until after delivery.", "Administer a Td booster only.", "No vaccine is needed."],
+                answer: "Administer Tdap today.",
+                feedback: "Correct! Tdap is recommended during EACH pregnancy, ideally between 27-36 weeks, to provide passive immunity to the newborn against pertussis."
+            },
+            {
+                scenario: "A 12-month-old child comes for their well-child visit. They have a history of intussusception at 6 months of age. Which vaccine is contraindicated?",
+                options: ["MMR", "Varicella", "Rotavirus", "Hib"],
+                answer: "Rotavirus",
+                feedback: "Correct! A personal history of intussusception is a contraindication for the rotavirus vaccine due to the risk of recurrence."
+            },
+            {
+                scenario: "A 55-year-old healthy adult asks about the shingles vaccine. They have no memory of having chickenpox. What is the correct advice?",
+                options: ["They do not need the vaccine.", "They need to be tested for VZV immunity first.", "Administer the 2-dose Shingrix (RZV) series.", "Administer the Varicella (chickenpox) vaccine instead."],
+                answer: "Administer the 2-dose Shingrix (RZV) series.",
+                feedback: "Correct! Shingrix is recommended for all immunocompetent adults 50 and older, regardless of prior history of chickenpox or shingles. Over 99% of adults are latently infected with VZV."
+            }
+        ];
+         const ppdScenarios = [
+            {
+                text: "A 45-year-old male, recently diagnosed with HIV. No known TB contacts.",
+                threshold: 5,
+                rationale: "For individuals with HIV, an induration of ≥5 mm is considered positive."
+            },
+            {
+                text: "A 30-year-old healthcare worker at a local hospital. This is an annual screening.",
+                threshold: 10,
+                rationale: "For healthcare workers in settings with potential TB exposure, an induration of ≥10 mm is considered positive."
+            },
+            {
+                text: "A 22-year-old recent immigrant (arrived 2 years ago) from a country with high TB prevalence.",
+                threshold: 10,
+                rationale: "For recent immigrants (within 5 years) from high-prevalence countries, an induration of ≥10 mm is considered positive."
+            },
+            {
+                text: "A 50-year-old office worker with no known TB risk factors. This is a pre-employment screening.",
+                threshold: 15,
+                rationale: "For persons with no known risk factors for TB, an induration of ≥15 mm is considered positive."
+            },
+            {
+                text: "A 68-year-old resident of a nursing home.",
+                threshold: 10,
+                rationale: "For residents of high-risk congregate settings (e.g., nursing homes, correctional facilities), an induration of ≥10 mm is considered positive."
+            }
+        ];
+
+        const flashcardSet = [
+            {
+                term: "MMR Vaccine",
+                definition: "Live attenuated vaccine. Protects against Measles, Mumps, and Rubella. Standard schedule: 2 doses (12-15 months, 4-6 years). Contraindicated in pregnancy, severe immunodeficiency.",
+                category: "Live Vaccine"
+            },
+            {
+                term: "DTaP Vaccine",
+                definition: "Inactivated vaccine (toxoids + acellular pertussis). Protects against Diphtheria, Tetanus, and Pertussis. For children <7 years. Series of 5 doses.",
+                category: "Inactivated Vaccine"
+            },
+            {
+                term: "Tdap Vaccine",
+                definition: "Inactivated vaccine (toxoids + acellular pertussis). Booster for Tetanus, Diphtheria, and Pertussis. For adolescents and adults. Recommended once, then Td booster q10yrs. Recommended during each pregnancy.",
+                category: "Inactivated Vaccine"
+            },
+            {
+                term: "Varicella Vaccine",
+                definition: "Live attenuated vaccine. Protects against Chickenpox. Standard schedule: 2 doses (12-15 months, 4-6 years). Contraindicated in pregnancy, severe immunodeficiency.",
+                category: "Live Vaccine"
+            },
+            {
+                term: "Hepatitis B Vaccine (HepB)",
+                definition: "Inactivated (recombinant) vaccine. Protects against Hepatitis B virus. Series of 2 or 3 doses depending on product/age. First dose often given at birth.",
+                category: "Inactivated Vaccine"
+            },
+            {
+                term: "Influenza Vaccine (IIV - Inactivated)",
+                definition: "Inactivated vaccine. Protects against seasonal influenza. Recommended annually for everyone ≥6 months without contraindications. Multiple formulations exist.",
+                category: "Inactivated Vaccine"
+            },
+            {
+                term: "Influenza Vaccine (LAIV - Live Attenuated)",
+                definition: "Live attenuated intranasal vaccine (FluMist). Protects against seasonal influenza. For healthy, non-pregnant individuals aged 2-49 years. Not for immunocompromised or those with asthma.",
+                category: "Live Vaccine"
+            },
+            {
+                term: "Tetanus Immunoglobulin (TIG)",
+                definition: "Passive immunity product. Used for tetanus post-exposure prophylaxis in individuals with contaminated wounds and inadequate or unknown tetanus vaccination history.",
+                category: "Immunoglobulin"
+            },
+            {
+                term: "Rho(D) Immunoglobulin (RhoGAM)",
+                definition: "Passive immunity product. Prevents Rh alloimmunization in Rh-negative mothers exposed to Rh-positive fetal blood. Given during pregnancy (around 28 weeks) and postpartum if baby is Rh-positive.",
+                category: "Immunoglobulin"
+            }
+        ];
+
+        const finalQuizQuestions = [
+            {
+                question: "Which of the following is a live attenuated vaccine?",
+                options: ["Hepatitis B Vaccine", "DTaP", "MMR", "Inactivated Polio Vaccine (IPV)"],
+                answer: "MMR",
+                rationale: "MMR (Measles, Mumps, Rubella) is a live attenuated vaccine. Hepatitis B, DTaP, and IPV are inactivated vaccines."
+            },
+            {
+                question: "A healthy 6-month-old infant is due for routine vaccinations. Which of these is typically NOT given at the 6-month visit?",
+                options: ["DTaP (3rd dose)", "Rotavirus (2nd or 3rd dose)", "Varicella (1st dose)", "IPV (3rd dose)"],
+                answer: "Varicella (1st dose)",
+                rationale: "The first dose of Varicella vaccine is typically given at 12-15 months of age. DTaP, Rotavirus, and IPV are all part of the typical 6-month schedule."
+            },
+            {
+                question: "What is the primary purpose of administering Rho(D) Immunoglobulin (RhoGAM) to an Rh-negative mother?",
+                options: ["To treat anemia in the mother", "To prevent hemolytic disease of the fetus and newborn (HDFN)", "To boost the mother's immune system", "To provide passive immunity against Hepatitis B to the newborn"],
+                answer: "To prevent hemolytic disease of the fetus and newborn (HDFN)",
+                rationale: "Rho(D) IG prevents the Rh-negative mother from developing antibodies against Rh-positive fetal red blood cells, which could cause HDFN in subsequent Rh-positive pregnancies."
+            },
+            {
+                question: "A 35-year-old patient with no known TB risk factors has a PPD test. After 48 hours, an induration of 12mm is measured. How should this be interpreted?",
+                options: ["Positive", "Negative", "Equivocal, retest needed", "False Positive"],
+                answer: "Negative",
+                rationale: "For individuals with no known TB risk factors, an induration of ≥15 mm is considered positive. A 12mm induration in this patient is negative."
+            },
+            {
+                question: "Which immunoglobulin product is typically administered to a newborn whose mother is HBsAg-positive, along with the first dose of Hepatitis B vaccine?",
+                options: ["Tetanus Immunoglobulin (TIG)", "Varicella-Zoster Immunoglobulin (VZIG)", "Hepatitis B Immunoglobulin (HBIG)", "Rabies Immunoglobulin (RIG)"],
+                answer: "Hepatitis B Immunoglobulin (HBIG)",
+                rationale: "HBIG provides immediate passive immunity to Hepatitis B and is given along with the active Hepatitis B vaccine to newborns of HBsAg-positive mothers to prevent perinatal transmission."
+            },
+            {
+                question: "The Varicella-Zoster Immunoglobulin (VZIG) is indicated for which of the following scenarios?",
+                options: ["Routine vaccination of all children against chickenpox.", "Treatment of active shingles infection in an immunocompetent adult.", "Post-exposure prophylaxis for susceptible, immunocompromised individuals exposed to varicella.", "Pre-exposure prophylaxis for travelers going to areas with high chickenpox prevalence."],
+                answer: "Post-exposure prophylaxis for susceptible, immunocompromised individuals exposed to varicella.",
+                rationale: "VZIG is used for post-exposure prophylaxis in specific high-risk susceptible individuals (e.g., immunocompromised, pregnant women, newborns) exposed to varicella to prevent or modify the disease course."
+            }
+        ];
+
+        const immunoglobulinCases = [
+            { scenario: "Post-exposure prophylaxis for a non-immune person bitten by a potentially rabid bat.", product: "Rabies IG (RIG)" },
+            { scenario: "Given to an Rh-negative mother at 28 weeks gestation.", product: "Rho(D) IG (RhoGAM)" },
+            { scenario: "Prophylaxis for a susceptible, immunocompromised child exposed to chickenpox.", product: "Varicella-Zoster IG (VZIG)" },
+            { scenario: "Given to a newborn whose mother is HBsAg-positive.", product: "Hepatitis B IG (HBIG)" },
+            { scenario: "A traveler needs immediate, short-term protection against Hepatitis A.", product: "Standard IG (IGIM)" }
+        ];
+
+        // --- MODAL & HUB LOGIC ---
+        const mainHub = document.getElementById('main-hub');
+        const modalContainer = document.getElementById('modal-container');
+
+        function openModal(content) {
+            mainHub.style.display = 'none';
+            modalContainer.innerHTML = content;
+            modalContainer.style.display = 'block';
+        }
+
+        function closeModal() {
+            mainHub.style.display = 'block';
+            modalContainer.innerHTML = '';
+            modalContainer.style.display = 'none';
+        }
+
+        // --- ACTIVITY: PPD INTERPRETER ---
+        document.getElementById('activity-ppd').addEventListener('click', () => {
+            let currentPPDScenario;
+
+            function loadPPDScenario() {
+                currentPPDScenario = ppdScenarios[Math.floor(Math.random() * ppdScenarios.length)];
+                document.getElementById('ppd-scenario-text').textContent = currentPPDScenario.text;
+                document.getElementById('ppd-ruler').value = 0;
+                updateIndurationVisual(0);
+                document.getElementById('ppd-feedback').style.display = 'none';
+                document.getElementById('ppd-feedback').className = 'mt-4 p-3 rounded-md'; // Reset classes
+                document.getElementById('interpret-positive').disabled = false;
+                document.getElementById('interpret-negative').disabled = false;
+            }
+
+            function updateIndurationVisual(value) {
+                const visualSize = (value / 30) * 150; // Max visual size of 150px for 30mm
+                document.getElementById('ppd-induration-visual').style.width = visualSize + 'px';
+                document.getElementById('ppd-induration-visual').style.height = visualSize + 'px';
+                document.getElementById('ppd-measurement-display').textContent = value;
+            }
+
+            const modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-screen flex flex-col">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">📏 PPD Interpreter</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+                        </header>
+                        <div class="p-6 flex-grow overflow-y-auto">
+                            <div id="ppd-scenario-text" class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-md text-blue-700 text-sm">
+                                <!-- Patient scenario will be injected here -->
+                            </div>
+                            
+                            <div class="text-center mb-6">
+                                <p class="mb-2 text-sm">Simulate PPD induration measurement:</p>
+                                <div class="relative w-48 h-48 mx-auto border-2 border-gray-300 rounded-full flex items-center justify-center bg-pink-100 select-none" id="ppd-skin-area">
+                                    <div id="ppd-induration-visual" class="absolute bg-red-300 rounded-full pointer-events-none" style="width: 0px; height: 0px; opacity: 0.6;"></div>
+                                    <div class="absolute text-xs text-gray-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform pointer-events-none">Induration</div>
+                                </div>
+                                <input type="range" id="ppd-ruler" min="0" max="30" value="0" class="w-64 mt-4">
+                                <p class="mt-1 text-sm">Measured: <span id="ppd-measurement-display" class="font-semibold">0</span> mm</p>
+                            </div>
+
+                            <div class="text-center mb-4">
+                                <p class="font-semibold mb-2 text-sm">Based on your measurement and the patient's risk factors, is this PPD test positive or negative?</p>
+                                <button id="interpret-positive" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2 text-sm">Positive</button>
+                                <button id="interpret-negative" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded text-sm">Negative</button>
+                            </div>
+                            
+                            <div id="ppd-feedback" class="mt-4 p-3 rounded-md text-sm" style="display: none;">
+                                <!-- Feedback will be injected here -->
+                            </div>
+                        </div>
+                        <footer class="p-4 border-t text-right">
+                            <button id="ppd-next-scenario" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 text-sm">Next Scenario</button>
+                        </footer>
+                    </div>
+                </div>
+            `;
+            openModal(modalContent);
+            loadPPDScenario();
+
+            document.getElementById('ppd-ruler').addEventListener('input', (e) => {
+                updateIndurationVisual(e.target.value);
+            });
+
+            function handleInterpretation(userInterpretationIsPositive) {
+                const measurement = parseInt(document.getElementById('ppd-ruler').value);
+                const actualIsPositive = measurement >= currentPPDScenario.threshold;
+                const feedbackEl = document.getElementById('ppd-feedback');
+                let feedbackText;
+
+                if (userInterpretationIsPositive === actualIsPositive) {
+                    feedbackText = `<strong>Correct!</strong> Measured ${measurement}mm. ${currentPPDScenario.rationale}`;
+                    feedbackEl.className = 'mt-4 p-3 rounded-md text-sm bg-green-50 border border-green-300 text-green-700';
+                } else {
+                    feedbackText = `<strong>Incorrect.</strong> Measured ${measurement}mm. ${currentPPDScenario.rationale}`;
+                    feedbackText += actualIsPositive ? ` This should be considered Positive.` : ` This should be considered Negative.`;
+                    feedbackEl.className = 'mt-4 p-3 rounded-md text-sm bg-red-50 border border-red-300 text-red-700';
+                }
+                feedbackEl.innerHTML = feedbackText;
+                feedbackEl.style.display = 'block';
+                document.getElementById('interpret-positive').disabled = true;
+                document.getElementById('interpret-negative').disabled = true;
+            }
+
+            document.getElementById('interpret-positive').addEventListener('click', () => handleInterpretation(true));
+            document.getElementById('interpret-negative').addEventListener('click', () => handleInterpretation(false));
+            document.getElementById('ppd-next-scenario').addEventListener('click', loadPPDScenario);
+        });
+
+        // --- ACTIVITY: FLASHCARD REVIEW ---
+        document.getElementById('activity-flashcards').addEventListener('click', () => {
+            let currentCardIndex = 0;
+            let showingTerm = true;
+            let shuffledFlashcards = [...flashcardSet].sort(() => Math.random() - 0.5);
+
+            function updateFlashcardDisplay() {
+                const card = shuffledFlashcards[currentCardIndex];
+                document.getElementById('flashcard-content').textContent = showingTerm ? card.term : card.definition;
+                document.getElementById('flashcard-counter').textContent = `Card ${currentCardIndex + 1} of ${shuffledFlashcards.length}`;
+                const categoryEl = document.getElementById('flashcard-category');
+                if (card.category) {
+                    categoryEl.textContent = `Category: ${card.category}`;
+                    categoryEl.style.display = 'block';
+                } else {
+                    categoryEl.style.display = 'none';
+                }
+            }
+
+            const modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-xl max-h-screen flex flex-col">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">📚 Flashcard Review</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+                        </header>
+                        <div class="p-6 flex-grow overflow-y-auto flex flex-col items-center justify-center">
+                            <div id="flashcard-category" class="mb-2 text-sm text-gray-500"></div>
+                            <div id="flashcard-content" class="w-full h-64 bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6 flex items-center justify-center text-center text-lg font-medium text-indigo-800 mb-6 overflow-y-auto">
+                                <!-- Term or Definition here -->
+                            </div>
+                            <div id="flashcard-counter" class="text-sm text-gray-600 mb-4"></div>
+                            <div class="flex space-x-4">
+                                <button id="flashcard-prev" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-lg text-sm">Previous</button>
+                                <button id="flashcard-flip" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg text-sm">Flip Card</button>
+                                <button id="flashcard-next" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-lg text-sm">Next</button>
+                            </div>
+                        </div>
+                        <footer class="p-4 border-t text-right">
+                            <button onclick="closeModal()" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 text-sm">Close Review</button>
+                        </footer>
+                    </div>
+                </div>
+            `;
+            openModal(modalContent);
+            updateFlashcardDisplay();
+
+            document.getElementById('flashcard-flip').addEventListener('click', () => {
+                showingTerm = !showingTerm;
+                updateFlashcardDisplay();
+            });
+
+            document.getElementById('flashcard-prev').addEventListener('click', () => {
+                if (currentCardIndex > 0) {
+                    currentCardIndex--;
+                    showingTerm = true; // Always show term first on new card
+                    updateFlashcardDisplay();
+                }
+            });
+
+            document.getElementById('flashcard-next').addEventListener('click', () => {
+                if (currentCardIndex < shuffledFlashcards.length - 1) {
+                    currentCardIndex++;
+                    showingTerm = true; // Always show term first on new card
+                    updateFlashcardDisplay();
+                }
+            });
+        });
+
+        // --- ACTIVITY: FINAL CHALLENGE QUIZ ---
+        document.getElementById('activity-quiz').addEventListener('click', () => {
+            let currentQuizQuestionIndex = 0;
+            let quizScore = 0;
+            let quizAnswered = false;
+            let shuffledQuizQuestions = [...finalQuizQuestions].sort(() => Math.random() - 0.5);
+
+            function renderQuizQuestion() {
+                quizAnswered = false;
+                const questionData = shuffledQuizQuestions[currentQuizQuestionIndex];
+                const optionsHtml = questionData.options.map(option => 
+                    `<div class="quiz-option p-3 mb-2 rounded-lg border border-gray-300 hover:bg-gray-100 cursor-pointer text-sm">${option}</div>`
+                ).join('');
+
+                const quizModalContent = document.getElementById('quiz-modal-content-area'); // Assuming a div with this ID in the modal structure
+                if (!quizModalContent) return; // Should not happen if modal is structured correctly
+
+                quizModalContent.innerHTML = `
+                    <div class="text-sm font-semibold text-gray-700 mb-1">Question ${currentQuizQuestionIndex + 1} of ${shuffledQuizQuestions.length}</div>
+                    <p class="text-md text-gray-900 mb-4">${questionData.question}</p>
+                    <div id="quiz-options-container">${optionsHtml}</div>
+                    <div id="quiz-rationale-display" class="mt-3 p-3 rounded-md text-sm" style="display: none;"></div>
+                    <div class="text-right mt-4">
+                        <button id="quiz-next-btn" class="bg-indigo-500 text-white px-5 py-2 rounded-lg hover:bg-indigo-600 text-sm shadow-sm" style="display: none;">Next</button>
+                    </div>
+                `;
+
+                const optionElements = quizModalContent.querySelectorAll('.quiz-option');
+                optionElements.forEach(optionEl => {
+                    optionEl.addEventListener('click', () => {
+                        if (quizAnswered) return;
+                        quizAnswered = true;
+                        const selectedAnswer = optionEl.textContent;
+                        const correctAnswer = questionData.answer;
+                        const rationaleEl = document.getElementById('quiz-rationale-display');
+
+                        optionElements.forEach(opt => opt.classList.remove('hover:bg-gray-100', 'cursor-pointer')); // Disable further clicks
+
+                        if (selectedAnswer === correctAnswer) {
+                            optionEl.classList.add('bg-green-100', 'border-green-500', 'font-semibold');
+                            quizScore++;
+                        } else {
+                            optionEl.classList.add('bg-red-100', 'border-red-500');
+                            optionElements.forEach(opt => {
+                                if (opt.textContent === correctAnswer) {
+                                    opt.classList.add('bg-green-100', 'border-green-500', 'font-semibold');
+                                }
+                            });
+                        }
+                        rationaleEl.innerHTML = `<strong>Rationale:</strong> ${questionData.rationale}`;
+                        rationaleEl.className = selectedAnswer === correctAnswer ? 'mt-3 p-3 rounded-md text-sm bg-green-50 border border-green-200 text-green-700' : 'mt-3 p-3 rounded-md text-sm bg-red-50 border border-red-200 text-red-700';
+                        rationaleEl.style.display = 'block';
+                        document.getElementById('quiz-next-btn').style.display = 'inline-block';
+                    });
+                });
+
+                document.getElementById('quiz-next-btn').addEventListener('click', () => {
+                    currentQuizQuestionIndex++;
+                    if (currentQuizQuestionIndex < shuffledQuizQuestions.length) {
+                        renderQuizQuestion();
+                    } else {
+                        showQuizResults();
+                    }
+                });
+            }
+
+            function showQuizResults() {
+                const quizModalContent = document.getElementById('quiz-modal-content-area');
+                 quizModalContent.innerHTML = `
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-800">Challenge Complete!</h3>
+                        <p class="mt-3 text-xl">Your Score: <span class="font-bold text-indigo-600">${quizScore}</span> out of <span class="font-bold text-indigo-600">${shuffledQuizQuestions.length}</span></p>
+                        <button id="quiz-restart-btn" class="mt-6 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 text-md shadow-md">Restart Challenge</button>
+                    </div>`;
+                document.getElementById('quiz-restart-btn').addEventListener('click', () => {
+                    currentQuizQuestionIndex = 0;
+                    quizScore = 0;
+                    shuffledQuizQuestions = [...finalQuizQuestions].sort(() => Math.random() - 0.5); // Re-shuffle
+                    renderQuizQuestion();
+                });
+            }
+            
+            const modalHTML = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-screen flex flex-col">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">🏆 Final Challenge Quiz</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+                        </header>
+                        <div id="quiz-modal-content-area" class="p-6 flex-grow overflow-y-auto">
+                            <!-- Quiz content will be rendered here -->
+                        </div>
+                        <footer class="p-4 border-t text-right">
+                            <button onclick="closeModal()" class="bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 text-sm">Close Quiz</button>
+                        </footer>
+                    </div>
+                </div>
+            `;
+            openModal(modalHTML);
+            renderQuizQuestion(); // Initial render
+        });
+
+        // --- ACTIVITY: VACCINE SORTER ---
+        document.getElementById('activity-sorter').addEventListener('click', () => {
+            const allVaccines = [...liveVaccines, ...inactivatedVaccines].sort(() => Math.random() - 0.5);
+            const modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-screen flex flex-col">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">🗂️ Vaccine Sorter</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800">&times;</button>
+                        </header>
+                        <div class="p-6 flex-grow overflow-y-auto">
+                            <p class="mb-4 text-center">Drag the vaccines from the bank into the correct category.</p>
+                            <div id="vaccine-bank" class="bg-gray-100 p-4 rounded-lg flex flex-wrap gap-2 justify-center mb-6 min-h-[50px]">
+                                ${allVaccines.map(v => `<div class="draggable bg-white p-2 rounded shadow cursor-move" draggable="true" data-vaccine="${v}">${v}</div>`).join('')}
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div id="live-zone" class="drop-zone border-2 border-dashed border-blue-400 bg-blue-50 rounded-lg p-4 min-h-[200px]">
+                                    <h4 class="font-bold text-blue-800 text-center">Live Attenuated</h4>
+                                </div>
+                                <div id="inactivated-zone" class="drop-zone border-2 border-dashed border-purple-400 bg-purple-50 rounded-lg p-4 min-h-[200px]">
+                                    <h4 class="font-bold text-purple-800 text-center">Inactivated / Other</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="p-4 border-t text-right">
+                            <button id="check-sorter" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700">Check Answers</button>
+                        </footer>
+                    </div>
+                </div>
+            `;
+            openModal(modalContent);
+
+            // Drag and Drop Logic
+            const draggables = document.querySelectorAll('.draggable');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            draggables.forEach(d => {
+                d.addEventListener('dragstart', () => d.classList.add('opacity-50'));
+                d.addEventListener('dragend', () => d.classList.remove('opacity-50'));
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    zone.classList.add('drag-over');
+                });
+                zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    const draggedEl = document.querySelector('.opacity-50');
+                    if(draggedEl) zone.appendChild(draggedEl);
+                });
+            });
+
+            document.getElementById('check-sorter').addEventListener('click', () => {
+                let correct = 0;
+                document.querySelectorAll('#live-zone .draggable').forEach(el => {
+                    if (liveVaccines.includes(el.dataset.vaccine)) {
+                        el.classList.add('bg-green-200');
+                        correct++;
+                    } else {
+                        el.classList.add('bg-red-200');
+                    }
+                });
+                document.querySelectorAll('#inactivated-zone .draggable').forEach(el => {
+                    if (inactivatedVaccines.includes(el.dataset.vaccine)) {
+                        el.classList.add('bg-green-200');
+                        correct++;
+                    } else {
+                        el.classList.add('bg-red-200');
+                    }
+                });
+                document.querySelectorAll('#vaccine-bank .draggable').forEach(el => el.classList.add('bg-yellow-200'));
+                alert(`You got ${correct} out of ${allVaccines.length} correct!`);
+            });
+        });
+
+        // --- ACTIVITY: CASE STUDIES ---
+        document.getElementById('activity-cases').addEventListener('click', () => {
+            let currentCase = 0;
+            const loadCase = (index) => {
+                const caseData = caseStudies[index];
+                const modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">🩺 Clinical Case ${index + 1}/${caseStudies.length}</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800">&times;</button>
+                        </header>
+                        <div class="p-6">
+                            <p class="text-lg mb-4">${caseData.scenario}</p>
+                            <div class="space-y-3" id="case-options">
+                                ${caseData.options.map(opt => `<button class="block w-full text-left p-3 bg-gray-100 rounded-lg hover:bg-indigo-100" data-answer="${opt}">${opt}</button>`).join('')}
+                            </div>
+                            <div id="case-feedback" class="mt-4 p-4 rounded-lg hidden"></div>
+                        </div>
+                        <footer class="p-4 border-t flex justify-end">
+                            <button id="next-case" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 hidden">Next Case</button>
+                        </footer>
+                    </div>
+                </div>`;
+                openModal(modalContent);
+
+                document.querySelectorAll('#case-options button').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const feedbackEl = document.getElementById('case-feedback');
+                        const nextBtn = document.getElementById('next-case');
+                        const isCorrect = btn.dataset.answer === caseData.answer;
+                        
+                        feedbackEl.innerHTML = caseData.feedback;
+                        feedbackEl.className = `mt-4 p-4 rounded-lg ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+                        feedbackEl.classList.remove('hidden');
+
+                        if (currentCase < caseStudies.length - 1) {
+                            nextBtn.classList.remove('hidden');
+                        } else {
+                            nextBtn.textContent = "Finish";
+                            nextBtn.classList.remove('hidden');
+                        }
+                    });
+                });
+                
+                document.getElementById('next-case').addEventListener('click', () => {
+                    currentCase++;
+                    if (currentCase < caseStudies.length) {
+                        loadCase(currentCase);
+                    } else {
+                        closeModal();
+                    }
+                });
+            };
+            loadCase(currentCase);
+        });
+        
+         // --- ACTIVITY: IMMUNOGLOBULIN MATCH ---
+        document.getElementById('activity-ig').addEventListener('click', () => {
+            const shuffledScenarios = [...immunoglobulinCases].sort(() => 0.5 - Math.random());
+            const shuffledProducts = [...immunoglobulinCases.map(c => c.product)].sort(() => 0.5 - Math.random());
+
+            let modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-screen flex flex-col">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">💉 Immunoglobulin Match</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800">&times;</button>
+                        </header>
+                        <div class="p-6 flex-grow overflow-y-auto">
+                            <p class="mb-4 text-center">Match the clinical scenario to the correct immunoglobulin product.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                                <!-- Scenarios Column -->
+                                <div class="space-y-4">
+                                    ${shuffledScenarios.map((item, i) => `
+                                        <div class="flex items-center gap-4">
+                                            <div id="slot-${i}" class="drop-zone w-48 h-12 border-2 border-dashed rounded-lg flex items-center justify-center text-gray-400" data-correct="${item.product}">Drop Here</div>
+                                            <p class="flex-1">${item.scenario}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <!-- Products Column -->
+                                <div class="bg-gray-100 p-4 rounded-lg space-y-3">
+                                    <h4 class="font-bold text-center mb-2">Products</h4>
+                                     ${shuffledProducts.map(item => `
+                                        <div class="draggable bg-white p-3 rounded shadow text-center" draggable="true" data-product="${item}">${item}</div>
+                                     `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                         <footer class="p-4 border-t text-right">
+                            <button id="check-ig" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700">Check Match</button>
+                        </footer>
+                    </div>
+                </div>`;
+            openModal(modalContent);
+            
+            // Drag and Drop Logic for IG Match
+            let draggedItem = null;
+            document.querySelectorAll('.draggable').forEach(item => {
+                item.addEventListener('dragstart', e => {
+                    draggedItem = e.target;
+                    setTimeout(() => item.style.display = 'none', 0);
+                });
+                item.addEventListener('dragend', () => {
+                    setTimeout(() => {
+                        draggedItem.style.display = 'block';
+                        draggedItem = null;
+                    }, 0);
+                });
+            });
+
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.addEventListener('dragover', e => e.preventDefault());
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    if (zone.children.length === 0) {
+                        zone.appendChild(draggedItem);
+                        zone.classList.remove('text-gray-400');
+                    }
+                });
+            });
+
+            document.getElementById('check-ig').addEventListener('click', () => {
+                document.querySelectorAll('.drop-zone').forEach(zone => {
+                    const droppedItem = zone.querySelector('.draggable');
+                    if(droppedItem) {
+                        if (droppedItem.dataset.product === zone.dataset.correct) {
+                            zone.style.borderColor = '#10b981';
+                            zone.style.backgroundColor = '#d1fae5';
+                        } else {
+                            zone.style.borderColor = '#ef4444';
+                            zone.style.backgroundColor = '#fee2e2';
+                        }
+                    }
+                });
+            });
+        });
+
+        // --- ACTIVITY: PPD INTERPRETER ---
+        document.getElementById('activity-ppd').addEventListener('click', () => {
+            const ppdCases = [
+                {
+                    patient: "A 35-year-old healthcare worker with no known TB contacts, for annual screening.",
+                    induration: 8, // mm
+                    interpretation: "Negative"
+                },
+                {
+                    patient: "A 28-year-old recent immigrant from a high-prevalence country.",
+                    induration: 12, // mm
+                    interpretation: "Positive"
+                },
+                {
+                    patient: "A 45-year-old person living with HIV, CD4 count of 150.",
+                    induration: 6, // mm
+                    interpretation: "Positive"
+                },
+                 {
+                    patient: "A 22-year-old college student with no risk factors.",
+                    induration: 16, // mm
+                    interpretation: "Positive"
+                }
+            ];
+            let currentPPDCaseIndex = 0;
+            
+            const loadPPDCase = (index) => {
+                const ppdCase = ppdCases[index];
+                const modalContent = `
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl">
+                        <header class="p-4 border-b flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">📏 PPD Interpreter</h2>
+                            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800">&times;</button>
+                        </header>
+                        <div class="p-6">
+                            <p class="mb-2 font-semibold">Patient Profile:</p>
+                            <p class="mb-4 bg-gray-100 p-3 rounded-lg">${ppdCase.patient}</p>
+                            <div class="relative w-full h-24 bg-red-100 rounded-lg flex items-center justify-center mb-2" style="background-color: #fbd3c4;">
+                                <div id="induration" class="absolute left-1/2 -translate-x-1/2 h-16 bg-red-300 rounded-full" style="background-color: #f4a38b; width: ${ppdCase.induration * 5}px;"></div>
+                            </div>
+                            <div class="relative w-full h-10 mb-6">
+                               <div class="w-full h-px bg-gray-400 absolute top-1/2"></div>
+                               <div id="ruler" class="absolute h-8 top-1/2 -translate-y-1/2 bg-yellow-200 border border-yellow-400 opacity-75" style="left: calc(50% - 25px); width: 50px;">
+                                   <div id="ruler-handle" class="absolute w-2 h-full bg-gray-600 top-0 left-0"></div>
+                                   <div id="ruler-handle-right" class="absolute w-2 h-full bg-gray-600 top-0 right-0"></div>
+                               </div>
+                               <div id="measurement" class="text-center font-bold text-lg mt-2 absolute w-full top-8">Measurement: 10 mm</div>
+                            </div>
+                            <p class="text-center my-4">Based on your measurement and the patient's profile, is the test Positive or Negative?</p>
+                            <div class="flex justify-center gap-4">
+                                <button class="ppd-choice bg-green-500 text-white font-bold py-2 px-8 rounded-lg hover:bg-green-600" data-choice="Positive">Positive</button>
+                                <button class="ppd-choice bg-red-500 text-white font-bold py-2 px-8 rounded-lg hover:bg-red-600" data-choice="Negative">Negative</button>
+                            </div>
+                             <div id="ppd-feedback" class="mt-4 p-4 rounded-lg hidden text-center"></div>
+                        </div>
+                    </div>
+                </div>`;
+                openModal(modalContent);
+                
+                // PPD Ruler Logic
+                const ruler = document.getElementById('ruler');
+                const measurementDisplay = document.getElementById('measurement');
+                let rulerWidth = 50; 
+                ruler.style.width = rulerWidth + 'px';
+                
+                const updateMeasurement = () => {
+                     const measuredMM = Math.round(ruler.offsetWidth / 5);
+                     measurementDisplay.textContent = `Measurement: ${measuredMM} mm`;
+                }
+
+                document.querySelectorAll('.ppd-choice').forEach(btn => {
+                    btn.addEventListener('click', e => {
+                        const choice = e.target.dataset.choice;
+                        const feedbackEl = document.getElementById('ppd-feedback');
+                        const isCorrect = choice === ppdCase.interpretation;
+                        feedbackEl.innerHTML = isCorrect ? `Correct! The interpretation is ${ppdCase.interpretation}.` : `Incorrect. The correct interpretation is ${ppdCase.interpretation}.`;
+                        feedbackEl.className = `mt-4 p-4 rounded-lg text-center ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+                        setTimeout(() => {
+                           currentPPDCaseIndex++;
+                           if (currentPPDCaseIndex < ppdCases.length) {
+                               loadPPDCase(currentPPDCaseIndex);
+                           } else {
+                               alert('PPD Interpretation Challenge Complete!');
+                               closeModal();
+                           }
+                        }, 2000);
+                    });
+                });
+            };
+            loadPPDCase(currentPPDCaseIndex);
+        });
+
+        // Placeholder for other activities
+        document.getElementById('activity-flashcards').addEventListener('click', () => alert('Flashcard Review coming soon!'));
+        document.getElementById('activity-quiz').addEventListener('click', () => alert('Final Challenge coming soon!'));
+    </script>
+</body>
+</html>
