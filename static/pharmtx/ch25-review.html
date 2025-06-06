@@ -249,150 +249,42 @@
 
         const tabNav = document.getElementById('tab-nav');
         const tabContent = document.getElementById('tab-content');
-        let activeTab = Object.keys(studyData)[0]; // Set the first tab as active by default
+        let initialActiveCategory = Object.keys(studyData)[0]; // Determine the initial active category
 
-        function createTabs() {
-            Object.keys(studyData).forEach(category => {
-                const button = document.createElement('button');
-                button.textContent = category;
-                button.className = 'tab ' + (category === activeTab ? 'tab-active' : 'tab-inactive');
-                button.onclick = () => {
-                    activeTab = category;
-                    createTabs(); // Re-render tabs to update active state
-                    displayCategoryContent(category);
-                };
-                tabNav.appendChild(button);
-            });
-        }
-
-        function displayCategoryContent(category) {
-            tabContent.innerHTML = ''; // Clear previous cards
+        // Function to generate content for a tab (cards)
+        function generateCategoryCardsHTML(category) {
             const items = studyData[category];
-            items.forEach(item => {
-                const cardContainer = document.createElement('div');
-                cardContainer.className = 'perspective';
+            if (!items) return ''; // Should not happen if category is valid
 
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.onclick = () => card.classList.toggle('flipped');
-
-                const cardInner = document.createElement('div');
-                cardInner.className = 'card-inner';
-
-                // Card Front
-                const cardFront = document.createElement('div');
-                cardFront.className = 'card-front bg-white p-6 rounded-lg shadow-lg';
-                cardFront.innerHTML = `
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">${item.title}</h3>
-                    <p class="text-sm text-gray-500 mb-1">${item.subtitle || ''}</p>
-                    <p class="text-md font-medium text-gray-700">${item.use}</p>
-                    <p class="mt-4 text-xs text-gray-400">Click to see details</p>
-                `;
-
-                // Card Back
-                const cardBack = document.createElement('div');
-                cardBack.className = 'card-back bg-gray-700 text-white p-6 rounded-lg shadow-lg overflow-y-auto';
-                let pointsHTML = '<ul class="list-disc list-inside text-sm space-y-2">';
-                item.points.forEach(point => {
-                    pointsHTML += `<li>${point}</li>`;
-                });
-                pointsHTML += '</ul>';
-                cardBack.innerHTML = `
-                    <h4 class="text-lg font-semibold mb-3">${item.title} - Details</h4>
-                    ${pointsHTML}
-                    <p class="mt-auto pt-3 text-xs text-gray-300">Click to flip back</p>
-                `;
-                
-                cardInner.appendChild(cardFront);
-                cardInner.appendChild(cardBack);
-                card.appendChild(cardInner);
-                cardContainer.appendChild(card);
-                tabContent.appendChild(cardContainer);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createTabs();
-            displayCategoryContent(activeTab);
-        });
-    </script>
-</body>
-</html>
-                    use: "Diarrhea from Giardia & Cryptosporidium",
-                    points: [
-                        "<strong>MOA:</strong> Interferes with anaerobic energy metabolism in the protozoa.",
-                        "<strong>Administration:</strong> Must be taken with food to improve bioavailability.",
-                        "<strong>Drug Interactions:</strong> Highly protein-bound; use caution with other highly protein-bound drugs like warfarin.",
-                        "<strong>ADRs:</strong> GI irritation (abdominal pain, nausea, diarrhea) is common.",
-                        "<strong>Formulation:</strong> Available as an oral suspension for pediatric use."
-                    ]
-                }
-            ]
-        };
-
-        const tabNav = document.getElementById('tab-nav');
-        const tabContent = document.getElementById('tab-content');
-
-        // Function to generate content for a tab
-        function generateTabContent(category) {
-            const cardsHtml = studyData[category].map((card, index) => `
-                <div class="perspective w-full h-80 mb-8">
-                    <div class="card relative w-full h-full" onclick="this.classList.toggle('flipped')">
+            return items.map(item => `
+                <div class="perspective">
+                    <div class="card" onclick="this.classList.toggle('flipped')">
                         <div class="card-inner">
-                            <!-- Front of Card -->
-                            <div class="card-front bg-white p-6 flex flex-col justify-center items-center text-center cursor-pointer">
-                                <h3 class="text-xl font-semibold text-blue-600">${card.title}</h3>
-                                <p class="text-gray-500 mt-2">${card.subtitle}</p>
-                                <div class="mt-4 text-xs text-gray-400">Click to flip</div>
+                            <div class="card-front bg-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-semibold text-blue-600 mb-2">${item.title}</h3>
+                                <p class="text-sm text-gray-500 mb-1">${item.subtitle || ''}</p>
+                                <p class="text-md font-medium text-gray-700">${item.use}</p>
+                                <p class="mt-4 text-xs text-gray-400">Click to see details</p>
                             </div>
-                            <!-- Back of Card -->
-                            <div class="card-back bg-blue-50 p-6 text-left">
-                                <h4 class="text-lg font-bold text-blue-800 mb-2">${card.use}</h4>
-                                <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
-                                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                            <div class="card-back bg-gray-700 text-white p-6 rounded-lg shadow-lg overflow-y-auto">
+                                <h4 class="text-lg font-semibold mb-3">${item.title} - Details</h4>
+                                <ul class="list-disc list-inside text-sm space-y-2">
+                                    ${item.points.map(point => `<li>${point}</li>`).join('')}
                                 </ul>
+                                <p class="mt-auto pt-3 text-xs text-gray-300">Click to flip back</p>
                             </div>
                         </div>
                     </div>
                 </div>
             `).join('');
-
-            return `<div id="${category.replace(/\s+/g, '-')}" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        ${cardsHtml}
-                    </div>`;
         }
 
-        // Initialize tabs and content
-        function initialize() {
-            const categories = Object.keys(studyData);
-            
-            categories.forEach((category, index) => {
-                // Create Tab Button
-                const tabButton = document.createElement('button');
-                tabButton.textContent = category;
-                tabButton.className = `tab py-4 px-1 border-b-2 text-sm sm:text-base ${index === 0 ? 'tab-active' : 'tab-inactive'}`;
-                tabButton.onclick = () => switchTab(category);
-                tabNav.appendChild(tabButton);
-
-                // Create Tab Content Pane
-                const pane = document.createElement('div');
-                pane.innerHTML = generateTabContent(category);
-                if (index !== 0) {
-                    pane.style.display = 'none';
-                }
-                pane.id = `content-${category.replace(/\s+/g, '-')}`;
-                tabContent.appendChild(pane);
-            });
-        }
-        
-        // Function to switch tabs
+        // Function to switch tabs and display content
         function switchTab(categoryToShow) {
-            const categories = Object.keys(studyData);
-            
-            // Update tab buttons
+            // Update tab buttons active state
             const buttons = tabNav.getElementsByTagName('button');
-            for(let btn of buttons) {
-                if(btn.textContent === categoryToShow) {
+            for (let btn of buttons) {
+                if (btn.textContent === categoryToShow) {
                     btn.classList.remove('tab-inactive');
                     btn.classList.add('tab-active');
                 } else {
@@ -400,18 +292,26 @@
                     btn.classList.add('tab-inactive');
                 }
             }
-
-            // Update content panes
-            categories.forEach(category => {
-                const pane = document.getElementById(`content-${category.replace(/\s+/g, '-')}`);
-                if (category === categoryToShow) {
-                    pane.style.display = 'block';
-                } else {
-                    pane.style.display = 'none';
-                }
-            });
+            // Display content for the selected category
+            tabContent.innerHTML = generateCategoryCardsHTML(categoryToShow);
         }
 
+        // Initialize tabs and display content for the first tab
+        function initialize() {
+            const categories = Object.keys(studyData);
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category;
+                button.className = `tab ${category === initialActiveCategory ? 'tab-active' : 'tab-inactive'}`;
+                button.onclick = () => switchTab(category);
+                tabNav.appendChild(button);
+            });
+
+            // Display content for the initial active category
+            if (categories.length > 0) {
+                switchTab(initialActiveCategory);
+            }
+        }
 
         // Initial load
         initialize();
