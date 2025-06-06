@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Pharmacoeconomics Guide for NPs</title>
+    <!-- Chosen Palette: "Calm Medical" - A palette using warm neutrals (bg-stone-50), a professional blue (bg-blue-600, text-blue-800) for primary actions and headers, a supportive teal (bg-teal-500, text-teal-800) for informational content, and subtle grays for text and borders. -->
+    <!-- Application Structure Plan: A tab-based, single-page application structure was chosen for its intuitive and self-contained nature, which is ideal for a study guide. The user can easily navigate between key learning areas without scrolling or losing context. The sections are: 1) "Home": An introduction and overview. 2) "Core Concepts": Interactive cards for key terms. 3) "Analysis Types": A dynamic comparison tool to explore the different economic analyses. 4) "Generics Deep Dive": Key facts and an interactive element comparing brand vs. generic costs. 5) "Practice Scenarios": A quiz-like section to apply knowledge to real-world NP situations. This structure guides the user from foundational knowledge to practical application, enhancing learning retention. -->
+    <!-- Visualization & Content Choices: 1) Core Concepts: Goal is to inform. Method is interactive flip cards (HTML/CSS/JS) for definitions, which is more engaging than a static list. 2) Analysis Types: Goal is to compare. A tabbed interface (HTML/CSS/JS) presents details for each analysis type, allowing direct comparison. 3) Generics: Goal is to compare and inform. A dynamic bar chart (Chart.js) will visualize the cost difference between a brand-name drug and its generic, driven by user interaction. Key FDA requirements are presented as a checklist for clarity. 4) Scenarios: Goal is to apply knowledge. Interactive quiz cards (HTML/CSS/JS) will present a clinical problem and reveal the best practice/answer upon user click. This active recall method is highly effective for learning. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-btn.active {
+            border-bottom-color: #0c4a6e; /* border-sky-800 */
+            color: #0c4a6e; /* text-sky-800 */
+            font-weight: 600;
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .quiz-card .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .quiz-card.revealed .answer {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div id="app" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-sky-900">Pharmacoeconomics: A Practical Guide for NPs</h1>
+            <p class="mt-2 text-lg text-stone-600">Balancing clinical excellence with economic reality in your prescribing practice.</p>
+        </header>
+
+        <nav class="mb-8 border-b border-stone-300">
+            <div class="flex flex-wrap -mb-px justify-center" id="tabs">
+                <button data-tab="home" class="tab-btn text-stone-600 border-b-2 border-transparent py-4 px-4 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 ease-in-out hover:bg-stone-100 active">Home</button>
+                <button data-tab="concepts" class="tab-btn text-stone-600 border-b-2 border-transparent py-4 px-4 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 ease-in-out hover:bg-stone-100">Core Concepts</button>
+                <button data-tab="analysis" class="tab-btn text-stone-600 border-b-2 border-transparent py-4 px-4 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 ease-in-out hover:bg-stone-100">Analysis Types</button>
+                <button data-tab="generics" class="tab-btn text-stone-600 border-b-2 border-transparent py-4 px-4 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 ease-in-out hover:bg-stone-100">Generics Deep Dive</button>
+                <button data-tab="scenarios" class="tab-btn text-stone-600 border-b-2 border-transparent py-4 px-4 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 ease-in-out hover:bg-stone-100">Practice Scenarios</button>
+            </div>
+        </nav>
+
+        <main id="tab-content">
+            <!-- Content will be injected here by JavaScript -->
+        </main>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const appData = {
+                home: {
+                    title: "Welcome, Future NP!",
+                    content: `
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="text-lg text-stone-700 mb-4">This interactive guide is designed to translate the core principles of pharmacoeconomics into tangible skills for your daily practice. As a prescriber, your decisions have a profound impact not only on a patient's health but also on their financial well-being and their ability to adhere to treatment.</p>
+                            <p class="text-stone-700 mb-4">Use the tabs above to navigate through the key areas. You will start with foundational concepts, explore the different ways drug value is analyzed, understand the critical role of generic drugs, and finally, apply your knowledge in practical, case-based scenarios.</p>
+                            <div class="mt-6 p-4 bg-teal-50 border-l-4 border-teal-500 rounded-r-lg">
+                                <h3 class="font-bold text-teal-800">Your Goal:</h3>
+                                <p class="text-teal-700">To become a compassionate and effective provider who understands that a prescription a patient cannot afford is an ineffective prescription.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                concepts: {
+                    title: "Core Concepts & Key Terminology",
+                    intro: "Grasp the fundamental terminology of pharmacoeconomics. These concepts form the building blocks for every analysis and decision you'll encounter. Click on each card to reveal its definition and clinical relevance.",
+                    cards: [
+                        { term: "Direct Costs", definition: "The most obvious costs, including medications, lab tests, provider time (medical), and patient transportation or childcare (non-medical).", example: "A patient's copay for Lisinopril and the cost of the A1C test you ordered." },
+                        { term: "Indirect Costs", definition: "Costs resulting from patient morbidity (illness) and mortality (death), such as lost wages or reduced productivity.", example: "The income a patient loses from taking three days off work due to a severe migraine." },
+                        { term: "Intangible Costs", definition: "Non-financial outcomes that are difficult to measure in dollars but are critical to patient-centered care, like pain, suffering, and grief.", example: "The distress and anxiety a patient experiences while undergoing chemotherapy." },
+                        { term: "Quality-Adjusted Life Years (QALY)", definition: "A metric where 1 QALY equals one year in perfect health. It's used to measure how a treatment impacts both length and quality of life.", example: "A treatment might add two years of life, but if it causes severe side effects, it may only equal 0.8 QALYs." }
+                    ]
+                },
+                analysis: {
+                    title: "Understanding Pharmacoeconomic Analysis Types",
+                    intro: "As an NP, you will interpret studies that use these methods to justify formularies and treatment guidelines. Understanding what each analysis asks is key to critically evaluating drug therapies. Select a type to see how it works.",
+                    types: [
+                        { name: "Cost-Minimization", question: "Which of these two *therapeutically equal* treatments costs less overall?", description: "This is the most straightforward analysis. It assumes the clinical outcomes are identical and simply compares the total costs of two or more treatment alternatives.", example: "Comparing brand-name vs. generic azathioprine. The clinical effect is the same, so the decision is based on which option has the lowest total cost (including acquisition, administration, and monitoring)." },
+                        { name: "Cost-Effectiveness", question: "Is the extra clinical benefit from this more expensive drug worth the extra cost?", description: "Compares treatments that are *not* therapeutically equal. The outcome is measured in natural units (e.g., mm Hg drop in BP, cases cured), not dollars.", example: "Comparing a costly 3-drug hypertension regimen that lowers BP by 35 points to a cheaper 2-drug regimen that lowers it by 20 points. Is the extra 15-point drop worth the higher price?" },
+                        { name: "Cost-Benefit", question: "Which program provides the biggest 'bang for the buck'?", description: "This analysis puts a dollar value on both the costs and the health outcomes, allowing for comparison of different types of programs. The result is often a benefit-to-cost ratio.", example: "A hospital deciding if the money spent on an anticoagulation clinic would be better spent creating a new diabetes education program." },
+                        { name: "Cost-Utility", question: "How does this treatment impact the patient's quality of life?", description: "This is a specialized form of cost-effectiveness that uses Quality-Adjusted Life Years (QALYs) as its primary outcome measure. It's vital when quality of life is a major consideration.", example: "Evaluating a cancer therapy that extends life by 6 months but causes extreme, debilitating nausea. The analysis weighs the value of the extra time against the severe drop in quality of life." }
+                    ]
+                },
+                generics: {
+                    title: "The Generic Drug Deep Dive: Your Go-To Tool",
+                    intro: "With generics accounting for 90% of prescriptions, mastering their use is non-negotiable. This section covers FDA standards and visualizes the real-world financial impact for your patients.",
+                    content: `
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold text-sky-900 mb-4">FDA Mandate for Bioequivalence</h3>
+                                <p class="mb-4 text-stone-700">The FDA's rigorous standards ensure a generic is a true therapeutic equivalent. You can prescribe them with confidence. A generic must:</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start"><span class="text-teal-500 mr-2 mt-1">&#10003;</span><span>Contain the same active ingredients.</span></li>
+                                    <li class="flex items-start"><span class="text-teal-500 mr-2 mt-1">&#10003;</span><span>Be the same dosage form and strength.</span></li>
+                                    <li class="flex items-start"><span class="text-teal-500 mr-2 mt-1">&#10003;</span><span>Have an equal rate and extent of drug absorption (bioequivalence).</span></li>
+                                    <li class="flex items-start"><span class="text-teal-500 mr-2 mt-1">&#10003;</span><span>Be manufactured under the same strict standards as brand-name products.</span></li>
+                                </ul>
+                                <p class="mt-4 text-sm text-stone-600"><strong>Clinical Confidence:</strong> The system works. When patient complaints about a generic form of Wellbutrin XL (Budeprion XL 300) arose, the FDA investigated, found it was not bioequivalent, and had it removed from the market.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold text-sky-900 mb-4">Visualizing the Cost Savings</h3>
+                                <p class="mb-4 text-stone-700">The cost difference can be staggering. Here's an example comparing the retail price of brand-name Glucophage versus its generic, metformin.</p>
+                                <div class="chart-container">
+                                    <canvas id="genericsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                scenarios: {
+                    title: "Apply Your Knowledge: Practice Scenarios",
+                    intro: "Theory is important, but practice is essential. Read each scenario, consider the best course of action based on pharmacoeconomic principles, and then click to reveal the recommended approach and rationale.",
+                    questions: [
+                        {
+                            scenario: "A stable patient on brand-name Glucophage (co-pay: $70) needs a refill. How would you counsel them about switching to generic metformin (available for $4)?",
+                            answer: "<strong>Counseling Approach:</strong> Reassure the patient by explaining that the FDA requires the generic to be a **therapeutic equivalent** to the brand. This means it has the same active ingredient and is proven to have the same clinical effect (**bioequivalence**). Highlight the significant cost savings ($66/month) and explain that this makes it easier to stay adherent to their treatment plan, leading to better long-term health outcomes. Acknowledge their potential concerns but express confidence in the generic's quality and safety."
+                        },
+                        {
+                            scenario: "Your clinic is weighing two gout treatments: a cheap NSAID with a high rate of costly GI complications vs. more expensive colchicine with fewer complications. Which analysis is most appropriate?",
+                            answer: "<strong>Appropriate Analysis:</strong> A **Cost-Effectiveness Analysis** is best here. The treatments are not therapeutically equal because of the differing side-effect profiles. This analysis will determine if the extra cost of colchicine is justified by the savings from avoiding expensive GI complication treatments and the improved patient outcome. It looks beyond the initial drug price to the total cost of care."
+                        },
+                        {
+                            scenario: "A patient on Medicare Part D is worried about hitting the coverage gap or 'donut hole.' What proactive step can you take as their prescriber?",
+                            answer: "<strong>Proactive NP Action:</strong> Your primary step is to review their medication list and proactively prescribe cost-effective generics whenever clinically appropriate. By minimizing their upfront drug spending, you can delay or entirely prevent them from reaching the coverage gap. You can also educate them that the Inflation Reduction Act caps their annual out-of-pocket drug costs at $2,000 (starting in 2025) and insulin at $35/month, which can provide significant peace of mind and improve adherence."
+                        }
+                    ]
+                }
+            };
+
+            const tabsContainer = document.getElementById('tabs');
+            const tabContentContainer = document.getElementById('tab-content');
+            let genericsChartInstance = null;
+
+            function renderTabContent(tabKey) {
+                const tabData = appData[tabKey];
+                let html = `<div class="p-4 bg-white rounded-lg shadow-sm"><h2 class="text-2xl font-bold text-sky-900 mb-4">${tabData.title}</h2>`;
+                if(tabData.intro) {
+                    html += `<p class="mb-6 text-stone-700">${tabData.intro}</p>`;
+                }
+
+                if (tabKey === 'home') {
+                    html += tabData.content;
+                }
+
+                if (tabKey === 'concepts' && tabData.cards) {
+                    html += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">`;
+                    tabData.cards.forEach(card => {
+                        html += `
+                            <div class="flip-card h-56 cursor-pointer rounded-lg shadow-md" onclick="this.classList.toggle('flipped')">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front bg-sky-100">
+                                        <h3 class="text-xl font-semibold text-sky-800">${card.term}</h3>
+                                        <p class="text-xs text-stone-500 mt-4">(Click to flip)</p>
+                                    </div>
+                                    <div class="flip-card-back bg-teal-100 text-teal-900">
+                                        <p class="text-sm">${card.definition}</p>
+                                        <p class="text-xs italic mt-2"><strong>Ex:</strong> ${card.example}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                }
+                
+                if (tabKey === 'analysis' && tabData.types) {
+                    html += `<div class="flex flex-col md:flex-row gap-8">`;
+                    html += `<div class="md:w-1/3">
+                                <ul class="space-y-2">`;
+                    tabData.types.forEach((type, index) => {
+                        html += `<li><button data-analysis-index="${index}" class="analysis-btn w-full text-left p-3 rounded-md transition-colors duration-200 ${index === 0 ? 'bg-teal-600 text-white' : 'bg-stone-100 hover:bg-stone-200'}">${type.name}</button></li>`
+                    });
+                    html += `</ul></div>`;
+                    html += `<div id="analysis-detail" class="md:w-2/3 p-4 bg-stone-50 rounded-lg border"></div>`;
+                    html += `</div>`;
+                }
+
+                if(tabKey === 'generics') {
+                    html += tabData.content;
+                }
+                
+                if(tabKey === 'scenarios' && tabData.questions) {
+                    html += `<div class="space-y-6">`;
+                    tabData.questions.forEach((q, index) => {
+                        html += `
+                            <div class="quiz-card bg-stone-100 border border-stone-200 rounded-lg p-6">
+                                <div class="font-semibold text-stone-800">${index + 1}. ${q.scenario}</div>
+                                <div class="answer mt-2 text-sm text-teal-800 bg-teal-50 p-4 rounded-md">
+                                    ${q.answer}
+                                </div>
+                                <button class="reveal-btn mt-4 text-sm font-semibold text-blue-600 hover:text-blue-800">Click to Reveal Answer</button>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                }
+
+
+                html += `</div>`;
+                tabContentContainer.innerHTML = html;
+                
+                if(tabKey === 'analysis') renderAnalysisDetail(0);
+                if(tabKey === 'generics') renderGenericsChart();
+                if(tabKey === 'scenarios') addQuizListeners();
+            }
+            
+            function renderAnalysisDetail(index) {
+                const detailContainer = document.getElementById('analysis-detail');
+                const analysisData = appData.analysis.types[index];
+                detailContainer.innerHTML = `
+                    <h3 class="text-xl font-bold text-teal-800 mb-2">${analysisData.name}</h3>
+                    <p class="italic text-stone-600 mb-4">"${analysisData.question}"</p>
+                    <p class="text-stone-700 mb-4">${analysisData.description}</p>
+                    <div class="p-3 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                        <p class="text-sm text-blue-800"><strong>Example:</strong> ${analysisData.example}</p>
+                    </div>
+                `;
+
+                document.querySelectorAll('.analysis-btn').forEach(btn => {
+                    btn.classList.remove('bg-teal-600', 'text-white');
+                    btn.classList.add('bg-stone-100', 'hover:bg-stone-200');
+                });
+                const activeBtn = document.querySelector(`.analysis-btn[data-analysis-index="${index}"]`);
+                activeBtn.classList.add('bg-teal-600', 'text-white');
+                activeBtn.classList.remove('bg-stone-100', 'hover:bg-stone-200');
+
+            }
+
+            function renderGenericsChart() {
+                const ctx = document.getElementById('genericsChart').getContext('2d');
+                if (genericsChartInstance) {
+                    genericsChartInstance.destroy();
+                }
+                genericsChartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['30-Day Supply Cost'],
+                        datasets: [{
+                            label: 'Brand-Name Glucophage',
+                            data: [70],
+                            backgroundColor: '#0369a1', // sky-700
+                            borderColor: '#0c4a6e', // sky-900
+                            borderWidth: 1
+                        }, {
+                            label: 'Generic Metformin ($4 Program)',
+                            data: [4],
+                            backgroundColor: '#0d9488', // teal-600
+                            borderColor: '#115e59', // teal-800
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value;
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Brand vs. Generic Monthly Cost Example'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function addQuizListeners() {
+                document.querySelectorAll('.quiz-card .reveal-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const card = e.target.closest('.quiz-card');
+                        card.classList.toggle('revealed');
+                        e.target.textContent = card.classList.contains('revealed') ? 'Hide Answer' : 'Click to Reveal Answer';
+                    });
+                });
+            }
+
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.tab-btn')) {
+                    const tabKey = e.target.dataset.tab;
+                    renderTabContent(tabKey);
+
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                }
+            });
+            
+            tabContentContainer.addEventListener('click', e => {
+                if(e.target.matches('.analysis-btn')) {
+                    const index = e.target.dataset.analysisIndex;
+                    renderAnalysisDetail(index);
+                }
+            });
+
+            // Initial render
+            renderTabContent('home');
+        });
+    </script>
+</body>
+</html>
