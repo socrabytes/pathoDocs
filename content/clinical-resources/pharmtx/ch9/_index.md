@@ -7,7 +7,6 @@ toc:
   enable: true
 ---
 
-# Chapter 9: Cannabis
 by Tracy Klein
 
 ## Outline

@@ -1,6 +1,6 @@
 ---
-title: "Interactive Review: Chapter 7"
-description: "An interactive infographic and clinical review for Chapter 7: Nutrition and Nutraceuticals."
+title: "Visual Summary"
+description: "A visual summary and clinical review for Chapter 7: Nutrition and Nutraceuticals."
 weight: 72
 showBreadcrumbs: true
 showReadingTime: true
@@ -8,9 +8,7 @@ toc:
   enable: true
 ---
 
-## Interactive Review: Nutrition & Nutraceuticals
-
-This page provides access to an interactive infographic designed to supplement your study of Chapter 7. It covers key concepts in nutrient-drug interactions, nutritional management, and the clinical use of nutraceuticals.
+This visual guide provides a condensed overview of key concepts from Chapter 7, focusing on nutrient-drug interactions, nutritional management, and common nutraceuticals. It's designed to complement your detailed study by offering a quick, graphical summary of essential information.
 
 **Click the link below to launch the interactive review in a new tab:**
 

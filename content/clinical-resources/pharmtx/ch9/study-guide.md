@@ -1,5 +1,5 @@
 ---
-title: "Study Guide: Chapter 9 - Cannabis in Clinical Practice"
+title: "Study Guide"
 description: "Supplemental notes, vocabulary, and highlights for Chapter 9."
 weight: 91
 showBreadcrumbs: true
@@ -7,8 +7,6 @@ showReadingTime: true
 toc:
   enable: true
 ---
-
-# Study Guide: Chapter 9 - Cannabis for the Nurse Practitioner
 
 This guide focuses on the key testable concepts, clinical applications, and safety considerations for cannabinoid-based therapeutics as presented in the source material.
 

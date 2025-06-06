@@ -7,7 +7,6 @@ toc:
   enable: true
 ---
 
-# CHAPTER 7 NUTRITION AND NUTRACEUTICALS
 Teri Moser Woo
 
 **NUTRIENT-DRUG INTERACTIONS**

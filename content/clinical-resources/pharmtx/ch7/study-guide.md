@@ -1,5 +1,5 @@
 ---
-title: "Study Guide: Chapter 7 - Nutrition and Nutraceuticals"
+title: "Study Guide"
 description: "Supplemental notes, vocabulary, and highlights for Chapter 7."
 weight: 71 
 showBreadcrumbs: true
@@ -7,8 +7,6 @@ showReadingTime: true
 toc:
   enable: true
 ---
-
-# NP Study Guide: Nutrition & Nutraceuticals (Chapter 7)
 
 This guide focuses on clinically relevant information for Nurse Practitioners regarding nutrient-drug interactions, nutritional management, and the use of common nutraceuticals.
 
