@@ -12,12 +12,12 @@ This page provides access to an interactive infographic designed to supplement y
 
 **Click the link below to launch the interactive review in a new tab:**
 
-<a href="/reviews/ch7/chapter-review.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Interactive Chapter 7 Review</a>
+<a href="../../../reviews/ch7/chapter-review.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Interactive Chapter 7 Review</a>
 
 Alternatively, you can view it embedded below:
 
-<iframe src="/reviews/ch7/chapter-review.html" width="100%" height="800px" style="border:1px solid #ccc; border-radius: 8px; margin-top: 20px;">
-  Your browser does not support iframes. Please <a href="/reviews/ch7/chapter-review.html" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
+<iframe src="../../../reviews/ch7/chapter-review.html" width="100%" height="800px" style="border:1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  Your browser does not support iframes. Please <a href="../../../reviews/ch7/chapter-review.html" target="_blank" rel="noopener noreferrer">click here to view the content</a>.
 </iframe>
 
 <style>
