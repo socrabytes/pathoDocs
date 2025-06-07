@@ -236,7 +236,7 @@ bid, twice a day; ER, extended release; HF, heart failure; tid, three times a da
 4. Troponin I or T may be tested when the clinical picture suggests an acute coronary syndrome. Elevated troponin levels can also identify a cohort of patients with HF who are at higher risk. An initial determination of troponin should be obtained for patients presenting to the hospital with acute HF to assess for ACS, as well as provide guidance regarding risk stratification. An increase in cardiac troponins indicates myocyte necrosis and may identify the patient for whom revascularization should be considered (Gherasim, 2019).
 {{< figure src="./sub_image_img-0.jpg" alt="Stages of heart failure and corresponding therapies." caption="Figure 39-2. Stages in the evolution of HF and recommended therapy by stage." >}}
 
-{{%/* details title="Annotation Details for Figure 39-2" closed="true" */%}}
+{{% details title="Annotation Details for Figure 39-2" closed="true" %}}
 **Annotation for img-0.jpeg:**
 ```json
 {
@@ -246,7 +246,7 @@ bid, twice a day; ER, extended release; HF, heart failure; tid, three times a da
   "suggested_filename": "heart_failure_stages_and_therapies"
 }
 ```
-{{%/* /details */%}}
+{{% /details %}}
 
 
 **Table 39-3 Framingham Diagnostic Criteria for the Diagnosis of Heart Failure**
