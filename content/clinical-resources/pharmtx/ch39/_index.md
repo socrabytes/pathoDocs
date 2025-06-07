@@ -237,15 +237,9 @@ bid, twice a day; ER, extended release; HF, heart failure; tid, three times a da
 {{< figure src="./sub_image_img-0.jpg" alt="Stages of heart failure and corresponding therapies." caption="Figure 39-2. Stages in the evolution of HF and recommended therapy by stage." >}}
 
 {{% details title="Annotation Details for Figure 39-2" closed="true" %}}
-**Annotation for img-0.jpeg:**
-```json
-{
-  "image_type": "table",
-  "short_description": "Stages of heart failure and corresponding therapies.",
-  "summary": "This table outlines the progression of heart failure from Stage A to Stage D, detailing patient characteristics and recommended therapies at each stage. It begins with patients at high risk but without structural heart disease (Stage A), moves through structural heart disease without symptoms (Stage B), to structural heart disease with symptoms (Stage C), and finally to refractory heart failure requiring specialized interventions (Stage D). Each stage specifies therapies ranging from lifestyle changes and medication to advanced interventions like mechanical assist devices and heart transplantation.",
-  "suggested_filename": "heart_failure_stages_and_therapies"
-}
-```
+This figure (which is a table) illustrates the stages of heart failure and their corresponding therapies.
+
+It outlines the progression of heart failure from Stage A (patients at high risk but without structural heart disease or symptoms) through Stage D (refractory heart failure requiring specialized interventions). For each stage, the table details patient characteristics and recommended therapies. These therapies range from lifestyle changes and medications in earlier stages to more advanced interventions such as mechanical assist devices and heart transplantation in Stage D.
 {{% /details %}}
 
 
