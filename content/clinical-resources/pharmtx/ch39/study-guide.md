@@ -86,23 +86,22 @@ After completing this chapter, you should be able to:
 > Symptoms in heart failure are often caused by either **fluid congestion** (due to backup of pressure) or **poor perfusion** (due to forward flow failure).
 
 - **General Symptoms:** Common symptoms for any type of HF include breathlessness (dyspnea), fatigue, exercise intolerance, and weight gain due to fluid retention.
-{{< tabs items="Left-Sided HF (Pulmonary Congestion),Right-Sided HF (Systemic Venous Congestion)" >}}
-  {{< tab >}}
-##### Left-Sided Heart Failure (Pulmonary Congestion)
 
-> [!IMPORTANT]
-> **Left-Sided HF - Hemodynamic Change:** Increased pressure and volume in the left ventricle (↑ preload) causes pressure to back up into the lungs, leading to pulmonary congestion.
+{{< tabs items="Left-Sided HF,Right-Sided HF" >}}
+{{< tab >}}
+**Left-Sided Heart Failure (Pulmonary Congestion)**
 
-**Correlated Symptoms:** This leads to pulmonary symptoms like a persistent cough, dyspnea, orthopnea (shortness of breath when lying flat), and paroxysmal nocturnal dyspnea (waking up suddenly short of breath).
-  {{< /tab >}}
-  {{< tab >}}
-##### Right-Sided Heart Failure (Systemic Venous Congestion)
+- **Hemodynamic Change:** Increased pressure and volume in the left ventricle (↑ preload) causes pressure to back up into the lungs, leading to pulmonary congestion.
 
-> [!IMPORTANT]
-> **Right-Sided HF - Hemodynamic Change:** Often a consequence of untreated left-sided HF, pressure backs up into the systemic venous system, leading to systemic venous congestion.
+- **Correlated Symptoms:** This leads to pulmonary symptoms like a persistent cough, dyspnea, orthopnea (shortness of breath when lying flat), and paroxysmal nocturnal dyspnea (waking up suddenly short of breath).
+{{< /tab >}}
+{{< tab >}}
+**Right-Sided Heart Failure (Systemic Venous Congestion)**
 
-**Correlated Symptoms:** This results in jugular venous distention (bulging neck veins), hepatomegaly (enlarged liver), anorexia, and bilateral dependent peripheral edema (swelling in the legs and ankles).
-  {{< /tab >}}
+- **Hemodynamic Change:** Often a consequence of untreated left-sided HF, pressure backs up into the systemic venous system, leading to systemic venous congestion.
+
+- **Correlated Symptoms:** This results in jugular venous distention (bulging neck veins), hepatomegaly (enlarged liver), anorexia, and bilateral dependent peripheral edema (swelling in the legs and ankles).
+{{< /tab >}}
 {{< /tabs >}}
 
 ### 5. Goals of Pharmacotherapy
@@ -145,10 +144,8 @@ After completing this chapter, you should be able to:
     - For patients with HFrEF, GDMT should be initiated to prevent symptoms.
     - An **ACE inhibitor** (or ARB if intolerant) and a **beta-blocker** are recommended.
 - **Stage C (Structural Disease with Symptoms):**
-    - **HFrEF:**Therapy is layered.
-        1. **Foundation:** 
-           > [!IMPORTANT]
-           > An **Angiotensin Receptor-Neprilysin Inhibitor (ARNI)** is now recommended over an ACEi/ARB for eligible patients with HFrEF (NYHA class II-III) to further reduce morbidity and mortality. This is combined with a guideline-directed **beta-blocker**, a **Mineralocorticoid Receptor Antagonist (MRA)**, and an **SGLT2 inhibitor** to form the four pillars of HFrEF GDMT.
+    - **HFrEF:** Therapy is layered.
+        1. **Foundation:** An **Angiotensin Receptor-Neprilysin Inhibitor (ARNI)** is now recommended over an ACEi/ARB for eligible patients with HFrEF (NYHA class II-III) to further reduce morbidity and mortality. This is combined with a guideline-directed **beta-blocker**, a **Mineralocorticoid Receptor Antagonist (MRA)**, and an **SGLT2 inhibitor** to form the four pillars of HFrEF GDMT.
         2. **Symptom Control:** **Diuretics** are used as needed to manage fluid retention and congestion.
         3. **Further Therapy:** For specific populations, hydralazine/nitrates (especially in Black patients) or other therapies may be added.
 - **Stage D (Refractory HF):**
@@ -161,25 +158,20 @@ After completing this chapter, you should be able to:
 
 ## Clinical Pearls
 
-> [!IMPORTANT]
-> **Guideline-Directed Medical Therapy (GDMT) is paramount in HF.** Adherence to GDMT, encompassing clinical evaluation, diagnostics, and tailored pharmacological/procedural interventions, is crucial for maximizing positive outcomes and preventing complications like renal failure and further cardiovascular events.
+*   **IMPORTANT:** **Guideline-Directed Medical Therapy (GDMT) is paramount in HF.** Adherence to GDMT, encompassing clinical evaluation, diagnostics, and tailored pharmacological/procedural interventions, is crucial for maximizing positive outcomes and preventing complications like renal failure and further cardiovascular events.
 
-> [!TIP]
-> **Interpreting Natriuretic Peptides:**
-> - An NT-proBNP level > 125 pg/mL or a BNP level ≥ 35 pg/mL strongly suggests HF and warrants further diagnostic evaluation.
-> - **Key Consideration for ARNIs:** Sacubitril/valsartan (an ARNI) inhibits neprilysin, leading to increased BNP levels. Therefore, NT-proBNP, which is not a substrate for neprilysin, should be used for monitoring HF in patients on ARNI therapy.
+*   **TIP:** **Interpreting Natriuretic Peptides:**
+    *   An NT-proBNP level > 125 pg/mL or a BNP level ≥ 35 pg/mL strongly suggests HF and warrants further diagnostic evaluation.
+    *   **Key Consideration for ARNIs:** Sacubitril/valsartan (an ARNI) inhibits neprilysin, leading to increased BNP levels. Therefore, NT-proBNP, which is not a substrate for neprilysin, should be used for monitoring HF in patients on ARNI therapy.
 
-> [!NOTE]
-> **Differentiating HFrEF and HFpEF:**
-> - **HFrEF (Heart Failure with reduced Ejection Fraction):** Characterized by a Left Ventricular Ejection Fraction (LVEF) ≤ 40%. This is typically due to systolic dysfunction (impaired contractility).
-> - **HFpEF (Heart Failure with preserved Ejection Fraction):** Characterized by an LVEF ≥ 50%. This is often associated with diastolic dysfunction (impaired ventricular relaxation and filling), though systolic function can also be abnormal. HFpEF diagnosis can be more complex.
+*   **NOTE:** **Differentiating HFrEF and HFpEF:**
+    *   **HFrEF (Heart Failure with reduced Ejection Fraction):** Characterized by a Left Ventricular Ejection Fraction (LVEF) ≤ 40%. This is typically due to systolic dysfunction (impaired contractility).
+    *   **HFpEF (Heart Failure with preserved Ejection Fraction):** Characterized by an LVEF ≥ 50%. This is often associated with diastolic dysfunction (impaired ventricular relaxation and filling), though systolic function can also be abnormal. HFpEF diagnosis can be more complex.
 
-> [!NOTE]
-> **Aggressively Manage Modifiable Risk Factors:**
-> - **Hypertension (HTN):** This is the single most important modifiable risk factor. Effective HTN control can reduce the risk of developing HF by approximately 50%.
-> - **Diabetes Mellitus (DM) & Metabolic Syndrome:** Both significantly increase HF risk and adversely affect outcomes if not properly managed. SGLT2 inhibitors have shown particular benefit in patients with DM and HF.
+*   **NOTE:** **Aggressively Manage Modifiable Risk Factors:**
+    *   **Hypertension (HTN):** This is the single most important modifiable risk factor. Effective HTN control can reduce the risk of developing HF by approximately 50%.
+    *   **Diabetes Mellitus (DM) & Metabolic Syndrome:** Both significantly increase HF risk and adversely affect outcomes if not properly managed. SGLT2 inhibitors have shown particular benefit in patients with DM and HF.
 
-> [!TIP]
-> **Evaluating Symptoms: Look for Patterns and Severity:**
-> - HF symptoms (e.g., dyspnea, persistent cough, peripheral edema, fatigue) can be vague and overlap with comorbidities.
-> - Focus on identifying **clusters of symptoms** and assess for signs of **congestion** (e.g., jugular venous distention, rales, edema) versus **poor perfusion** (e.g., cool extremities, narrow pulse pressure, altered mental status) to guide acute management.
+*   **TIP:** **Evaluating Symptoms: Look for Patterns and Severity:**
+    *   HF symptoms (e.g., dyspnea, persistent cough, peripheral edema, fatigue) can be vague and overlap with comorbidities.
+    *   Focus on identifying **clusters of symptoms** and assess for signs of **congestion** (e.g., jugular venous distention, rales, edema) versus **poor perfusion** (e.g., cool extremities, narrow pulse pressure, altered mental status) to guide acute management.
