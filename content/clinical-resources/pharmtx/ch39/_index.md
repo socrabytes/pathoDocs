@@ -234,7 +234,7 @@ bid, twice a day; ER, extended release; HF, heart failure; tid, three times a da
 2. Complete blood count, urinalysis, serum electrolytes (including calcium and magnesium), blood urea nitrogen (BUN), serum creatinine, HbA1c, liver function studies, fasting lipid profiles, and thyroid-stimulating hormone are useful in determining possible treatable underlying causes of HF and in determining end-organ damage (SIGN, 2016).
 3. Although the assessment of NT proBNP cannot reliably distinguish patients with systolic dysfunction from those with diastolic dysfunction, evidence supports its use in both diagnosis and management. There are a number of noncardiac reasons for elevated BNP (see Table 39-4) (Yancy et al, 2017).
 4. Troponin I or T may be tested when the clinical picture suggests an acute coronary syndrome. Elevated troponin levels can also identify a cohort of patients with HF who are at higher risk. An initial determination of troponin should be obtained for patients presenting to the hospital with acute HF to assess for ACS, as well as provide guidance regarding risk stratification. An increase in cardiac troponins indicates myocyte necrosis and may identify the patient for whom revascularization should be considered (Gherasim, 2019).
-{{< figure src="./image_images/sub_image_img-0..jpg" alt="Stages of heart failure and corresponding therapies." caption="Figure 39-2. Stages in the evolution of HF and recommended therapy by stage." >}}
+{{< figure src="./sub_image_img-0.jpg" alt="Stages of heart failure and corresponding therapies." caption="Figure 39-2. Stages in the evolution of HF and recommended therapy by stage." >}}
 
 {{%/* details title="Annotation Details for Figure 39-2" closed="true" */%}}
 **Annotation for img-0.jpeg:**
