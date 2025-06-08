@@ -56,28 +56,52 @@ Override the configuration:
 
 <img src="https://github.com/imfing/hextra-starter-template/assets/5097752/e2e3cecd-c884-47ec-b064-14f896fee08d" width=600 />
 
-## Local Development
+## Local Development for pathoDocs
 
-Pre-requisites: [Hugo](https://gohugo.io/getting-started/installing/), [Go](https://golang.org/doc/install) and [Git](https://git-scm.com)
+This section outlines how to set up and run the `pathoDocs` project locally.
 
+**Pre-requisites:**
+*   [Hugo (Extended version)](https://gohugo.io/getting-started/installing/)
+*   [Go](https://golang.org/doc/install)
+*   [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+**1. Clone the Repository (if you haven't already):**
 ```shell
-# Clone the repo
-git clone https://github.com/imfing/hextra-starter-template.git
-
-# Change directory
-cd hextra-starter-template
-
-# Start the server
-hugo mod tidy
-hugo server --logLevel debug --disableFastRender -p 1313
+git clone https://github.com/socrabytes/pathoDocs.git
+cd pathoDocs
 ```
 
-### Update theme
+**2. Install/Update Hugo Modules (including Hextra theme):**
+If this is your first time or you need to ensure modules are up to date:
+```shell
+hugo mod tidy  # Cleans up go.mod and go.sum
+hugo mod get -u # Updates modules to their latest versions
+```
+*(Note: `hugo mod tidy` removes unused module versions and `hugo mod get -u` updates them. These are useful for managing the Hextra theme module.)*
 
+**3. Running the Local Server:**
+
+*   **Standard Development:**
+    For most development tasks, you can start the Hugo server with:
+    ```shell
+    hugo server -NF
+    ```
+    The site will typically be available at `http://localhost:1313/`.
+
+*   **Testing Content with GitHub Pages Paths:**
+    If you are testing content that includes hardcoded paths for the GitHub Pages deployment (e.g., interactive reviews in `static/` linked with a `/pathoDocs/` prefix), you need to run the local Hugo server with a specific `baseURL` to simulate the GitHub Pages environment:
+    ```shell
+    # Replace 1313 with your desired port if different
+    hugo server -NF --baseURL "http://localhost:1313/pathoDocs/"
+    ```
+    Your site will then be accessible at `http://localhost:1313/pathoDocs/`, and links prefixed with `/pathoDocs/` will resolve correctly. For example, an interactive review page might be at `http://localhost:1313/pathoDocs/clinical-resources/pharmtx/chXX/interactive-review/`.
+
+**4. Updating the Hextra Theme:**
+To specifically update the Hextra theme (or other Hugo modules) to their latest versions:
 ```shell
 hugo mod get -u
 hugo mod tidy
 ```
 
-See [Update modules](https://gohugo.io/hugo-modules/use-modules/#update-modules) for more details.
+See [Update modules](https://gohugo.io/hugo-modules/use-modules/#update-modules) for more details on managing Hugo modules.
 
