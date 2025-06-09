@@ -13,7 +13,6 @@ Welcome to our curated collection of evidence-based clinical resources designed 
 {{< cards >}}
   {{< card 
       link="/clinical-resources/pharmtx/" 
-      title="Pharmacotherapeutics for Advanced Practice" 
       image="/clinical-resources/pharmatx-cover.png" 
       subtitle="Evidence-based medication guides and treatment protocols for NP students"
   >}}
@@ -22,27 +21,16 @@ Welcome to our curated collection of evidence-based clinical resources designed 
 > [!NOTE]
 > Additional textbooks and clinical references will be added to this collection as they become available.
 
-## How Our Resources Are Organized
 
-{{< cards >}}
-  {{< card title="Consistent Structure" icon="template" subtitle="All textbooks follow a unit-based organization with conceptual grouping for logical progression through complex topics" >}}
-  
-  {{< card title="Comprehensive Chapters" icon="document-text" subtitle="Each chapter includes detailed content review, visual study guides, clinical pearls, and key takeaways" >}}
-  
-  {{< card title="Easy Navigation" icon="search" subtitle="Use the search bar to quickly find specific medications, conditions, or concepts across all resources" >}}
-{{< /cards >}}
-
-## Chapter Structure Example
-
-Each chapter in our textbooks follows this consistent organization:
+> [!IMPORTANT]
+> Each chapter includes comprehensive content in the main file, a detailed study guide with key points, and a visual summary with interactive elements to reinforce learning.
 
 {{< filetree/container >}}
   {{< filetree/folder name="Chapter 7: Nutrition and Nutraceuticals" state="open" >}}
-    {{< filetree/file name="_index.md" >}}
-    {{< filetree/file name="study-guide.md" >}}
-    {{< filetree/file name="visual-summary.html" >}}
+    {{< filetree/file name="Study Guide" >}}
+    {{< filetree/file name="Visual Summary" >}}
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
 
 > [!TIP]
-> Each chapter includes comprehensive content in the main file, a detailed study guide with key points, and a visual summary with interactive elements to reinforce learning.
+> Use the search bar at the top of the page to quickly find specific medications, conditions, or concepts across all resources.
