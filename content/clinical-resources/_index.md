@@ -25,31 +25,33 @@ Welcome to our curated collection of evidence-based clinical resources designed 
 ## How Our Resources Are Organized
 
 {{< cards >}}
-  {{< card title="Consistent Structure" icon="template" >}}
-  All textbooks follow a unit-based organization with conceptual grouping for logical progression through complex topics
-  {{< /card >}}
+  {{< card title="Consistent Structure" icon="template" subtitle="All textbooks follow a unit-based organization with conceptual grouping for logical progression through complex topics" >}}
   
-  {{< card title="Comprehensive Chapters" icon="document-text" >}}
-  Each chapter includes detailed content review, visual study guides, clinical pearls, and key takeaways
-  {{< /card >}}
+  {{< card title="Comprehensive Chapters" icon="document-text" subtitle="Each chapter includes detailed content review, visual study guides, clinical pearls, and key takeaways" >}}
   
-  {{< card title="Easy Navigation" icon="search" >}}
-  Use the search bar to quickly find specific medications, conditions, or concepts across all resources
-  {{< /card >}}
+  {{< card title="Easy Navigation" icon="search" subtitle="Use the search bar to quickly find specific medications, conditions, or concepts across all resources" >}}
 {{< /cards >}}
 
-## How to Use These Resources
+## Chapter Structure Example
 
-{{% details title="For Coursework" %}}
-- **Before Class**: Review relevant chapters to build foundational knowledge
-- **During Class**: Reference key concepts and visual aids to enhance understanding
-- **After Class**: Use chapter summaries and clinical pearls to reinforce learning
-- **Exam Preparation**: Focus on highlighted content and key takeaways
-{{% /details %}}
+Each chapter in our textbooks follows this consistent organization:
 
-{{% details title="For Clinical Rotations" %}}
-- **Pre-Rotation**: Study condition-specific chapters for your upcoming rotation
-- **During Rotation**: Use quick-reference guides for point-of-care decision support
-- **Case Presentations**: Reference evidence-based recommendations for treatment plans
-- **Documentation**: Follow provided templates and examples for thorough clinical notes
-{{% /details %}}
+{{< filetree/container >}}
+  {{< filetree/folder name="Chapter 9: Cannabis in Clinical Practice" >}}
+    {{< filetree/file name="chapter-content.md" >}}
+    {{< filetree/folder name="study-materials" >}}
+      {{< filetree/file name="key-concepts.md" >}}
+      {{< filetree/file name="clinical-pearls.md" >}}
+      {{< filetree/file name="case-studies.md" >}}
+    {{< /filetree/folder >}}
+    {{< filetree/folder name="visual-resources" >}}
+      {{< filetree/file name="mechanism-of-action.html" >}}
+      {{< filetree/file name="dosing-guidelines.pdf" >}}
+      {{< filetree/file name="treatment-algorithm.svg" >}}
+    {{< /filetree/folder >}}
+    {{< filetree/file name="chapter-review.html" >}}
+  {{< /filetree/folder >}}
+{{< /filetree/container >}}
+
+> [!TIP]
+> Each chapter includes comprehensive content followed by study materials and interactive visual resources to reinforce key concepts.
