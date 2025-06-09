@@ -102,70 +102,79 @@
         <main class="space-y-16">
             <!-- Section 1: Pathophysiology -->
             <section id="pathophysiology" class="card p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-slate-800 mb-1">The Vicious Cycle of Heart Failure</h2>
-                <p class="text-slate-500 mb-6">Click through the steps to see how the body's attempts to compensate for a failing heart ultimately make things worse.</p>
+                <h2 class="text-3xl font-bold text-slate-800 mb-2">The Vicious Cycle of Heart Failure</h2>
+                <p class="text-slate-600 mb-8">Click through the steps to see how the body's attempts to compensate for a failing heart ultimately make things worse.</p>
 
-                <div class="flex justify-center space-x-2 mb-8 flex-wrap gap-2">
-                    <button class="step-button font-semibold py-2 px-4 border border-slate-300 rounded-full" onclick="showStep(0)">Start</button>
-                    <button class="step-button font-semibold py-2 px-4 border border-slate-300 rounded-full" onclick="showStep(1)">1. Initial Injury</button>
-                    <button class="step-button font-semibold py-2 px-4 border border-slate-300 rounded-full" onclick="showStep(2)">2. Neurohormonal Activation</button>
-                    <button class="step-button font-semibold py-2 px-4 border border-slate-300 rounded-full" onclick="showStep(3)">3. Harmful Effects</button>
-                    <button class="step-button font-semibold py-2 px-4 border border-slate-300 rounded-full" onclick="showStep(4)">4. Vicious Cycle</button>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 shadow-md transition-all duration-200" onclick="showStep(0)">Reset Diagram</button>
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200" onclick="showStep(1)">Step 1: Initial Injury</button>
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200" onclick="showStep(2)">Step 2: ↓ Cardiac Output</button>
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200" onclick="showStep(3)">Step 3: RAAS & SNS</button>
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200" onclick="showStep(4)">Step 4: Maladaptation</button>
+                    <button class="step-btn px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200" onclick="showStep(5)">Step 5: Progression</button>
                 </div>
 
-                <div class="relative w-full overflow-x-auto">
+                <div class="relative w-full overflow-x-auto bg-slate-50 p-4 rounded-xl shadow-inner">
                     <svg id="patho-diagram" viewBox="0 0 800 450" class="min-w-[700px]">
                         <!-- Diagram elements -->
                         <g id="step1" class="patho-diagram-element">
-                            <rect x="300" y="20" width="200" height="50" rx="10" fill="#fef3c7" stroke="#f97316" />
-                            <text x="400" y="50" text-anchor="middle" font-weight="bold">Initial Myocardial Injury</text>
-                            <path d="M 400 70 V 100" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                            <rect x="300" y="100" width="200" height="50" rx="10" fill="#fef3c7" stroke="#f97316"/>
-                            <text x="400" y="130" text-anchor="middle" font-weight="bold">Decreased Cardiac Output</text>
+                            <rect x="300" y="20" width="200" height="50" rx="10" fill="#fef3c7" stroke="#f97316" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))" />
+                            <text x="400" y="50" text-anchor="middle" font-weight="bold" class="fill-slate-800">Initial Myocardial Injury</text>
+                            <path d="M 400 70 V 100" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                            <rect x="300" y="100" width="200" height="50" rx="10" fill="#fef3c7" stroke="#f97316" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                            <text x="400" y="130" text-anchor="middle" font-weight="bold" class="fill-slate-800">Decreased Cardiac Output</text>
                         </g>
 
                         <g id="step2" class="patho-diagram-element">
-                           <path d="M 400 150 V 180" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                            <rect x="250" y="180" width="300" height="40" rx="10" fill="#fee2e2" stroke="#ef4444"/>
-                            <text x="400" y="205" text-anchor="middle" font-weight="bold">Neurohormonal Activation</text>
+                           <path d="M 400 150 V 180" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                            <rect x="250" y="180" width="300" height="40" rx="10" fill="#fee2e2" stroke="#ef4444" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                            <text x="400" y="205" text-anchor="middle" font-weight="bold" class="fill-slate-800">Neurohormonal Activation</text>
                             
-                            <path d="M 300 220 L 200 250" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                            <rect x="100" y="250" width="200" height="50" rx="10" fill="#dbeafe" stroke="#3b82f6"/>
-                            <text x="200" y="280" text-anchor="middle" font-weight="bold">SNS Activation</text>
+                            <path d="M 300 220 L 200 250" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                            <rect x="100" y="250" width="200" height="50" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                            <text x="200" y="280" text-anchor="middle" font-weight="bold" class="fill-slate-800">SNS Activation</text>
 
-                            <path d="M 500 220 L 600 250" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                            <rect x="500" y="250" width="200" height="50" rx="10" fill="#dbeafe" stroke="#3b82f6"/>
-                            <text x="600" y="280" text-anchor="middle" font-weight="bold">RAAS Activation</text>
+                            <path d="M 500 220 L 600 250" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                            <rect x="500" y="250" width="200" height="50" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                            <text x="600" y="280" text-anchor="middle" font-weight="bold" class="fill-slate-800">RAAS Activation</text>
                         </g>
                         
                         <g id="step3" class="patho-diagram-element">
-                             <path d="M 200 300 V 330" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                             <rect x="50" y="330" width="300" height="50" rx="10" fill="#fecaca" stroke="#dc2626"/>
-                             <text x="200" y="350" text-anchor="middle">↑ HR, ↑ Contractility, Vasoconstriction</text>
-                             <text x="200" y="368" text-anchor="middle">(↑ Afterload)</text>
+                             <path d="M 200 300 V 330" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                             <rect x="50" y="330" width="300" height="50" rx="10" fill="#fecaca" stroke="#dc2626" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                             <text x="200" y="350" text-anchor="middle" font-weight="bold" class="fill-slate-800">↑ HR, ↑ Contractility, Vasoconstriction</text>
+                             <text x="200" y="368" text-anchor="middle" class="fill-slate-700">(↑ Afterload)</text>
 
-                             <path d="M 600 300 V 330" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
-                             <rect x="450" y="330" width="300" height="60" rx="10" fill="#fecaca" stroke="#dc2626"/>
-                             <text x="600" y="348" text-anchor="middle">Na+ & Water Retention,</text>
-                             <text x="600" y="363" text-anchor="middle">Vasoconstriction</text>
-                             <text x="600" y="378" text-anchor="middle">(↑ Preload & Afterload)</text>
+                             <path d="M 600 300 V 330" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+                             <rect x="450" y="330" width="300" height="60" rx="10" fill="#fecaca" stroke="#dc2626" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                             <text x="600" y="348" text-anchor="middle" font-weight="bold" class="fill-slate-800">Na+ & Water Retention,</text>
+                             <text x="600" y="363" text-anchor="middle" font-weight="bold" class="fill-slate-800">Vasoconstriction</text>
+                             <text x="600" y="378" text-anchor="middle" class="fill-slate-700">(↑ Preload & Afterload)</text>
                         </g>
 
                         <g id="step4" class="patho-diagram-element">
-                             <path d="M 200 380 C 100 420, 100 20, 300 20" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-red)"/>
-                             <path d="M 600 395 C 700 435, 700 20, 500 20" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-red)"/>
-                             <rect x="275" y="390" width="250" height="60" rx="10" fill="#fee2e2" stroke="#ef4444"/>
-                             <text x="400" y="405" text-anchor="middle" font-size="0.9em" font-style="italic">Maladaptive Outcomes:</text>
-                             <text x="400" y="420" text-anchor="middle" font-weight="bold">Increased Cardiac Workload</text>
-                             <text x="400" y="435" text-anchor="middle" font-weight="bold">& Ventricular Remodeling</text>
+                             <path d="M 200 380 C 100 420, 100 20, 300 20" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-red)"/>
+                             <path d="M 600 395 C 700 435, 700 20, 500 20" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-red)"/>
+                             <rect x="275" y="390" width="250" height="60" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                             <text x="400" y="405" text-anchor="middle" font-size="0.9em" font-style="italic" class="fill-slate-700">Maladaptive Outcomes:</text>
+                             <text x="400" y="420" text-anchor="middle" font-weight="bold" class="fill-slate-800">Increased Cardiac Workload</text>
+                             <text x="400" y="435" text-anchor="middle" font-weight="bold" class="fill-slate-800">& Ventricular Remodeling</text>
+                        </g>
+
+                        <g id="step5" class="patho-diagram-element">
+                            <rect x="325" y="460" width="150" height="40" rx="10" fill="#fecaca" stroke="#dc2626" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"/>
+                            <text x="400" y="475" text-anchor="middle" font-weight="bold" class="fill-slate-800">Progressive</text>
+                            <text x="400" y="490" text-anchor="middle" font-weight="bold" class="fill-slate-800">Myocardial Dysfunction</text>
+                            <!-- Arrow from Step 4 to Step 5 -->
+                            <line x1="400" y1="450" x2="400" y2="460" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
                         </g>
 
                         <defs>
                             <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ca3af" />
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
                             </marker>
                             <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626" />
                             </marker>
                         </defs>
                     </svg>
@@ -177,25 +186,57 @@
                 <h2 class="text-3xl font-bold text-slate-800 mb-1">HFrEF vs. HFpEF</h2>
                 <p class="text-slate-500 mb-6">Explore the key differences between Heart Failure with <span class="font-semibold text-rose-600">reduced</span> Ejection Fraction and <span class="font-semibold text-indigo-600">preserved</span> Ejection Fraction.</p>
                 
-                <div class="grid md:grid-cols-2 gap-8 items-start">
-                    <!-- HFrEF -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <!-- Normal Heart Column -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="text-xl font-bold mb-3 text-emerald-400">Normal Heart</h3>
+                        <div class="heart-container mx-auto mb-4" id="normal-heart-container">
+                            <!-- SVG will be injected here -->
+                        </div>
+                        <div class="text-left text-sm text-slate-600 mb-2 px-2">
+                                <p class="italic mb-1 font-medium">Key visual features:</p>
+                                <ul class="list-disc list-inside ml-2 space-y-0.5">
+                                    <li>Balanced chamber size</li>
+                                    <li>Moderate wall thickness</li>
+                                </ul>
+                            </div>
+                            <p class="font-semibold mt-3">Normal Function</p>
+                        <p class="text-sm text-slate-600 mb-2">The ventricle fills and pumps blood efficiently.</p>
+                        <p class="text-2xl font-bold text-emerald-500">LVEF 55-70%</p>
+                    </div>
+
+                    <!-- HFrEF Column -->
                     <div class="border border-rose-200 rounded-lg p-4 text-center">
                         <h3 class="text-2xl font-bold text-rose-600 mb-2">HFrEF (Systolic Dysfunction)</h3>
                         <div class="heart-container mx-auto mb-4" id="hfref-heart-container">
                             <!-- SVG will be injected here -->
                         </div>
-                        <p class="font-semibold">Primary Problem: Weak Contraction</p>
+                        <div class="text-left text-sm text-slate-600 mb-2 px-2">
+                                <p class="italic mb-1 font-medium">Key visual features:</p>
+                                <ul class="list-disc list-inside ml-2 space-y-0.5">
+                                    <li>Significantly enlarged chamber (dilated)</li>
+                                    <li>Noticeably thin walls (compare to Normal)</li>
+                                </ul>
+                            </div>
+                        <p class="font-semibold mt-3">Primary Problem: Weak Contraction</p>
                         <p class="text-sm text-slate-600 mb-2">The ventricle is dilated and cannot pump blood effectively.</p>
                         <p class="text-2xl font-bold text-rose-600">LVEF ≤ 40%</p>
                     </div>
 
-                    <!-- HFpEF -->
+                    <!-- HFpEF Column -->
                     <div class="border border-indigo-200 rounded-lg p-4 text-center">
                         <h3 class="text-2xl font-bold text-indigo-600 mb-2">HFpEF (Diastolic Dysfunction)</h3>
                         <div class="heart-container mx-auto mb-4" id="hfpef-heart-container">
                              <!-- SVG will be injected here -->
                         </div>
-                        <p class="font-semibold">Primary Problem: Impaired Relaxation</p>
+                        <div class="text-left text-sm text-slate-600 mb-2 px-2">
+                                <p class="italic mb-1 font-medium">Key visual features:</p>
+                                <ul class="list-disc list-inside ml-2 space-y-0.5">
+                                    <li>Markedly reduced chamber size</li>
+                                    <li>Prominently thick walls (compare to Normal)</li>
+                                </ul>
+                            </div>
+                        <p class="font-semibold mt-3">Primary Problem: Impaired Relaxation</p>
                         <p class="text-sm text-slate-600 mb-2">The ventricle is stiff and hypertrophied, so it cannot fill with blood properly.</p>
                         <p class="text-2xl font-bold text-indigo-600">LVEF ≥ 50%</p>
                     </div>
@@ -305,50 +346,52 @@
 
             <!-- Section 5: Knowledge Check -->
             <section id="quiz" class="card p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-slate-800 mb-1">Knowledge Check</h2>
-                <p class="text-slate-500 mb-6">Apply what you've learned with a quick case study.</p>
-                <div id="quiz-container" class="bg-slate-50 rounded-lg p-6">
-                    <p class="mb-4"><strong>Scenario:</strong> A 68-year-old patient with a history of hypertension presents with increasing shortness of breath and a 5 lb weight gain over 3 days. An echocardiogram reveals an LVEF of 30%.</p>
-                    
-                    <div id="question1" class="mb-6">
-                        <p class="font-semibold mb-2">1. Based on the LVEF, what type of heart failure does this patient have?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">A) HFpEF (Diastolic)</button>
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, true)">B) HFrEF (Systolic)</button>
-                        </div>
-                    </div>
-
-                    <div id="question2" class="mb-6 hidden">
-                        <p class="font-semibold mb-2">2. What ACC/AHA Stage is this patient?</p>
-                         <div class="space-y-2">
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">A) Stage B</button>
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, true)">B) Stage C</button>
-                             <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">C) Stage D</button>
-                        </div>
+                <h2 class="text-3xl font-bold text-slate-800 mb-2">Knowledge Check</h2>
+                <p class="text-slate-600 mb-6">Apply what you've learned with a quick case study.</p>
+                <div id="quiz-container" class="bg-slate-50 rounded-lg p-6 shadow-inner">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-md mb-6">
+                        <p class="mb-0"><strong class="text-blue-800">Scenario:</strong> A 68-year-old patient with a history of hypertension presents with increasing shortness of breath and a 5 lb weight gain over 3 days. An echocardiogram reveals an LVEF of 30%.</p>
                     </div>
                     
-                    <div id="question3" class="mb-6 hidden">
-                         <p class="font-semibold mb-2">3. Which drug class is used primarily for symptom relief of congestion?</p>
-                         <div class="space-y-2">
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">A) Beta-Blockers</button>
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">B) ACE Inhibitors</button>
-                             <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, true)">C) Diuretics</button>
-                        </div>
-                    </div>
-
-                    <div id="question4" class="mb-6 hidden">
-                        <p class="font-semibold mb-2">4. If the patient in the scenario (LVEF 30%, SOB, weight gain) also reported significant orthopnea and paroxysmal nocturnal dyspnea (PND), these specific symptoms are most classically associated with:</p>
+                    <div id="question1" class="mb-6 bg-white p-4 rounded-lg shadow-sm">
+                        <p class="font-semibold mb-3 text-slate-800">1. Based on the LVEF, what type of heart failure does this patient have?</p>
                         <div class="space-y-2">
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">A) Right-Sided Heart Failure manifestations</button>
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, true)">B) Left-Sided Heart Failure manifestations</button>
-                            <button class="quiz-option p-2 border rounded-md w-full text-left hover:bg-slate-100" onclick="checkAnswer(this, false)">C) Both equally and non-specifically</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">A) HFpEF (Diastolic)</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="true">B) HFrEF (Systolic)</button>
                         </div>
                     </div>
 
-                    <div id="quiz-feedback" class="p-4 rounded-md text-center font-semibold hidden"></div>
-                    <div id="quiz-complete" class="text-center hidden">
+                    <div id="question2" class="mb-6 hidden bg-white p-4 rounded-lg shadow-sm">
+                        <p class="font-semibold mb-3 text-slate-800">2. What ACC/AHA Stage is this patient?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">A) Stage B</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="true">B) Stage C</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">C) Stage D</button>
+                        </div>
+                    </div>
+                    
+                    <div id="question3" class="mb-6 hidden bg-white p-4 rounded-lg shadow-sm">
+                        <p class="font-semibold mb-3 text-slate-800">3. Which drug class is used primarily for symptom relief of congestion?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">A) Beta-Blockers</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">B) ACE Inhibitors</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="true">C) Diuretics</button>
+                        </div>
+                    </div>
+
+                    <div id="question4" class="mb-6 hidden bg-white p-4 rounded-lg shadow-sm">
+                        <p class="font-semibold mb-3 text-slate-800">4. If the patient in the scenario (LVEF 30%, SOB, weight gain) also reported significant orthopnea and paroxysmal nocturnal dyspnea (PND), these specific symptoms are most classically associated with:</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">A) Right-Sided Heart Failure manifestations</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="true">B) Left-Sided Heart Failure manifestations</button>
+                            <button class="quiz-option p-3 border border-slate-300 rounded-lg w-full text-left hover:bg-slate-100 transition-colors duration-200" data-correct="false">C) Both equally and non-specifically</button>
+                        </div>
+                    </div>
+
+                    <div id="quiz-feedback" class="p-4 rounded-md text-center font-semibold hidden my-4"></div>
+                    <div id="quiz-complete" class="text-center hidden bg-green-50 p-6 rounded-lg border border-green-200 my-4">
                         <p class="text-2xl font-bold text-green-600 mb-4">Great Job!</p>
-                        <button class="py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700" onclick="resetQuiz()">Try Again</button>
+                        <button id="reset-quiz-btn" class="py-2 px-6 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 shadow-md transition-all duration-200">Try Again</button>
                     </div>
                 </div>
             </section>
@@ -362,7 +405,7 @@
 
     <script>
         // --- Pathophysiology Logic ---
-        const stepButtons = document.querySelectorAll('.step-button');
+        const stepButtons = document.querySelectorAll('.step-btn');
         // It's better to select all diagram elements directly by class if their IDs might not strictly follow stepN
         const diagramElements = document.querySelectorAll('.patho-diagram-element');
 
@@ -406,16 +449,21 @@
         // --- HFrEF vs HFpEF SVG Animation Logic ---
         const hfrefSVG = `
             <svg viewBox="0 0 100 100">
-                <path d="M 50,95 C 10,65 10,40 25,20 S 45,15 50,30 C 55,15 75,5 75,20 S 90,65 50,95 Z" fill="#fda4af" stroke="#f43f5e" stroke-width="2">
-                    <animate attributeName="d" values="M 50,95 C 10,65 10,40 25,20 S 45,15 50,30 C 55,15 75,5 75,20 S 90,65 50,95 Z; M 50,95 C 15,68 15,42 30,22 S 48,18 50,32 C 52,18 70,8 70,22 S 85,68 50,95 Z; M 50,95 C 10,65 10,40 25,20 S 45,15 50,30 C 55,15 75,5 75,20 S 90,65 50,95 Z" dur="1.5s" repeatCount="indefinite" />
+                <path d="M 50,95 C 10,70 10,45 20,25 S 35,15 50,30 C 65,15 80,25 90,45 S 90,70 50,95 Z" fill="#fda4af" stroke="#f43f5e" stroke-width="1">
+                </path>
+            </svg>
+        `;
+
+        const normalHeartSVG = `
+            <svg viewBox="0 0 100 100">
+                <path d="M 50,95 C 15,65 15,40 30,20 S 45,15 50,30 C 55,15 70,20 85,40 S 85,65 50,95 Z" fill="#a7f3d0" stroke="#059669" stroke-width="4">
                 </path>
             </svg>
         `;
 
         const hfpefSVG = `
             <svg viewBox="0 0 100 100">
-                 <path d="M 50,95 C 10,65 10,40 25,20 S 45,15 50,30 C 55,15 75,5 75,20 S 90,65 50,95 Z" fill="#c7d2fe" stroke="#4f46e5" stroke-width="5">
-                     <animate attributeName="d" values="M 50,95 C 20,65 20,40 35,25 S 48,20 50,33 C 52,20 62,15 65,25 S 80,65 50,95 Z; M 50,95 C 22,66 22,41 37,26 S 49,21 50,34 C 51,21 63,16 63,26 S 78,66 50,95 Z; M 50,95 C 20,65 20,40 35,25 S 48,20 50,33 C 52,20 62,15 65,25 S 80,65 50,95 Z" dur="1.5s" repeatCount="indefinite" />
+                 <path d="M 50,95 C 15,65 15,40 30,20 S 45,15 50,30 C 55,15 70,20 85,40 S 85,65 50,95 Z" fill="#c7d2fe" stroke="#4f46e5" stroke-width="9">
                  </path>
             </svg>
         `;
@@ -481,22 +529,75 @@
         }
 
         // --- Quiz Logic ---
-        const quizFeedback = document.getElementById('quiz-feedback');
         let currentQuestion = 1;
-
-        window.checkAnswer = (btn, isCorrect) => {
-            const parentQuestion = btn.closest('div[id^="question"]');
-            const options = parentQuestion.querySelectorAll('.quiz-option');
-
-            options.forEach(opt => {
-                opt.disabled = true;
-                opt.classList.add(opt === btn ? (isCorrect ? 'bg-green-200' : 'bg-red-200') : '');
+        
+        // Initialize quiz elements after DOM is fully loaded
+        function initQuiz() {
+            // Get quiz feedback element
+            const quizFeedback = document.getElementById('quiz-feedback');
+            if (!quizFeedback) {
+                console.error('Quiz feedback element not found');
+                return;
+            }
+            
+            // Attach event handlers to all quiz options
+            document.querySelectorAll('.quiz-option').forEach(btn => {
+                // Get correct answer from data attribute
+                const isCorrect = btn.getAttribute('data-correct') === 'true';
+                
+                // Add event listener
+                btn.addEventListener('click', function() {
+                    handleAnswer(this, isCorrect, quizFeedback);
+                });
             });
-
-            quizFeedback.textContent = isCorrect ? "Correct!" : "Not quite. Try reviewing the relevant section.";
-            quizFeedback.className = `p-4 rounded-md text-center font-semibold block ${isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
-
+            
+            // Initialize reset button
+            const resetBtn = document.querySelector('#quiz-complete button');
+            if (resetBtn) {
+                if (resetBtn.hasAttribute('onclick')) {
+                    resetBtn.removeAttribute('onclick');
+                }
+                resetBtn.addEventListener('click', resetQuiz);
+            }
+            
+            console.log('Quiz initialized with', document.querySelectorAll('.quiz-option').length, 'options');
+        }
+        
+        // Handle answer selection
+        function handleAnswer(btn, isCorrect, quizFeedback) {
+            const parentQuestion = btn.closest('div[id^="question"]');
+            if (!parentQuestion) return;
+            
+            const options = parentQuestion.querySelectorAll('.quiz-option');
+            const questionId = parentQuestion.id;
+            
+            // Clear any previous feedback content
+            while (quizFeedback.firstChild) {
+                quizFeedback.removeChild(quizFeedback.firstChild);
+            }
+            
+            // Highlight selected answer
+            options.forEach(opt => {
+                if (opt === btn) {
+                    opt.classList.add(isCorrect ? 'bg-green-200' : 'bg-red-200');
+                }
+            });
+            
+            // Show feedback
             if (isCorrect) {
+                // Correct answer
+                quizFeedback.className = 'p-4 rounded-md text-center block bg-green-100 text-green-700';
+                const message = document.createElement('p');
+                message.className = 'font-semibold';
+                message.textContent = 'Correct!';
+                quizFeedback.appendChild(message);
+                
+                // Disable all options in this question
+                options.forEach(opt => {
+                    opt.disabled = true;
+                });
+                
+                // Proceed to next question after delay
                 setTimeout(() => {
                     parentQuestion.classList.add('hidden');
                     quizFeedback.classList.add('hidden');
@@ -508,30 +609,81 @@
                         document.getElementById('quiz-complete').classList.remove('hidden');
                     }
                 }, 1000);
+            } else {
+                // Incorrect answer
+                quizFeedback.className = 'p-4 rounded-md text-center block bg-red-100 text-red-700';
+                
+                const message = document.createElement('p');
+                message.className = 'font-semibold mb-3';
+                message.textContent = 'Not quite. Try again!';
+                quizFeedback.appendChild(message);
+                
+                // Add try again button
+                const tryAgainBtn = document.createElement('button');
+                tryAgainBtn.className = 'py-1 px-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 shadow-sm transition-all duration-200';
+                tryAgainBtn.textContent = 'Try Again';
+                tryAgainBtn.addEventListener('click', () => {
+                    // Reset this question only
+                    options.forEach(opt => {
+                        opt.disabled = false;
+                        opt.classList.remove('bg-red-200', 'bg-green-200');
+                    });
+                    quizFeedback.classList.add('hidden');
+                });
+                quizFeedback.appendChild(tryAgainBtn);
+                
+                // Only disable the clicked option
+                btn.disabled = true;
             }
-        };
+        }
         
-        window.resetQuiz = () => {
+        // Reset quiz to initial state
+        function resetQuiz() {
             currentQuestion = 1;
             document.getElementById('question1').classList.remove('hidden');
             document.getElementById('question2').classList.add('hidden');
             document.getElementById('question3').classList.add('hidden');
             document.getElementById('question4').classList.add('hidden');
             document.getElementById('quiz-complete').classList.add('hidden');
-            quizFeedback.classList.add('hidden');
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            
             document.querySelectorAll('.quiz-option').forEach(btn => {
                 btn.disabled = false;
                 btn.classList.remove('bg-green-200', 'bg-red-200');
             });
+        }
+        
+        // Make functions available to window scope
+        window.checkAnswer = function(btn, isCorrect) {
+            handleAnswer(btn, isCorrect, document.getElementById('quiz-feedback'));
         };
+        
+        window.resetQuiz = resetQuiz;
 
         // --- Initial setup on page load ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize interactive diagram
             showStep(0); 
-            document.getElementById('hfref-heart-container').innerHTML = hfrefSVG;
-            document.getElementById('hfpef-heart-container').innerHTML = hfpefSVG;
+            
+            // Initialize heart SVGs
+            const hfpefContainer = document.getElementById('hfpef-heart-container');
+            const normalContainer = document.getElementById('normal-heart-container');
+            const hfrefContainer = document.getElementById('hfref-heart-container');
+
+            if (normalContainer) normalContainer.innerHTML = normalHeartSVG;
+            if (hfrefContainer) hfrefContainer.innerHTML = hfrefSVG;
+            if (hfpefContainer) hfpefContainer.innerHTML = hfpefSVG;
+            
+            // Initialize staging section
             showStage('A'); 
+            
+            // Initialize drug cards
             generateDrugCards();
+            
+            // Initialize quiz functionality
+            initQuiz();
+            
+            console.log('All interactive elements initialized');
         });
     </script>
 </body>
