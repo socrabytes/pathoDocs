@@ -14,7 +14,7 @@ Welcome to our curated collection of evidence-based clinical resources designed 
   {{< card 
       link="/clinical-resources/pharmtx/" 
       image="/clinical-resources/pharmatx-cover.png" 
-      subtitle="Full coverage of the 'Pharmacotherapeutics for Advanced Practice' textbook, providing comprehensive, evidence-based medication protocols."
+      subtitle="Your complete guide to 'Pharmacotherapeutics for Advanced Practice': Evidence-based medication protocols for NP success."
   >}}
 {{< /cards >}}
 
