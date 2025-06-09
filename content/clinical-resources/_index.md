@@ -22,11 +22,14 @@ Welcome to our curated collection of evidence-based clinical resources designed 
 > Additional textbooks and clinical references will be added to this collection as they become available.
 
 
+### Understanding Chapter Layout
+
 > [!IMPORTANT]
 > Each chapter includes comprehensive content in the main file, a detailed study guide with key points, and a visual summary with interactive elements to reinforce learning.
 
 {{< filetree/container >}}
   {{< filetree/folder name="Chapter 7: Nutrition and Nutraceuticals" state="open" >}}
+    {{< filetree/file name="Main Chapter Content" >}}
     {{< filetree/file name="Study Guide" >}}
     {{< filetree/file name="Visual Summary" >}}
   {{< /filetree/folder >}}
